@@ -215,10 +215,17 @@
               <e p="LoginScenePanelAnimation.cs" t="Include" />
               <e p="Register.cs" t="Include" />
             </e>
+            <e p="Race.cs" t="Include" />
             <e p="Races.cs" t="Include" />
             <e p="RaceSelect" t="Include">
-              <e p="RaceDetail.cs" t="Include" />
-              <e p="RaceSelect.cs" t="Include" />
+              <e p="RacePanel.cs" t="Include" />
+              <e p="RaceSelector.cs" t="Include" />
+            </e>
+            <e p="Scenes" t="Include">
+              <e p="Scenes.cs" t="Include" />
+            </e>
+            <e p="User" t="Include">
+              <e p="User.cs" t="Include" />
             </e>
           </e>
         </e>

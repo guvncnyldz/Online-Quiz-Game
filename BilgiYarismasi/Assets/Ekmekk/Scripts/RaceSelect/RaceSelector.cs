@@ -5,62 +5,65 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RaceSelect : MonoBehaviour
+public class RaceSelector : MonoBehaviour
 {
     [SerializeField] private Button btn_fire, btn_air, btn_earth, btn_water;
 
-    private Vector3 startRotation;
-
-    private RaceDetail raceDetail;
+    private RacePanel racePanel;
+    public RacesIndex selectedRace;
+    public Button selectedButton;
 
     private void Awake()
     {
-        raceDetail = FindObjectOfType<RaceDetail>();
-
-        startRotation = transform.rotation.eulerAngles;
+        racePanel = FindObjectOfType<RacePanel>();
 
         btn_air.onClick.AddListener(() => ChooseRace(btn_air, RacesIndex.Air));
         btn_fire.onClick.AddListener(() => ChooseRace(btn_fire, RacesIndex.Fire));
         btn_earth.onClick.AddListener(() => ChooseRace(btn_earth, RacesIndex.Earth));
         btn_water.onClick.AddListener(() => ChooseRace(btn_water, RacesIndex.Water));
-        
-        ChooseRace(btn_fire,RacesIndex.Fire);
+
+        selectedRace = RacesIndex.Fire;
+        selectedButton = btn_fire;
+        racePanel.SetDetailDirect(Races.races[selectedRace].name, Races.races[selectedRace].color,
+            Races.races[selectedRace].detail);
     }
 
     void ChooseRace(Button selectedButton, RacesIndex selectedRace)
     {
+        if (this.selectedRace == selectedRace)
+            return;
+
         LockButtons(false);
 
         float rotateTargetZ = 0;
-        string raceName = "";
 
         switch (selectedRace)
         {
             case RacesIndex.Fire:
-                raceName = "ATEŞ";
                 rotateTargetZ = 0;
                 break;
             case RacesIndex.Air:
-                raceName = "HAVA";
                 rotateTargetZ = 90;
                 break;
             case RacesIndex.Earth:
-                raceName = "TOPRAK";
                 rotateTargetZ = 180;
                 break;
             case RacesIndex.Water:
-                raceName = "SU";
                 rotateTargetZ = -90;
                 break;
         }
 
-        raceDetail.SetDetail(raceName, Races.colorCodes[selectedRace], "");
+        this.selectedButton = selectedButton;
+        this.selectedRace = selectedRace;
         
+        racePanel.SetDetail(Races.races[selectedRace].name, Races.races[selectedRace].color,
+            Races.races[selectedRace].detail);
+
         transform.DORotate(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, rotateTargetZ),
             160).SetSpeedBased().SetEase(Ease.Linear).OnComplete(() => { LockButtons(true); });
     }
 
-    void LockButtons(bool isUnlocked)
+    public void LockButtons(bool isUnlocked)
     {
         btn_air.enabled = isUnlocked;
         btn_earth.enabled = isUnlocked;

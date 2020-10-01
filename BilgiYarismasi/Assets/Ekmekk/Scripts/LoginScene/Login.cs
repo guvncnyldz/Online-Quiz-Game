@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Login : MonoBehaviour
@@ -10,7 +11,7 @@ public class Login : MonoBehaviour
     [SerializeField] private TMP_InputField input_nickname, input_password;
     [SerializeField] private Button btn_login;
     [SerializeField] private ErrorText errorText;
-    
+
     private LoginScene loginScene;
     private LoginScenePanelAnimation animations;
 
@@ -26,7 +27,7 @@ public class Login : MonoBehaviour
     {
         string nickname = input_nickname.text;
         string password = input_password.text;
-        
+
         if (FormInputControl.NicknameControl(nickname, WrongInput) &&
             FormInputControl.PasswordControl(password, WrongInput))
         {
@@ -45,8 +46,18 @@ public class Login : MonoBehaviour
         LoginHttp.Login(nickname, password, SuccessLogin, FailLogin);
     }
 
-    void SuccessLogin()
+    void SuccessLogin(string nickname, string email)
     {
+        User.GetInstance.email = email;
+        User.GetInstance.nickname = nickname;
+
+        LoginHttp.GetRace(nickname, (race) =>
+            {
+                User.GetInstance.race = race;
+                SceneManager.LoadScene((int) Scenes.Game);
+            },
+            () => { SceneManager.LoadScene((int) Scenes.Race); });
+        
         Debug.Log("Giriş Başarılı");
     }
 
