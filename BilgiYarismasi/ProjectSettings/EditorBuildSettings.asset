@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Ekmekk/Scenes/LoginScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Ekmekk/Scenes/RaceMenu.unity
+    guid: 24d8e265dad05d44aad4d1c8408cd9ae
+  - enabled: 1
+    path: Assets/Ekmekk/Scenes/Main.unity
+    guid: dc0004949a8d8ef408c2f7551e3ea62c
   m_configObjects: {}
