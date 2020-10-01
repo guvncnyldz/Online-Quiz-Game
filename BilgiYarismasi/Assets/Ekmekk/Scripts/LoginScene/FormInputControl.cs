@@ -23,7 +23,7 @@ public static class FormInputControl
         return true;
     }
 
-    public static bool emailControl(string email,Action<string> fail)
+    public static bool EmailControl(string email,Action<string> fail)
     {
         bool isAllowed = false;
 
@@ -60,6 +60,7 @@ public static class FormInputControl
         return true;
     }
 
+    //Util
     static bool IsAllowed(string value)
     {
         string allowedChars = "!#$%&'*+-/=?^_`{|}~.1234567890ABCDEFGHIJKLMNOPRSTUVYZabcdefghijklmnoprstuvyz";

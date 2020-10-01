@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Register : MonoBehaviour
@@ -36,7 +37,7 @@ public class Register : MonoBehaviour
 
         if (FormInputControl.NicknameControl(nickname, WrongInput) &&
             FormInputControl.PasswordControl(password, WrongInput) &&
-            FormInputControl.emailControl(email, WrongInput))
+            FormInputControl.EmailControl(email, WrongInput))
         {
             animations.Fall(EndRegister);
             loginScene.LockPanel(true);
@@ -54,9 +55,12 @@ public class Register : MonoBehaviour
         LoginHttp.Register(nickname, password, email, SuccessRegister, FailRegister);
     }
 
-    void SuccessRegister()
+    void SuccessRegister(string nickname, string email)
     {
-        Debug.Log("Kayıt Başarılı");
+        User.GetInstance.nickname = nickname;
+        User.GetInstance.email = email;
+        
+        SceneManager.LoadScene((int) Scenes.Race);
     }
 
     void FailRegister(string error)
