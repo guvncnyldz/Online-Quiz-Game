@@ -18,14 +18,17 @@
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Race.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/7f/6c79a0ca/Action`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/33/2b4fc439/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RaceSelector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/TrainingManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Races.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RacePanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/TrainingEndPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/FormInputControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Scenes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/LoginScenePanelAnimation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Question.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/Joker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/Answer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuChanger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Pool/QuestionPool.cs" root0="FORCE_HIGHLIGHTING" />
@@ -43,23 +46,27 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RaceDetail.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RaceSelect.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/FormInputControl.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Races.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Race.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RaceSelector.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Scenes.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/User.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/Login.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPMock/LoginHttp.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/Register.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RacePanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/Timer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Question.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Pool/QuestionPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/QuestionPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/Answer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/TrainingEndPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/Login.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/Timer.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/AnswerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/TrainingManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/Answer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Pool/QuestionPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/Joker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RacePanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Races.cs" />
       </list>
     </option>
   </component>
@@ -115,7 +122,7 @@
       <workItem from="1601281936866" duration="15899000" />
       <workItem from="1601381486673" duration="11315000" />
       <workItem from="1601540880574" duration="5223000" />
-      <workItem from="1601638088612" duration="12938000" />
+      <workItem from="1601638088612" duration="18556000" />
     </task>
     <servers />
   </component>
@@ -132,70 +139,86 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="444" height="436" key="DebuggerActiveHint/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655410738" />
-    <state width="1493" height="29" key="GridCell.Tab.0.bottom" timestamp="1601655418286">
+    <state width="1493" height="29" key="GridCell.Tab.0.bottom" timestamp="1601759681609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655418286" />
-    <state width="1493" height="29" key="GridCell.Tab.0.center" timestamp="1601655418286">
+    <state width="1493" height="29" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601759681609" />
+    <state width="1493" height="29" key="GridCell.Tab.0.center" timestamp="1601759681609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.0.center/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655418286" />
-    <state width="1493" height="29" key="GridCell.Tab.0.left" timestamp="1601655418286">
+    <state width="1493" height="29" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601759681609" />
+    <state width="1493" height="29" key="GridCell.Tab.0.left" timestamp="1601759681608">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.0.left/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655418286" />
-    <state width="1493" height="29" key="GridCell.Tab.0.right" timestamp="1601655418286">
+    <state width="1493" height="29" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601759681608" />
+    <state width="1493" height="29" key="GridCell.Tab.0.right" timestamp="1601759681609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.0.right/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655418286" />
-    <state width="1493" height="29" key="GridCell.Tab.1.bottom" timestamp="1601655427085">
+    <state width="1493" height="29" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601759681609" />
+    <state width="1493" height="29" key="GridCell.Tab.1.bottom" timestamp="1601759681609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655427085" />
-    <state width="1493" height="29" key="GridCell.Tab.1.center" timestamp="1601655427085">
+    <state width="1493" height="29" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601759681609" />
+    <state width="1493" height="29" key="GridCell.Tab.1.center" timestamp="1601759681609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.1.center/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655427085" />
-    <state width="1493" height="29" key="GridCell.Tab.1.left" timestamp="1601655427085">
+    <state width="1493" height="29" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601759681609" />
+    <state width="1493" height="29" key="GridCell.Tab.1.left" timestamp="1601759681609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.1.left/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655427085" />
-    <state width="1493" height="29" key="GridCell.Tab.1.right" timestamp="1601655427085">
+    <state width="1493" height="29" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601759681609" />
+    <state width="1493" height="29" key="GridCell.Tab.1.right" timestamp="1601759681609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.1.right/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655427085" />
-    <state width="1493" height="29" key="GridCell.Tab.2.bottom" timestamp="1601655418107">
+    <state width="1493" height="29" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601759681609" />
+    <state width="1493" height="29" key="GridCell.Tab.2.bottom" timestamp="1601759681610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.2.bottom/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655418107" />
-    <state width="1493" height="29" key="GridCell.Tab.2.center" timestamp="1601655418107">
+    <state width="1493" height="29" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601759681610" />
+    <state width="1493" height="29" key="GridCell.Tab.2.center" timestamp="1601759681610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.2.center/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655418107" />
-    <state width="1493" height="29" key="GridCell.Tab.2.left" timestamp="1601655418107">
+    <state width="1493" height="29" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1601759681610" />
+    <state width="1493" height="29" key="GridCell.Tab.2.left" timestamp="1601759681610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.2.left/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655418107" />
-    <state width="1493" height="29" key="GridCell.Tab.2.right" timestamp="1601655418107">
+    <state width="1493" height="29" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1601759681610" />
+    <state width="1493" height="29" key="GridCell.Tab.2.right" timestamp="1601759681610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.2.right/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655418107" />
-    <state width="1493" height="29" key="GridCell.Tab.3.bottom" timestamp="1601655418107">
+    <state width="1493" height="29" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1601759681610" />
+    <state width="1493" height="29" key="GridCell.Tab.3.bottom" timestamp="1601759681611">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.3.bottom/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655418107" />
-    <state width="1493" height="29" key="GridCell.Tab.3.center" timestamp="1601655418107">
+    <state width="1493" height="29" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601759681611" />
+    <state width="1493" height="29" key="GridCell.Tab.3.center" timestamp="1601759681610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.3.center/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655418107" />
-    <state width="1493" height="29" key="GridCell.Tab.3.left" timestamp="1601655418107">
+    <state width="1493" height="29" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1601759681610" />
+    <state width="1493" height="29" key="GridCell.Tab.3.left" timestamp="1601759681610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.3.left/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655418107" />
-    <state width="1493" height="29" key="GridCell.Tab.3.right" timestamp="1601655418107">
+    <state width="1493" height="29" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1601759681610" />
+    <state width="1493" height="29" key="GridCell.Tab.3.right" timestamp="1601759681610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.3.right/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601655418107" />
+    <state width="1493" height="29" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1601759681610" />
     <state x="361" y="144" key="Rider.ProjectTemplateDialog.Size" timestamp="1601290162196">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -24,30 +24,7 @@ public class QuestionPool
     {
         questionPool = new Stack<Question>();
 
-        Question question = new Question();
-        question.id = "1";
-        question.question = "Türkiye'nin başkenti neresidir?";
-        question.answers[0] = "Edirne";
-        question.answers[1] = "bu";
-        question.answers[2] = "Ankara";
-        question.answers[3] = "İstanbul";
-        AddQuestion(question);
-        question = new Question();
-        question.id = "2";
-        question.question = "İşte bilmem ne?";
-        question.answers[0] = "Aynen";
-        question.answers[1] = "sdf";
-        question.answers[2] = "bu";
-        question.answers[3] = "Şıkkı";
-        AddQuestion(question);
-        question = new Question();
-        question.id = "3";
-        question.question = "Bu sorunun cevabı D şıkkı";
-        question.answers[0] = "Bu a";
-        question.answers[1] = "Bu b";
-        question.answers[2] = "Bu c";
-        question.answers[3] = "Bu d yani doğru cevap tıkla buna";
-        AddQuestion(question);
+        NewQuestion();
     }
 
     public Question GetQuestion()
@@ -64,5 +41,33 @@ public class QuestionPool
     public int GetQuestionCount()
     {
         return questionPool.Count;
+    }
+
+    public void NewQuestion()
+    {
+        Question question = new Question();
+        question.id = "1";
+        question.question = "Türkiye'nin başkenti neresidir?";
+        question.answers[0] = "Edirne";
+        question.answers[1] = "Ankara";
+        question.answers[2] = "İzmir";
+        question.answers[3] = "İstanbul";
+        AddQuestion(question);
+        question = new Question();
+        question.id = "2";
+        question.question = "12+12 işleminin sonucu kaçtır?";
+        question.answers[0] = "23";
+        question.answers[1] = "22";
+        question.answers[2] = "24";
+        question.answers[3] = "25";
+        AddQuestion(question);
+        question = new Question();
+        question.id = "3";
+        question.question = "Cumhuriyet bayramı hangi tahrite kutlanılır?";
+        question.answers[0] = "30 Ağustos";
+        question.answers[1] = "23 Nisan";
+        question.answers[2] = "19 Kasım";
+        question.answers[3] = "29 Ekim";
+        AddQuestion(question);
     }
 }

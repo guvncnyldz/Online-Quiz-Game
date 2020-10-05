@@ -14,6 +14,7 @@ public class MenuChanger : MonoBehaviour
 
     [SerializeField]
     private Image img_topmenu, img_bottommenu, img_settingsbutton, img_shopbutton, img_playbutton, background;
+
     [SerializeField] private TextMeshProUGUI txt_diomand, txt_gold, txt_play;
 
     private RectTransform bottomPanel, topPanel;
@@ -22,46 +23,35 @@ public class MenuChanger : MonoBehaviour
     {
         bottomPanel = img_bottommenu.GetComponent<RectTransform>();
         topPanel = img_topmenu.GetComponent<RectTransform>();
-
+        
         bottomPanel.anchoredPosition = new Vector2(0, -1 * PANELY);
         topPanel.anchoredPosition = new Vector2(0, PANELY);
-
+        
         int raceIndex = (int) User.GetInstance.race;
         MenuOption menuOption = menuOptions[raceIndex];
+        
+        background.color = Races.races[(RacesIndex) raceIndex].color;
+
+
+
 
         img_bottommenu.sprite = menuOption.bottomMenu;
         img_topmenu.sprite = menuOption.topMenu;
         img_settingsbutton.sprite = menuOption.settingsButton;
         img_shopbutton.sprite = menuOption.shopButton;
         img_playbutton.sprite = menuOption.playButton;
-        background.color = Races.races[(RacesIndex) raceIndex].color;
+        
 
         txt_diomand.font = txt_gold.font = menuOption.coinFont;
         txt_play.font = menuOption.textFont;
-        
+
         OpenMenu();
     }
 
     void OpenMenu()
     {
-        bottomPanel.DOAnchorPos(new Vector2(0, PANELY), 1).SetEase(Ease.Linear);
-        topPanel.DOAnchorPos(new Vector2(0, PANELY * -1), 1).SetEase(Ease.Linear);
-    }
-
-    void Test(int i)
-    {
-        int raceIndex = i;
-        MenuOption menuOption = menuOptions[raceIndex];
-
-        img_bottommenu.sprite = menuOption.bottomMenu;
-        img_topmenu.sprite = menuOption.topMenu;
-        img_settingsbutton.sprite = menuOption.settingsButton;
-        img_shopbutton.sprite = menuOption.shopButton;
-        img_playbutton.sprite = menuOption.playButton;
-        background.color = Races.races[(RacesIndex) raceIndex].color;
-
-        txt_diomand.font = txt_gold.font = menuOption.coinFont;
-        txt_play.font = menuOption.textFont;
+        bottomPanel.DOAnchorPos(new Vector2(0, PANELY), 0.5f).SetEase(Ease.Linear);
+        topPanel.DOAnchorPos(new Vector2(0, PANELY * -1), 0.5f).SetEase(Ease.Linear);
     }
 }
 

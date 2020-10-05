@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
 
     [SerializeField] private Image img_time;
     [SerializeField] private Image img_fire;
+    [SerializeField] private Image img_backFire;
     [SerializeField] private float startTime;
 
     private float lastTime;
@@ -27,16 +28,6 @@ public class Timer : MonoBehaviour
     {
         fireAnimator = img_fire.GetComponent<Animator>();
         lastTime = startTime;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-            StartCountdown();
-        if (Input.GetKeyDown(KeyCode.S))
-            StopCountdown();
-        if (Input.GetKeyDown(KeyCode.D))
-            RestartCountdown();
     }
 
     public void StartCountdown()
@@ -55,7 +46,7 @@ public class Timer : MonoBehaviour
     {
         if (countdown != null)
             StopCoroutine(countdown);
-        
+
         fireAnimator.enabled = false;
         lastTime = currentTime;
         Color color = img_fire.color;
@@ -80,7 +71,11 @@ public class Timer : MonoBehaviour
         Color color = img_fire.color;
         color.a = 0;
         fireburnout = img_fire.DOColor(color, 0.5f).OnComplete(() =>
-            img_fire.gameObject.SetActive(false));
+        {
+            img_backFire.gameObject.SetActive(false);
+            img_time.gameObject.SetActive(false);
+            img_fire.gameObject.SetActive(false);
+        });
     }
 
     IEnumerator Countdown()

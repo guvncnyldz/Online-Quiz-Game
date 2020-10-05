@@ -151,15 +151,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 42435279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60ee0cd08effb1d4b8413d4c057087c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f2a933d9cccf1c4b9ba1c0884498b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raceName: {fileID: 0}
-  raceDetail: {fileID: 0}
-  raceNameBlackscreen: {fileID: 0}
-  btn_select: {fileID: 0}
-  blackScreen: {fileID: 0}
-  iconHolder: {fileID: 0}
+  btn_play: {fileID: 272942722}
 --- !u!114 &42435281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.041153576, y: 0.57479584}
   m_AnchorMax: {x: 0.518, y: 0.8195987}
-  m_AnchoredPosition: {x: -0.7999878, y: -2.5999985}
+  m_AnchoredPosition: {x: -0.8000488, y: -2.5999985}
   m_SizeDelta: {x: 0.94999695, y: 5.500107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &272942720
@@ -618,7 +613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -113}
+  m_AnchoredPosition: {x: 0, y: 142.5}
   m_SizeDelta: {x: 0, y: 227.20001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &644377119
@@ -769,7 +764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 113}
+  m_AnchoredPosition: {x: 0, y: -147.73}
   m_SizeDelta: {x: 0, y: 227.20001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &917095762
@@ -1096,7 +1091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6134233, y: 0.588}
   m_AnchorMax: {x: 0.9378839, y: 0.8328029}
-  m_AnchoredPosition: {x: 0.3999939, y: -0.7400017}
+  m_AnchoredPosition: {x: 0.39996338, y: -0.7400017}
   m_SizeDelta: {x: 0.3826294, y: 0.02797699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1242486617

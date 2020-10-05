@@ -34,11 +34,13 @@ public class Answer : MonoBehaviour
 
         img_choice.rectTransform.anchoredPosition = new Vector2(CHOICEOUTPOSX, 0);
         img_answer.rectTransform.anchoredPosition = new Vector2(ANSWEROUTPOSX, 0);
+        
+        btn_answer.enabled = false;
     }
 
     public void ResultAnswer(bool isCorrect)
     {
-        img_choice.transform.DOScale(new Vector3(0, 1, 1f), 0.25f).OnComplete(() =>
+        img_choice.transform.DOScale(new Vector3(0, 0, 1f), 0.25f).OnComplete(() =>
         {
             Sprite sprite = isCorrect ? correctChoice : wrongChoice;
             img_choice.sprite = sprite;

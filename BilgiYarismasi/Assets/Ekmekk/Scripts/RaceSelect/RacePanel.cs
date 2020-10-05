@@ -1,5 +1,4 @@
-﻿using System.Windows.Markup;
-using DG.Tweening;
+﻿using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -67,7 +66,8 @@ public class RacePanel : MonoBehaviour
                 {
                     //OnComplete daha sonra olmayacak
                     User.GetInstance.race = selectedRace;
-                    SceneManager.LoadScene((int) Scenes.Main);
+                    LoginHttp.AddRace(User.GetInstance.nickname, selectedRace,
+                        () => SceneManager.LoadScene((int) Scenes.Main));
                 });
         }).SetEase(Ease.OutQuad);
     }

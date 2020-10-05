@@ -207,8 +207,10 @@
             <e p="Game" t="Include">
               <e p="Answer.cs" t="Include" />
               <e p="AnswerController.cs" t="Include" />
+              <e p="Joker.cs" t="Include" />
               <e p="QuestionPanel.cs" t="Include" />
               <e p="Timer.cs" t="Include" />
+              <e p="TrainingEndPanel.cs" t="Include" />
               <e p="TrainingManager.cs" t="Include" />
             </e>
             <e p="HTTPMock" t="Include">
@@ -224,6 +226,7 @@
             </e>
             <e p="MainMenu" t="Include">
               <e p="MenuChanger.cs" t="Include" />
+              <e p="MenuManager.cs" t="Include" />
             </e>
             <e p="Pool" t="Include">
               <e p="QuestionPool.cs" t="Include" />

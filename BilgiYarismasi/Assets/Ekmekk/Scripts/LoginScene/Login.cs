@@ -54,11 +54,9 @@ public class Login : MonoBehaviour
         LoginHttp.GetRace(nickname, (race) =>
             {
                 User.GetInstance.race = race;
-                SceneManager.LoadScene((int) Scenes.Game);
+                SceneManager.LoadScene((int) Scenes.Main);
             },
             () => { SceneManager.LoadScene((int) Scenes.Race); });
-        
-        Debug.Log("Giriş Başarılı");
     }
 
     void FailLogin(string error)
