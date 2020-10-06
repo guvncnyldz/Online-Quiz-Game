@@ -79,12 +79,9 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/LetterBoardPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/LoginScene.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/TrainingGame/TrainingManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHolderPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WorldHuntEndPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Scenes.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/Letterboard.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHuntManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/LetterSetter.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/ModSelectPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuManager.cs" />
@@ -93,6 +90,9 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/Register.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/TrainingGame/AnswerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/TrainingGame/Timer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHolderPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHuntManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHolder.cs" />
       </list>
     </option>
   </component>
@@ -127,10 +127,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8032">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8032" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -151,6 +151,7 @@
       <workItem from="1601540880574" duration="5223000" />
       <workItem from="1601638088612" duration="18556000" />
       <workItem from="1601890843576" duration="21871000" />
+      <workItem from="1601971627807" duration="1911000" />
     </task>
     <servers />
   </component>
