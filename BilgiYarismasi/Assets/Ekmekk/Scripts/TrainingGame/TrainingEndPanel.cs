@@ -15,7 +15,7 @@ public class TrainingEndPanel : MonoBehaviour
     {
         gameObject.SetActive(false);
         btn_home.onClick.AddListener(() => SceneManager.LoadScene((int) Scenes.Main));
-        btn_restart.onClick.AddListener(() => SceneManager.LoadScene((int) Scenes.Game));
+        btn_restart.onClick.AddListener(() => SceneManager.LoadScene((int) Scenes.TrainingGame));
     }
 
     public void SetValues(int score, int correct)

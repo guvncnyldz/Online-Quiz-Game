@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    private const float FIRESTARTX = 198.8f;
-    private const float FIREENDX = -187f;
+    private const float FIRESTARTX = 409.6f;
+    private const float FIREENDX = 8.8f;
 
     [SerializeField] private Image img_time;
     [SerializeField] private Image img_fire;
@@ -64,7 +64,6 @@ public class Timer : MonoBehaviour
 
     void TimesUp()
     {
-        Debug.Log("Süre bitti");
         OnTimesUp?.Invoke();
 
         fireAnimator.enabled = false;
@@ -80,6 +79,7 @@ public class Timer : MonoBehaviour
 
     IEnumerator Countdown()
     {
+        img_fire.rectTransform.anchoredPosition = new Vector2(FIRESTARTX, 0);
         while (currentTime >= 0)
         {
             currentTime -= Time.deltaTime;

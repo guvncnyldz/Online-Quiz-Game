@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,7 +27,6 @@ public class AnswerController : MonoBehaviour
     //Serverdan sonra değişecek
     public void CheckAnswer(int buttonId)
     {
-        LockAnswers(false);
         OnAnswer?.Invoke(buttonId);
     }
 
@@ -37,6 +37,7 @@ public class AnswerController : MonoBehaviour
             answer.Fall();
         }
     }
+
     public void ChangeAnswer(string[] answers)
     {
         for (int i = 0; i < 4; i++)

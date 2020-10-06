@@ -7,5 +7,6 @@ public enum Scenes
     Login,
     Race,
     Main,
-    Game
+    TrainingGame,
+    WordHunt
 }

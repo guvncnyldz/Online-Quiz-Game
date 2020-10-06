@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,10 +13,18 @@ public class Login : MonoBehaviour
     private LoginScene loginScene;
     private LoginScenePanelAnimation animations;
 
+    private RectTransform rectTransform;
+
     private void Awake()
     {
         btn_login.onClick.AddListener(BeginLogin);
 
+        input_nickname.onSelect.AddListener((s) => { MoveForKeyboard(true); });
+        input_nickname.onDeselect.AddListener((s) => { MoveForKeyboard(false); });
+        input_password.onSelect.AddListener((s) => { MoveForKeyboard(true); });
+        input_password.onDeselect.AddListener((s) => { MoveForKeyboard(false); });
+
+        rectTransform = GetComponent<RectTransform>();
         loginScene = FindObjectOfType<LoginScene>();
         animations = GetComponent<LoginScenePanelAnimation>();
     }
@@ -71,5 +77,17 @@ public class Login : MonoBehaviour
     {
         animations.Shake();
         errorText.SetError(error);
+    }
+
+    public void MoveForKeyboard(bool isKeyboardOpen)
+    {
+        if (isKeyboardOpen)
+        {
+            rectTransform.DOAnchorPos(new Vector2(0, 183), 0.5f);
+        }
+        else
+        {
+            rectTransform.DOAnchorPos(new Vector2(0, -17), 0.5f);
+        }
     }
 }

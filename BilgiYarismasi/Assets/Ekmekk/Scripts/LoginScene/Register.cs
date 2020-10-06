@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,10 +15,22 @@ public class Register : MonoBehaviour
     private LoginScene loginScene;
     private LoginScenePanelAnimation animations;
 
+    private RectTransform rectTransform;
+
     private void Awake()
     {
         btn_register.onClick.AddListener(BeginRegister);
 
+        input_nickname.onSelect.AddListener((s) => { MoveForKeyboard(true); });
+        input_nickname.onDeselect.AddListener((s) => { MoveForKeyboard(false); });
+        input_password.onSelect.AddListener((s) => { MoveForKeyboard(true); });
+        input_password.onDeselect.AddListener((s) => { MoveForKeyboard(false); });
+        input_passwordAgain.onSelect.AddListener((s) => { MoveForKeyboard(true); });
+        input_passwordAgain.onDeselect.AddListener((s) => { MoveForKeyboard(false); });
+        input_email.onSelect.AddListener((s) => { MoveForKeyboard(true); });
+        input_email.onDeselect.AddListener((s) => { MoveForKeyboard(false); });
+        
+        rectTransform = GetComponent<RectTransform>();
         loginScene = FindObjectOfType<LoginScene>();
         animations = GetComponent<LoginScenePanelAnimation>();
     }
@@ -59,7 +72,7 @@ public class Register : MonoBehaviour
     {
         User.GetInstance.nickname = nickname;
         User.GetInstance.email = email;
-        
+
         SceneManager.LoadScene((int) Scenes.Race);
     }
 
@@ -75,5 +88,17 @@ public class Register : MonoBehaviour
     {
         animations.Shake();
         errorText.SetError(error);
+    }
+
+    public void MoveForKeyboard(bool isKeyboardOpen)
+    {
+        if (isKeyboardOpen)
+        {
+            rectTransform.DOAnchorPos(new Vector2(0, 171), 0.5f);
+        }
+        else
+        {
+            rectTransform.DOAnchorPos(new Vector2(0, -41), 0.5f);
+        }
     }
 }
