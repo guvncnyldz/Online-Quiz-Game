@@ -19,6 +19,11 @@ public class WordHolder : MonoBehaviour
         img_mark.gameObject.SetActive(false);
     }
 
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void SetWord(string word)
     {
         gameObject.SetActive(true);

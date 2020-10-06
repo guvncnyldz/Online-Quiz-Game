@@ -6,16 +6,11 @@ using UnityEngine;
 public class WordHuntManager : MonoBehaviour
 {
     private List<Word> words;
-
-    //Burası ayrıca bir sınıfa koyulabilir wordholderpanel için
-    private List<WordHolder> wordHolders;
+    private WordHolder[] wordHolders;
     private Letterboard letterboard;
     private LetterBoardPanel letterBoardPanel;
     private WordHolderPanel wordHolderPanel;
     private WorldHuntEndPanel worldHuntEndPanel;
-
-    //Buralar düzenlenecek
-    [SerializeField] private GameObject obj_word;
 
     private void Awake()
     {
@@ -24,7 +19,8 @@ public class WordHuntManager : MonoBehaviour
         wordHolderPanel = FindObjectOfType<WordHolderPanel>();
         worldHuntEndPanel = FindObjectOfType<WorldHuntEndPanel>();
 
-        wordHolders = new List<WordHolder>();
+        wordHolders = FindObjectsOfType<WordHolder>();
+
         letterboard.OnButtonClickUp += ControlWord;
         words = new List<Word>();
     }
@@ -51,22 +47,11 @@ public class WordHuntManager : MonoBehaviour
         {
             Word word = WordPool.GetInstance.GetWord();
             words.Add(word);
+            wordHolders[i].SetWord(word.word);
         }
 
-        wordHolderPanel.ChangeWordHolderPanel(() => SetWords());
+        wordHolderPanel.ChangeWordHolderPanel();
         letterBoardPanel.ChangeLetterPanel(() => LetterSetter.SetLetters(words, letterboard.letterButtons), null);
-    }
-
-    void SetWords()
-    {
-        for (int i = 0; i < words.Count; i++)
-        {
-            Transform temp = Instantiate(obj_word).transform;
-            temp.SetParent(wordHolderPanel.transform.GetChild(0), false);
-            WordHolder tempWordHolder = temp.GetComponent<WordHolder>();
-            tempWordHolder.SetWord(words[i].word);
-            wordHolders.Add(tempWordHolder);
-        }
     }
 
     void ControlWord(string word)
@@ -98,5 +83,9 @@ public class WordHuntManager : MonoBehaviour
         }
 
         letterboard.EndButtonClickUp(false);
+    }
+
+    void WinGame()
+    {
     }
 }

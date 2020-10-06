@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
-        btn_play.onClick.AddListener(() => { SceneManager.LoadScene((int) Scenes.Game); });
+        ModSelectPanel modSelectPanel = FindObjectOfType<ModSelectPanel>();
+        btn_play.onClick.AddListener(() => { modSelectPanel.gameObject.SetActive(true); });
     }
 }

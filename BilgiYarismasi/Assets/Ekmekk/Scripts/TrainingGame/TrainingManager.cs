@@ -39,7 +39,7 @@ public class TrainingManager : MonoBehaviour
         BeginGetQuestion();
     }
 
-    public void BeginGetQuestion()
+    void BeginGetQuestion()
     {
         if (QuestionPool.GetInstance.GetQuestionCount() > 0)
         {
@@ -68,6 +68,8 @@ public class TrainingManager : MonoBehaviour
     public void Pass()
     {
         joker.LockButton(false);
+        answerController.LockAnswers(false);
+
         timer.StopCountdown();
         timer.RestartCountdown();
         BeginGetQuestion();
@@ -76,6 +78,7 @@ public class TrainingManager : MonoBehaviour
     public void CheckAnswer(int answerId)
     {
         joker.LockButton(false);
+        answerController.LockAnswers(false);
         timer.StopCountdown();
         //Servera sorar
         answerController.ShowCorrect(Convert.ToInt16(currentQuestion.id), answerId);
@@ -83,6 +86,7 @@ public class TrainingManager : MonoBehaviour
         {
             Observable.Timer(TimeSpan.FromSeconds(1.5f)).Subscribe(_ =>
             {
+                correct++;
                 timer.RestartCountdown();
                 BeginGetQuestion();
             });
