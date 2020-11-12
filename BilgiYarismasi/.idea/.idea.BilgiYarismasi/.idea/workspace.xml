@@ -12,35 +12,35 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPMock/LoginHttp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Word.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Race.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/7f/6c79a0ca/Action`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/33/2b4fc439/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Scenes.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/LetterButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/LoginScenePanelAnimation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Question.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHuntManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/a9/0f2cbdb2/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHolder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuChanger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Pool/QuestionPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Scenes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/LoginScenePanelAnimation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/a9/0f2cbdb2/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WorldHuntEndPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHuntManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Question.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/Register.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHolderPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHuntInput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/Login.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/ModSelectPanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Word.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/LetterSetter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RaceSelector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuChanger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHuntGridUtil.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHolderPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/ModSelectPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/Login.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/LetterSetter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Pool/WordPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/LetterButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RaceSelector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/LetterBoardPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Races.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RacePanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WorldHuntEndPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/FormInputControl.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/LetterBoardPanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Pool/WordPool.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -51,7 +51,6 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RaceDetail.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RaceSelect.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/FormInputControl.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Race.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RaceSelector.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/User.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPMock/LoginHttp.cs" />
@@ -67,7 +66,6 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Game/Joker.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RacePanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Races.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WorldHuntInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WorldHuntGridUtil.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/TrainingGame/QuestionPanel.cs" />
@@ -93,6 +91,8 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHolderPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHuntManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/WordHunt/WordHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Race.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Races.cs" />
       </list>
     </option>
   </component>
@@ -152,6 +152,7 @@
       <workItem from="1601638088612" duration="18556000" />
       <workItem from="1601890843576" duration="21871000" />
       <workItem from="1601971627807" duration="1911000" />
+      <workItem from="1605193302076" duration="776000" />
     </task>
     <servers />
   </component>

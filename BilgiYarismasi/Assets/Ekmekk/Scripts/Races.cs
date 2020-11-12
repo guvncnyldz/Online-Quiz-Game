@@ -8,11 +8,10 @@ public static class Races
 {
     public static Dictionary<RacesIndex, Race> races = new Dictionary<RacesIndex, Race>()
     {
-        {RacesIndex.Fire, new Race("ATEŞ", "Bilgilerini ateşin gücüyle birleştir", GetColor("#FF4400"))},
-        {RacesIndex.Air, new Race("HAVA", "Kasırgalarının önünde hiçbir soru duramayacak", GetColor("#65C1DB"))},
-        {RacesIndex.Water, new Race("SU", "Su, bilgelik anlamına gelir. Gücünü göster", GetColor("#0077BC"))},
-        {RacesIndex.Earth, new Race("TOPRAK", "Doğa tüm kudretiyle arkanda duracak", GetColor("#B67E64"))},
-  
+        {RacesIndex.Fire, new Race(0, "ATEŞ", "Bilgilerini ateşin gücüyle birleştir", GetColor("#FF4400"))},
+        {RacesIndex.Air, new Race(1, "HAVA", "Kasırgalarının önünde hiçbir soru duramayacak", GetColor("#65C1DB"))},
+        {RacesIndex.Water, new Race(2, "SU", "Su, bilgelik anlamına gelir. Gücünü göster", GetColor("#0077BC"))},
+        {RacesIndex.Earth, new Race(3, "TOPRAK", "Doğa tüm kudretiyle arkanda duracak", GetColor("#B67E64"))},
     };
 
     //Util
@@ -23,9 +22,10 @@ public static class Races
         return color;
     }
 }
+
 public enum RacesIndex
 {
-    Fire,
+    Fire = 0,
     Air,
     Water,
     Earth
