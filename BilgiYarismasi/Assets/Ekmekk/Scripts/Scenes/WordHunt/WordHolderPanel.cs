@@ -16,11 +16,11 @@ public class WordHolderPanel : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
     }
 
-    public void ChangeWordHolderPanel(Action OnUp)
+    public void ChangeWordHolderPanel(Action onUp)
     {
         rectTransform.DOAnchorPos(new Vector2(0, OUTPOSY), 0.25f).OnComplete(() =>
             {
-                OnUp?.Invoke();
+                onUp?.Invoke();
                 rectTransform.DOAnchorPos(new Vector2(0, INPOSY), 0.25f).SetEase(Ease.Linear).SetDelay(0.25f);
             }
         ).SetEase(Ease.Linear);
