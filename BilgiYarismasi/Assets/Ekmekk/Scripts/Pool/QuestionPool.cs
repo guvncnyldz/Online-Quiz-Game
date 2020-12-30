@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using UniRx;
 using UnityEngine;
 
 public class QuestionPool
@@ -33,9 +35,14 @@ public class QuestionPool
         return question;
     }
 
-    public void AddQuestion(Question question)
+    public void AddQuestion(JArray questions)
     {
-        questionPool.Push(question);
+        foreach (JToken jQuestion in questions)
+        {
+            Question question = new Question();
+            question.Set(jQuestion);
+            questionPool.Push(question);
+        }
     }
 
     public int GetQuestionCount()
@@ -45,29 +52,5 @@ public class QuestionPool
 
     public void NewQuestion()
     {
-        Question question = new Question();
-        question.id = "1";
-        question.question = "Türkiye'nin başkenti neresidir?";
-        question.answers[0] = "Edirne";
-        question.answers[1] = "Ankara";
-        question.answers[2] = "İzmir";
-        question.answers[3] = "İstanbul";
-        AddQuestion(question);
-        question = new Question();
-        question.id = "2";
-        question.question = "12+12 işleminin sonucu kaçtır?";
-        question.answers[0] = "23";
-        question.answers[1] = "22";
-        question.answers[2] = "24";
-        question.answers[3] = "25";
-        AddQuestion(question);
-        question = new Question();
-        question.id = "3";
-        question.question = "Cumhuriyet bayramı hangi tahrite kutlanılır?";
-        question.answers[0] = "30 Ağustos";
-        question.answers[1] = "23 Nisan";
-        question.answers[2] = "19 Kasım";
-        question.answers[3] = "29 Ekim";
-        AddQuestion(question);
     }
 }
