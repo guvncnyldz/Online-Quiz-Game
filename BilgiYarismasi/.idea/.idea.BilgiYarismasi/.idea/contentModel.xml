@@ -204,12 +204,18 @@
         </e>
         <e p="Ekmekk" t="Include">
           <e p="Scripts" t="Include">
+            <e p="Character" t="Include">
+              <e p="Character.cs" t="Include" />
+              <e p="CharacterAnimation.cs" t="Include" />
+              <e p="CharacterCosmetics.cs" t="Include" />
+            </e>
             <e p="HTTPUtil" t="Include">
               <e p="ErrorHandler.cs" t="Include" />
               <e p="HTTPApiUtil.cs" t="Include" />
               <e p="HTTPAuthUtil.cs" t="Include" />
               <e p="LoginHttp.cs" t="Include" />
               <e p="QuestionHTTP.cs" t="Include" />
+              <e p="WordHttp.cs" t="Include" />
             </e>
             <e p="JSONUtil" t="Include">
               <e p="JSONUtil.cs" t="Include" />
@@ -218,7 +224,14 @@
               <e p="QuestionPool.cs" t="Include" />
               <e p="WordPool.cs" t="Include" />
             </e>
-            <e p="Question.cs" t="Include" />
+            <e p="QuestionBase" t="Include">
+              <e p="Answer.cs" t="Include" />
+              <e p="AnswerController.cs" t="Include" />
+              <e p="Joker.cs" t="Include" />
+              <e p="Question.cs" t="Include" />
+              <e p="QuestionPanel.cs" t="Include" />
+              <e p="Timer.cs" t="Include" />
+            </e>
             <e p="Race.cs" t="Include" />
             <e p="Races.cs" t="Include" />
             <e p="Scenes" t="Include">
@@ -237,6 +250,10 @@
                 <e p="ScrollMenu.cs" t="Include" />
                 <e p="ScrollMenuButton.cs" t="Include" />
               </e>
+              <e p="Millionaire" t="Include">
+                <e p="MillionairePanel.cs" t="Include" />
+                <e p="MillionareManager.cs" t="Include" />
+              </e>
               <e p="OpeningScene" t="Include">
                 <e p="GameLoader.cs" t="Include" />
               </e>
@@ -246,16 +263,11 @@
               </e>
               <e p="Scenes.cs" t="Include" />
               <e p="TrainingGame" t="Include">
-                <e p="Answer.cs" t="Include" />
-                <e p="AnswerController.cs" t="Include" />
-                <e p="Joker.cs" t="Include" />
-                <e p="QuestionPanel.cs" t="Include" />
-                <e p="Timer.cs" t="Include" />
-                <e p="TrainingEndPanel.cs" t="Include" />
                 <e p="TrainingManager.cs" t="Include" />
               </e>
               <e p="Utils" t="Include">
                 <e p="Countdown.cs" t="Include" />
+                <e p="EndPanel.cs" t="Include" />
               </e>
               <e p="WordHunt" t="Include">
                 <e p="Letterboard.cs" t="Include" />
@@ -271,9 +283,21 @@
               </e>
             </e>
             <e p="User" t="Include">
+              <e p="CosmeticData.cs" t="Include" />
+              <e p="Player.cs" t="Include" />
               <e p="User.cs" t="Include" />
+              <e p="UserBase.cs" t="Include" />
             </e>
             <e p="Word.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Packages" t="Include">
+          <e p="WebSocketSharp-netstandard.1.0.1" t="Include">
+            <e p="lib" t="Include">
+              <e p="netstandard2.0" t="Include">
+                <e p="websocket-sharp.xml" t="Include" />
+              </e>
+            </e>
           </e>
         </e>
         <e p="Plugins" t="Include">
@@ -556,6 +580,7 @@
             </e>
           </e>
         </e>
+        <e p="SocketClient.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />

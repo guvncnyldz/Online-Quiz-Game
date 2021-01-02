@@ -5,19 +5,10 @@ using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class User
+public class User : UserBase
 {
     private static User instance;
-
-    private int race;
-    private int coin;
-    private int energy;
-    private int money;
-    private string username;
-    private string email;
-
     public string UserId { get; private set; }
-    public string ProfileId { get; private set; }
 
     public string Username
     {
@@ -81,17 +72,11 @@ public class User
 
     public string Token { get; private set; }
 
-    public void SetUser(JArray info)
+    public override void SetUser(JArray info)
     {
-        UserId = info[0]["user"]["_id"].ToString();
-        ProfileId = info[0]["user"]["profile"]["_id"].ToString();
-        username = info[0]["user"]["user_name"].ToString();
-        email = info[0]["user"]["e_mail"].ToString();
-        coin = Convert.ToInt16(info[0]["user"]["profile"]["coin"].ToString());
-        race = Convert.ToInt16(info[0]["user"]["profile"]["race"].ToString());
-        energy = Convert.ToInt16(info[0]["user"]["profile"]["money"].ToString());
-        money = Convert.ToInt16(info[0]["user"]["profile"]["energy"].ToString());
+        base.SetUser(info);
 
+        UserId = info[0]["user"]["_id"].ToString();
         Token = info[0]["token"].ToString();
     }
 
@@ -120,6 +105,11 @@ public class User
         }
     }
 
+    public void ResetUser()
+    {
+        instance = null;
+    }
+
     public static User GetInstance()
     {
         if (instance == null)
@@ -128,10 +118,5 @@ public class User
         }
 
         return instance;
-    }
-
-    public void ResetUser()
-    {
-        instance = null;
     }
 }
