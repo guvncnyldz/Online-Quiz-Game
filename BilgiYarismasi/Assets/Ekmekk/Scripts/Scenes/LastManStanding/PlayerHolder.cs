@@ -47,7 +47,7 @@ public class PlayerHolder : MonoBehaviour
                 break;
         }
 
-        //TODO animasyon tüm methodlara
+        
     }
 
     public void Correct()
@@ -56,6 +56,8 @@ public class PlayerHolder : MonoBehaviour
 
         background.sprite = backgrounds[1];
         txt_answer.color = Color.green;
+        
+        character.charAnim.SetTrigger(CharAnimsTag.win);
     }
 
     public void Wrong()
@@ -65,12 +67,16 @@ public class PlayerHolder : MonoBehaviour
         background.sprite = backgrounds[2];
         txt_answer.color = Color.red;
         isFail = true;
+        
+        character.charAnim.SetTrigger(CharAnimsTag.lose);
     }
 
     public void NextQuestion()
     {
         background.gameObject.SetActive(false);
         txt_answer.text = "";
+        
+        character.charAnim.SetTrigger(CharAnimsTag.idle);
     }
 
     public void SetPlayer(JArray response)

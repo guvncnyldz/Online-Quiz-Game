@@ -20,5 +20,6 @@ public class CharacterAnimation : MonoBehaviour
 public enum CharAnimsTag
 {
     win,
-    lose
+    lose,
+    idle
 }
