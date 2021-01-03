@@ -87,8 +87,6 @@ public class User : UserBase
 
     private async void AddRace()
     {
-        Debug.Log("Race Güncellendi");
-
         var values = new Dictionary<string, string>
         {
             {"pid", ProfileId},

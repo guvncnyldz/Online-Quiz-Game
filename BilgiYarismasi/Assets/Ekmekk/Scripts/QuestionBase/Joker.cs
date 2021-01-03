@@ -22,9 +22,9 @@ public class Joker : MonoBehaviour
         txt_bomb = btn_bomb.GetComponentInChildren<TextMeshProUGUI>();
         txt_pass = btn_pass.GetComponentInChildren<TextMeshProUGUI>();
 
-        txt_correct.text = PlayerPrefs.GetInt("nickname-correct"+User.GetInstance().Username, 10).ToString();
-        txt_bomb.text = PlayerPrefs.GetInt("nickname-bomb"+User.GetInstance().Username, 10).ToString();
-        txt_pass.text = PlayerPrefs.GetInt("nickname-pass"+User.GetInstance().Username, 10).ToString();
+        txt_correct.text = PlayerPrefs.GetInt("nickname-correct" + User.GetInstance().Username, 10).ToString();
+        txt_bomb.text = PlayerPrefs.GetInt("nickname-bomb" + User.GetInstance().Username, 10).ToString();
+        txt_pass.text = PlayerPrefs.GetInt("nickname-pass" + User.GetInstance().Username, 10).ToString();
 
         btn_bomb.onClick.AddListener(Bomb);
         btn_pass.onClick.AddListener(Pass);
@@ -34,36 +34,38 @@ public class Joker : MonoBehaviour
     void Bomb()
     {
         btn_bomb.enabled = false;
-        
-        int count = PlayerPrefs.GetInt("nickname-bomb"+User.GetInstance().Username, 10);
+
+        int count = PlayerPrefs.GetInt("nickname-bomb" + User.GetInstance().Username, 10);
 
         if (count > 0)
         {
             count--;
-            PlayerPrefs.SetInt("nickname-bomb"+User.GetInstance().Username, count);
+            PlayerPrefs.SetInt("nickname-bomb" + User.GetInstance().Username, count);
             txt_bomb.text = count.ToString();
 
             List<int> answers = new List<int>() {0, 1, 2, 3};
-            int correct = Convert.ToInt16(FindObjectOfType<TrainingManager>().currentQuestion.id);
+            int correct = Convert.ToInt16(FindObjectOfType<TrainingManager>().currentQuestion.correct);
             answers.Remove(correct);
 
             AnswerController answerController = FindObjectOfType<AnswerController>();
             int answer = answers[Random.Range(0, 3)];
-            answerController.answers[answer].Disappear(null);
+            answerController.answers[answer].GetComponent<Button>().enabled = false;
             answers.Remove(answer);
+            answerController.JokerEffect(answer);
             answer = answers[Random.Range(0, 2)];
-            answerController.answers[answer].Disappear(null);
+            answerController.answers[answer].GetComponent<Button>().enabled = false;
+            answerController.JokerEffect(answer);
         }
     }
 
     void Pass()
     {
         btn_pass.enabled = false;
-        int count = PlayerPrefs.GetInt("nickname-pass"+User.GetInstance().Username, 10);
+        int count = PlayerPrefs.GetInt("nickname-pass" + User.GetInstance().Username, 10);
         if (count > 0)
         {
             count--;
-            PlayerPrefs.SetInt("nickname-pass"+User.GetInstance().Username, count);
+            PlayerPrefs.SetInt("nickname-pass" + User.GetInstance().Username, count);
             txt_pass.text = count.ToString();
 
             FindObjectOfType<TrainingManager>().Pass();
@@ -73,12 +75,12 @@ public class Joker : MonoBehaviour
     void Correct()
     {
         btn_correct.enabled = false;
-        int count = PlayerPrefs.GetInt("nickname-correct"+User.GetInstance().Username, 10);
+        int count = PlayerPrefs.GetInt("nickname-correct" + User.GetInstance().Username, 10);
         if (count > 0)
         {
             count--;
             txt_correct.text = count.ToString();
-            PlayerPrefs.SetInt("nickname-correct"+User.GetInstance().Username, count);
+            PlayerPrefs.SetInt("nickname-correct" + User.GetInstance().Username, count);
             int correct = Convert.ToInt16(FindObjectOfType<TrainingManager>().currentQuestion.id);
             FindObjectOfType<TrainingManager>().CheckAnswer(correct);
         }

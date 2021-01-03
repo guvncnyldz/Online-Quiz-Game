@@ -122,7 +122,12 @@ public class MillionareManager : MonoBehaviour
         }
         else
         {
-            EndGame();
+            level = 0;
+            millionairePanel.Appear(() =>
+            {
+                millionairePanel.FallIndicator();
+                EndGame();
+            });
         }
     }
 
@@ -136,6 +141,13 @@ public class MillionareManager : MonoBehaviour
         answerController.LockAnswers(false);
         joker.LockButton(true);
 
+        level = 0;
+        millionairePanel.Appear(() =>
+        {
+            millionairePanel.FallIndicator();
+            EndGame();
+        });
+        
         EndGame();
     }
 

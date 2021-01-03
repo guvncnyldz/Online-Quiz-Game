@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UniRx;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 public class AnswerController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class AnswerController : MonoBehaviour
     private Button[] btn_answers;
 
     public Action<int> OnAnswer;
+
+    [SerializeField] private Sprite[] raceJokerEffect;
 
     public void Awake()
     {
@@ -27,6 +30,11 @@ public class AnswerController : MonoBehaviour
     public void CheckAnswer(int buttonId)
     {
         OnAnswer?.Invoke(buttonId);
+    }
+
+    public void JokerEffect(int answer)
+    {
+        answers[answer].JokerEffect(raceJokerEffect[User.GetInstance().Race]);
     }
 
     public void Fall()

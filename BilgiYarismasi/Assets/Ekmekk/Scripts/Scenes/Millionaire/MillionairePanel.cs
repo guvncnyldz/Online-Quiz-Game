@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class MillionairePanel : MonoBehaviour
 {
@@ -24,6 +25,21 @@ public class MillionairePanel : MonoBehaviour
             return;
 
         indicator.DOAnchorPosY(levels[level].anchoredPosition.y, 0.75f).OnComplete(() => onComplete?.Invoke());
+    }
+
+    public void FallIndicator()
+    {
+        int[] rotateDir = {-1, 1};
+        int dir = rotateDir[Random.Range(0, 2)];
+
+        Vector3 eulerAngles = transform.eulerAngles;
+
+        Vector3 posTarget = new Vector3(0, -800, 0);
+        indicator.DOAnchorPos(posTarget, 0.5f).SetEase(Ease.InCubic);
+
+        Vector3 rotateTarget = new Vector3(eulerAngles.x, eulerAngles.y, eulerAngles.z + 75 * dir);
+        indicator.DORotate(rotateTarget, 0.5f)
+            .SetEase(Ease.InCubic).OnComplete(() => { transform.eulerAngles = new Vector3(0, 0, 0); });
     }
 
     public int GetMoney(int level)

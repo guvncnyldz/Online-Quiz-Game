@@ -49,6 +49,11 @@ public class Answer : MonoBehaviour
         });
     }
 
+    public void JokerEffect(Sprite effectSprite)
+    {
+        img_choice.sprite = effectSprite;
+    }
+
     public void SetAnswer(string answer)
     {
         txt_answer.text = answer;

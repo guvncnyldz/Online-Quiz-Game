@@ -10,5 +10,6 @@ public enum Scenes
     Race,
     Main,
     TrainingGame,
-    WordHunt
+    WordHunt,
+    Millionaire
 }

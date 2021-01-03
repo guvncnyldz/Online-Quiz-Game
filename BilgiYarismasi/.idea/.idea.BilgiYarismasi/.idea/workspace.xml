@@ -45,13 +45,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/JSONUtil/JSONUtil.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/HttpUtil.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/TrainingGame/Joker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/MainMenu/MenuChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/Register.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Races.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Scenes.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/RaceSelect/RacePanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/LoginScene/Login.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/ErrorHandler.cs" />
@@ -68,8 +63,6 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/Joker.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Question.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/QuestionHTTP.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/MenuChanger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/MenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/ScrollMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/TrainingEndPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/WordHttp.cs" />
@@ -82,8 +75,6 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/WordHuntManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/EndPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/TrainingManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionareManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionairePanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/QuestionPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/Answer.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/WordHolderPanel.cs" />
@@ -91,11 +82,20 @@
         <option value="$PROJECT_DIR$/Assets/SocketClient.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/CosmeticData.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Character/CharacterCosmetics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/User.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Character/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Character/CharacterAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/UserBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/MenuChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/User.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/UIMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Scenes.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionairePanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionareManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Answer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/AnswerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Joker.cs" />
       </list>
     </option>
   </component>
@@ -157,7 +157,7 @@
       <workItem from="1601971627807" duration="1911000" />
       <workItem from="1605193302076" duration="776000" />
       <workItem from="1609283096236" duration="59834000" />
-      <workItem from="1609628058223" duration="1498000" />
+      <workItem from="1609628058223" duration="5330000" />
     </task>
     <servers />
   </component>
