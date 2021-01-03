@@ -11,6 +11,7 @@ public class User : UserBase
 
     public JokerData jokerData;
     public string UserId { get; private set; }
+
     public string Username
     {
         get => username;
@@ -73,17 +74,42 @@ public class User : UserBase
 
     public string Token { get; private set; }
 
+    public User()
+    {
+        jokerData = new JokerData();
+    }
     public override void SetUser(JArray info)
     {
         base.SetUser(info);
 
         UserId = info[0]["user"]["_id"].ToString();
         Token = info[0]["token"].ToString();
+        
+        jokerData = new JokerData();
+        jokerData.SetJoker(info);
     }
 
     private async void UpdateProfile()
     {
-        Debug.Log("Profile Güncellendi");
+        var values = new Dictionary<string, string>
+        {
+            //User id ile daha güvenli olur. Şimdilik durabilir
+            {"uid", UserId},
+            {"user_name", Username},
+            {"coin", Coin.ToString()},
+            {"money", Money.ToString()},
+            {"energy", Energy.ToString()},
+            {"e_mail", Email},
+        };
+
+        JArray response = await HTTPApiUtil.Put(values, "users", "updateuser");
+
+        Error error = ErrorHandler.Handle(response);
+
+        if (error.isError)
+        {
+            SceneManager.LoadScene((int) Scenes.Fail);
+        }
     }
 
     private async void AddRace()

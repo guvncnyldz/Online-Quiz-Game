@@ -15,14 +15,14 @@ public static class HTTPApiUtil
 
         HttpClient client = new HttpClient()
         {
-            //DefaultRequestHeaders = {{"x-access-token", User.GetInstance().Token}}
-            DefaultRequestHeaders =
+            DefaultRequestHeaders = {{"x-access-token", User.GetInstance().Token}}
+            /*DefaultRequestHeaders =
             {
                 {
                     "x-access-token",
                     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXZpY2VfaWQiOiJEcG9zdCIsImlhdCI6MTYwOTM0NzQxOSwiZXhwIjo0NzY1MTA3NDE5fQ.fg92ZNfXjlQ3nYl06tgpDQsNsPZyyAK--oj8pw2_MR8"
                 }
-            }
+            }*/
         };
 
         client.Timeout = TimeSpan.FromSeconds(timeOut);
@@ -33,7 +33,7 @@ public static class HTTPApiUtil
 
         try
         {
-            var response = await client.PostAsync("http://localhost:8000/api/" + route + "/" + method, content);
+            var response = await client.PostAsync("http://192.168.1.34:8000/api/" + route + "/" + method, content);
 
             responseString = await response.Content.ReadAsStringAsync();
 
@@ -71,14 +71,14 @@ public static class HTTPApiUtil
 
         HttpClient client = new HttpClient()
         {
-            //DefaultRequestHeaders = {{"x-access-token", User.GetInstance().Token}}
-            DefaultRequestHeaders =
+            DefaultRequestHeaders = {{"x-access-token", User.GetInstance().Token}}
+            /*DefaultRequestHeaders =
             {
                 {
                     "x-access-token",
                     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXZpY2VfaWQiOiJEcG9zdCIsImlhdCI6MTYwOTM0NzQxOSwiZXhwIjo0NzY1MTA3NDE5fQ.fg92ZNfXjlQ3nYl06tgpDQsNsPZyyAK--oj8pw2_MR8"
                 }
-            }
+            }*/
         };
 
         client.Timeout = TimeSpan.FromSeconds(timeOut);
@@ -89,7 +89,7 @@ public static class HTTPApiUtil
 
         try
         {
-            var response = await client.PutAsync("http://localhost:8000/api/" + route + "/" + method, content);
+            var response = await client.PutAsync("http://192.168.1.34:8000/api/" + route + "/" + method, content);
 
             responseString = await response.Content.ReadAsStringAsync();
 

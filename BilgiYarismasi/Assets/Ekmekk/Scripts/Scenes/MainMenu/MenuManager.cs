@@ -9,9 +9,10 @@ public class MenuManager : MonoBehaviour
 {
     private UIMenuManager uiMenuManager;
 
-    private void Awake()
+    private void Start()
     {
         uiMenuManager = GetComponent<UIMenuManager>();
+        FindObjectOfType<Character>().cosmetic.SetCosmetic(User.GetInstance().cosmeticData);
     }
 
     public void Logout()
@@ -25,13 +26,19 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene((int) Scenes.TrainingGame);
     }
     
+    public void LastManStanding()
+    {
+        SceneManager.LoadScene((int) Scenes.LastManStanding);
+    }
     public void Millionaire()
     {
+        Debug.Log("asd");
         SceneManager.LoadScene((int) Scenes.Millionaire);
     }
     
     public void WordHunt()
     {
+        Debug.Log("asd");
         SceneManager.LoadScene((int) Scenes.WordHunt);
 
     }

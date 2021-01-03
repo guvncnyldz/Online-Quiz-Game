@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Ekmekk/Scenes/MillionaireGame.unity
     guid: 26d2c2a8f3dff4141b3e914b61535f33
+  - enabled: 1
+    path: Assets/Ekmekk/Scenes/LastManStanding.unity
+    guid: 767cb40710bb12846b6a5f93613465d4
   m_configObjects: {}

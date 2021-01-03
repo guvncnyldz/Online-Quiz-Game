@@ -80,10 +80,14 @@ public class ScrollMenu : MonoBehaviour
         if (!closestButton.ButtonName.Equals("Kilitli"))
         {
             buttonRunner.interactable = true;
-
+            txt_button.text = closestButton.ButtonName;
+            buttonRunner.onClick.RemoveAllListeners();
             buttonRunner.onClick.AddListener(() => { closestButton.OnClickEvent.Invoke(); });
         }
         else
+        {
             buttonRunner.interactable = false;
+            txt_button.text = closestButton.ButtonName;
+        }
     }
 }

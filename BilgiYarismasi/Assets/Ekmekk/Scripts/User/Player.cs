@@ -58,4 +58,9 @@ public class Player : UserBase
             energy = value;
         }
     }
+
+    public void SetManuelProfileId(string id)
+    {
+        base.ProfileId = id;
+    }
 }

@@ -11,5 +11,6 @@ public enum Scenes
     Main,
     TrainingGame,
     WordHunt,
-    Millionaire
+    Millionaire,
+    LastManStanding
 }

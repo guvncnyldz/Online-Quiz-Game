@@ -14,8 +14,6 @@ public class GameLoader : MonoBehaviour
 
     async void DeviceControl()
     {
-        Debug.Log(Application.version);
-
         var values = new Dictionary<string, string>
         {
             {"version", Application.version},

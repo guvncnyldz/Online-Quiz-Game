@@ -25,27 +25,27 @@ public class Joker : MonoBehaviour
         txt_bomb = btn_bomb.GetComponentInChildren<TextMeshProUGUI>();
         txt_pass = btn_pass.GetComponentInChildren<TextMeshProUGUI>();
 
-        txt_correct.text = PlayerPrefs.GetInt("nickname-correct" + User.GetInstance().Username, 10).ToString();
-        txt_bomb.text = PlayerPrefs.GetInt("nickname-bomb" + User.GetInstance().Username, 10).ToString();
-        txt_pass.text = PlayerPrefs.GetInt("nickname-pass" + User.GetInstance().Username, 10).ToString();
+        UpdateText();
 
         btn_bomb.onClick.AddListener(Bomb);
         btn_pass.onClick.AddListener(Pass);
         btn_correct.onClick.AddListener(Correct);
     }
 
+    void UpdateText()
+    {
+        txt_correct.text = "x" + User.GetInstance().jokerData.Correct;
+        txt_bomb.text = "x" + User.GetInstance().jokerData.Bomb;
+        txt_pass.text = "x" + User.GetInstance().jokerData.Pass;
+    }
+
     void Bomb()
     {
         btn_bomb.enabled = false;
 
-        int count = PlayerPrefs.GetInt("nickname-bomb" + User.GetInstance().Username, 10);
-
-        if (count > 0)
+        if (User.GetInstance().jokerData.Bomb > 0)
         {
-            count--;
-            PlayerPrefs.SetInt("nickname-bomb" + User.GetInstance().Username, count);
-            txt_bomb.text = count.ToString();
-
+            User.GetInstance().jokerData.Bomb--;
             List<int> answers = new List<int>() {0, 1, 2, 3};
             int correct = Convert.ToInt16(FindObjectOfType<QuestionBase>().currentQuestion.correct);
             answers.Remove(correct);
@@ -53,49 +53,49 @@ public class Joker : MonoBehaviour
             AnswerController answerController = FindObjectOfType<AnswerController>();
             int answer1 = answers[Random.Range(0, 3)];
             answerController.answers[answer1].GetComponent<Button>().enabled = false;
-            CreateSpell().Shot(answerController.answers[answer1].img_choice.transform, () => answerController.JokerEffect(answer1));
+            CreateSpell().Shot(answerController.answers[answer1].img_choice.transform,
+                () => answerController.JokerEffect(answer1));
             answers.Remove(answer1);
             int answer2 = answers[Random.Range(0, 2)];
             answerController.answers[answer2].GetComponent<Button>().enabled = false;
-            CreateSpell().Shot(answerController.answers[answer2].img_choice.transform, () => answerController.JokerEffect(answer2));
+            CreateSpell().Shot(answerController.answers[answer2].img_choice.transform,
+                () => answerController.JokerEffect(answer2));
         }
+
+        UpdateText();
     }
 
     void Pass()
     {
         btn_pass.enabled = false;
-        int count = PlayerPrefs.GetInt("nickname-pass" + User.GetInstance().Username, 10);
-        if (count > 0)
-        {
-            count--;
-            PlayerPrefs.SetInt("nickname-pass" + User.GetInstance().Username, count);
-            txt_pass.text = count.ToString();
 
+        if (User.GetInstance().jokerData.Pass > 0)
+        {
+            User.GetInstance().jokerData.Pass--;
             QuestionPanel questionPanel = FindObjectOfType<QuestionPanel>();
-            CreateSpell().Shot(questionPanel.transform, () =>
-            {
-                questionPanel.JokerEffect();
-            });
-            
+            CreateSpell().Shot(questionPanel.transform, () => { questionPanel.JokerEffect(); });
+
             FindObjectOfType<QuestionBase>().Pass();
         }
+
+        UpdateText();
     }
 
     void Correct()
     {
         btn_correct.enabled = false;
-        int count = PlayerPrefs.GetInt("nickname-correct" + User.GetInstance().Username, 10);
-        if (count > 0)
+        if (User.GetInstance().jokerData.Correct > 0)
         {
-            count--;
-            txt_correct.text = count.ToString();
-            PlayerPrefs.SetInt("nickname-correct" + User.GetInstance().Username, count);
-            
+            User.GetInstance().jokerData.Correct--;
+
             AnswerController answerController = FindObjectOfType<AnswerController>();
 
             int correct = Convert.ToInt16(FindObjectOfType<QuestionBase>().currentQuestion.correct);
-            CreateSpell().Shot(answerController.answers[correct].img_choice.transform, () => FindObjectOfType<QuestionBase>().CheckAnswer(correct));
+            CreateSpell().Shot(answerController.answers[correct].img_choice.transform,
+                () => FindObjectOfType<QuestionBase>().CheckAnswer(correct));
         }
+
+        UpdateText();
     }
 
     public void Fall()
@@ -123,6 +123,7 @@ public class Joker : MonoBehaviour
     Spell CreateSpell()
     {
         Spell spell = Instantiate(spells[User.GetInstance().Race], projectile).GetComponent<Spell>();
+        spell.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         return spell;
     }
 }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UniRx;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
 
 public class AnswerController : MonoBehaviour
@@ -85,6 +84,12 @@ public class AnswerController : MonoBehaviour
 
     public void ShowCorrect(int correctAnswer, int choosenAnswer)
     {
+        if (choosenAnswer == -1)
+        {
+            answers[correctAnswer].ResultAnswer(true);
+            return;
+        }
+        
         if (correctAnswer == choosenAnswer)
         {
             answers[choosenAnswer].ResultAnswer(true);

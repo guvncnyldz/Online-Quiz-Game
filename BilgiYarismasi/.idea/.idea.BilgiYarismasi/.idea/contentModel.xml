@@ -214,6 +214,7 @@
               <e p="HTTPApiUtil.cs" t="Include" />
               <e p="HTTPAuthUtil.cs" t="Include" />
               <e p="LoginHttp.cs" t="Include" />
+              <e p="PlayerHTTP.cs" t="Include" />
               <e p="QuestionHTTP.cs" t="Include" />
               <e p="WordHttp.cs" t="Include" />
             </e>
@@ -237,6 +238,12 @@
             <e p="Race.cs" t="Include" />
             <e p="Races.cs" t="Include" />
             <e p="Scenes" t="Include">
+              <e p="LastManStanding" t="Include">
+                <e p="LastManManager.cs" t="Include" />
+                <e p="LastManSocket.cs" t="Include" />
+                <e p="PlayerHolder.cs" t="Include" />
+                <e p="PlayerPanel.cs" t="Include" />
+              </e>
               <e p="LoginScene" t="Include">
                 <e p="ErrorText.cs" t="Include" />
                 <e p="FormInputControl.cs" t="Include" />
@@ -283,6 +290,9 @@
                 <e p="WordHuntManager.cs" t="Include" />
                 <e p="WorldHuntEndPanel.cs" t="Include" />
               </e>
+            </e>
+            <e p="SocketUtil" t="Include">
+              <e p="SocketUtil.cs" t="Include" />
             </e>
             <e p="User" t="Include">
               <e p="CosmeticData.cs" t="Include" />
@@ -614,6 +624,9 @@
           <e p="Sprites" t="Include">
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
+        </e>
+        <e p="UnityMainThreadDispatcher-master" t="Include">
+          <e p="UnityMainThreadDispatcher.cs" t="Include" />
         </e>
       </e>
       <e p="BilgiYarismasi.sln" t="IncludeFlat" />

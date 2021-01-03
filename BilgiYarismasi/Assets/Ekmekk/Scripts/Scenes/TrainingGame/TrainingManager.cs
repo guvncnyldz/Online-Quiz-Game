@@ -3,11 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TrainingManager : QuestionBase
 {
-    private int correct;
-
     protected override void Awake()
     {
         base.Awake();
@@ -15,6 +14,18 @@ public class TrainingManager : QuestionBase
         QuestionHTTP.GetQuestion(null, 10 - QuestionPool.GetInstance.GetQuestionCount());
 
         FindObjectOfType<Countdown>().StartCountDown(BeginGetQuestion);
+    }
+
+    public override void Pass()
+    {
+        base.Pass();
+        
+                
+        Observable.Timer(TimeSpan.FromSeconds(1.5f)).Subscribe(_ =>
+        {
+            timer.RestartCountdown();
+            EndGetQuestion();
+        });
     }
 
     protected override void BeginGetQuestion()
@@ -70,7 +81,12 @@ public class TrainingManager : QuestionBase
         }
         else
         {
-            int earningCoin = correct * 7;
+            int earningCoin = 0;
+        
+            for (int i = 0; i < correct; i++)
+            {
+                earningCoin += Random.Range(1, 10);
+            }
 
             User.GetInstance().Coin += earningCoin;
             QuestionHTTP.Answer(currentQuestion, false);
@@ -87,7 +103,13 @@ public class TrainingManager : QuestionBase
     {
         base.TimesUp();
 
-        int earningCoin = correct * 7;
+        int earningCoin = 0;
+        
+        for (int i = 0; i < correct; i++)
+        {
+            earningCoin += Random.Range(1, 10);
+        }
+        
         User.GetInstance().Coin += earningCoin;
 
         Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>

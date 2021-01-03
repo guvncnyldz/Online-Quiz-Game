@@ -21,7 +21,6 @@ public static class ErrorHandler
         if (value[0]["code"] != null)
         {
             string currentCore = value[0]["code"].ToString();
-
             foreach (string code in errorCodes)
             {
                 if (currentCore.Equals(code))
@@ -29,6 +28,7 @@ public static class ErrorHandler
                     error.isError = true;
                     error.errorCode = code;
                     error.message = value[0]["message"].ToString();
+                    Debug.Log(error.message);
                 }
             }
         }

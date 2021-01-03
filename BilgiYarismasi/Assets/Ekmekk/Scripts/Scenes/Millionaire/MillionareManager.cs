@@ -7,9 +7,6 @@ using UnityEngine;
 public class MillionareManager : QuestionBase
 {
     private MillionairePanel millionairePanel;
-
-    private int correct;
-
     protected override void Awake()
     {
         millionairePanel = FindObjectOfType<MillionairePanel>();
@@ -119,7 +116,17 @@ public class MillionareManager : QuestionBase
         EndGame();
     }
 
-
+    public override void Pass()
+    {
+        base.Pass();
+        
+                
+        Observable.Timer(TimeSpan.FromSeconds(1.5f)).Subscribe(_ =>
+        {
+            timer.RestartCountdown();
+            EndGetQuestion();
+        });
+    }
     void EndGame()
     {
         int earningCoin = millionairePanel.GetMoney(correct);

@@ -36,12 +36,6 @@ public abstract class QuestionBase : MonoBehaviour
         answerController.LockAnswers(false);
 
         timer.StopCountdown();
-        
-        Observable.Timer(TimeSpan.FromSeconds(1.5f)).Subscribe(_ =>
-        {
-            timer.RestartCountdown();
-            EndGetQuestion();
-        });
     }
 
     public virtual void CheckAnswer(int answerId)

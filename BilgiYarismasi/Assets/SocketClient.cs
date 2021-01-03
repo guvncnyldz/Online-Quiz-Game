@@ -1,6 +1,4 @@
-﻿using System;
-using Newtonsoft.Json.Linq;
-using UnityEditor.PackageManager;
+﻿using Newtonsoft.Json.Linq;
 using UnityEngine;
 using WebSocketSharp;
 

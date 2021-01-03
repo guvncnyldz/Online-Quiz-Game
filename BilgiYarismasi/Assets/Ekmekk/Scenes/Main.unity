@@ -457,7 +457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -103.98999, y: 14.71}
+  m_AnchoredPosition: {x: -103.98999, y: 24.5}
   m_SizeDelta: {x: 207.98051, y: 41.36302}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &78173544
@@ -758,7 +758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 68.80005, y: 47.7}
+  m_AnchoredPosition: {x: 68.80005, y: 53.400043}
   m_SizeDelta: {x: 126.91901, y: 33.678337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236281487
@@ -1172,7 +1172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 68.630005, y: 12.500053}
+  m_AnchoredPosition: {x: 68.630005, y: 18.2}
   m_SizeDelta: {x: 126.95001, y: 33.6783}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &454773496
@@ -2725,10 +2725,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4601b741604713347979019f22644e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonName: Kilitli
+  ButtonName: Sona Kalan
   OnClickEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 42435280}
+        m_MethodName: LastManStanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1485967471
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,6 +24,8 @@ public class Question
         answers[1] = jQuestion["answerB"].ToString();
         answers[2] = jQuestion["answerC"].ToString();
         answers[3] = jQuestion["answerD"].ToString();
-        correct = Convert.ToInt16(jQuestion["correct_answer"].ToString());
+
+        if (jQuestion["correct_answer"] != null)
+            correct = Convert.ToInt16(jQuestion["correct_answer"].ToString());
     }
 }

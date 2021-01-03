@@ -23,7 +23,7 @@ public static class HTTPAuthUtil
 
         try
         {
-            var response = await client.PostAsync("http://localhost:8000/" + route + "/" + method, content);
+            var response = await client.PostAsync("http://192.168.1.34:8000/" + route + "/" + method, content);
 
             responseString = await response.Content.ReadAsStringAsync();
 
@@ -31,6 +31,8 @@ public static class HTTPAuthUtil
         }
         catch (TaskCanceledException e)
         {
+            Debug.Log(responseString);
+
             JObject json = new JObject();
             json.Add("code", "408");
             json.Add("message", "İstek zaman aşımına uğradı");
@@ -41,6 +43,8 @@ public static class HTTPAuthUtil
         }
         catch (Exception e)
         {
+            Debug.Log(responseString);
+            
             JObject json = new JObject();
             json.Add("code", "500");
             json.Add("message", "Bilinmeyen hata");
