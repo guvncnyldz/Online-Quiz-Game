@@ -8,8 +8,11 @@ using Random = UnityEngine.Random;
 
 public class Joker : MonoBehaviour
 {
-    [SerializeField] private RectTransform rectTransform;
+    private RectTransform rectTransform;
+
+    [SerializeField] private Transform projectile;
     [SerializeField] private Button btn_correct, btn_bomb, btn_pass;
+    [SerializeField] private GameObject[] spells;
 
     private TextMeshProUGUI txt_correct, txt_bomb, txt_pass;
 
@@ -44,17 +47,17 @@ public class Joker : MonoBehaviour
             txt_bomb.text = count.ToString();
 
             List<int> answers = new List<int>() {0, 1, 2, 3};
-            int correct = Convert.ToInt16(FindObjectOfType<TrainingManager>().currentQuestion.correct);
+            int correct = Convert.ToInt16(FindObjectOfType<QuestionBase>().currentQuestion.correct);
             answers.Remove(correct);
 
             AnswerController answerController = FindObjectOfType<AnswerController>();
-            int answer = answers[Random.Range(0, 3)];
-            answerController.answers[answer].GetComponent<Button>().enabled = false;
-            answers.Remove(answer);
-            answerController.JokerEffect(answer);
-            answer = answers[Random.Range(0, 2)];
-            answerController.answers[answer].GetComponent<Button>().enabled = false;
-            answerController.JokerEffect(answer);
+            int answer1 = answers[Random.Range(0, 3)];
+            answerController.answers[answer1].GetComponent<Button>().enabled = false;
+            CreateSpell().Shot(answerController.answers[answer1].img_choice.transform, () => answerController.JokerEffect(answer1));
+            answers.Remove(answer1);
+            int answer2 = answers[Random.Range(0, 2)];
+            answerController.answers[answer2].GetComponent<Button>().enabled = false;
+            CreateSpell().Shot(answerController.answers[answer2].img_choice.transform, () => answerController.JokerEffect(answer2));
         }
     }
 
@@ -68,7 +71,13 @@ public class Joker : MonoBehaviour
             PlayerPrefs.SetInt("nickname-pass" + User.GetInstance().Username, count);
             txt_pass.text = count.ToString();
 
-            FindObjectOfType<TrainingManager>().Pass();
+            QuestionPanel questionPanel = FindObjectOfType<QuestionPanel>();
+            CreateSpell().Shot(questionPanel.transform, () =>
+            {
+                questionPanel.JokerEffect();
+            });
+            
+            FindObjectOfType<QuestionBase>().Pass();
         }
     }
 
@@ -81,8 +90,11 @@ public class Joker : MonoBehaviour
             count--;
             txt_correct.text = count.ToString();
             PlayerPrefs.SetInt("nickname-correct" + User.GetInstance().Username, count);
-            int correct = Convert.ToInt16(FindObjectOfType<TrainingManager>().currentQuestion.id);
-            FindObjectOfType<TrainingManager>().CheckAnswer(correct);
+            
+            AnswerController answerController = FindObjectOfType<AnswerController>();
+
+            int correct = Convert.ToInt16(FindObjectOfType<QuestionBase>().currentQuestion.correct);
+            CreateSpell().Shot(answerController.answers[correct].img_choice.transform, () => FindObjectOfType<QuestionBase>().CheckAnswer(correct));
         }
     }
 
@@ -106,5 +118,11 @@ public class Joker : MonoBehaviour
         btn_bomb.enabled = !isLocked;
         btn_correct.enabled = !isLocked;
         btn_pass.enabled = !isLocked;
+    }
+
+    Spell CreateSpell()
+    {
+        Spell spell = Instantiate(spells[User.GetInstance().Race], projectile).GetComponent<Spell>();
+        return spell;
     }
 }

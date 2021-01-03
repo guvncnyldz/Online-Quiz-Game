@@ -15,7 +15,7 @@ public class Answer : MonoBehaviour
     const float ANSWEROUTPOSX = 323;
 
     [SerializeField] private TextMeshProUGUI txt_answer;
-    [SerializeField] private Image img_choice, img_answer;
+    public Image img_choice, img_answer;
 
     [SerializeField] private Sprite correctChoice, wrongChoice, defaulChoice;
 

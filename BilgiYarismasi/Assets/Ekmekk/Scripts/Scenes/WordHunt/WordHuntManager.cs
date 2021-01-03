@@ -23,7 +23,7 @@ public class WordHuntManager : MonoBehaviour
 
     private void Awake()
     {
-        wordCount = Random.Range(3, 11);
+        wordCount = Random.Range(3, 10);
         //wordCount = 10;
         letterboard = FindObjectOfType<Letterboard>();
         letterBoardPanel = FindObjectOfType<LetterBoardPanel>();
@@ -64,8 +64,7 @@ public class WordHuntManager : MonoBehaviour
     {
         for (int i = 0; i < words.Count; i++)
         {
-            Transform temp = Instantiate(obj_word).transform;
-            temp.SetParent(wordHolderPanel.transform.GetChild(0), false);
+            Transform temp = Instantiate(obj_word,wordHolderPanel.transform.GetChild(0)).transform;
             WordHolder tempWordHolder = temp.GetComponent<WordHolder>();
             tempWordHolder.SetWord(words[i].word);
             wordHolders.Add(tempWordHolder);

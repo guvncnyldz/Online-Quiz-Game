@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterCosmetics : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer head, body, handLeft, handRight, footLeft, footRight, eye, hair;
+    [SerializeField] private Image head, body, handLeft, handRight, footLeft, footRight, eye, hair;
 
     public void SetCosmetic(CosmeticData cosmeticData)
     {

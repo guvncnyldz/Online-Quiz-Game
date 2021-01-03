@@ -8,8 +8,9 @@ using UnityEngine.SceneManagement;
 public class User : UserBase
 {
     private static User instance;
-    public string UserId { get; private set; }
 
+    public JokerData jokerData;
+    public string UserId { get; private set; }
     public string Username
     {
         get => username;

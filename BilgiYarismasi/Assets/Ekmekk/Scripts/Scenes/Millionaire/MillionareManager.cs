@@ -4,43 +4,29 @@ using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 
-public class MillionareManager : MonoBehaviour
+public class MillionareManager : QuestionBase
 {
-    private QuestionPanel questionPanel;
-    private AnswerController answerController;
-    private Joker joker;
-    private Timer timer;
-    private EndPanel endPanel;
     private MillionairePanel millionairePanel;
-    public Question currentQuestion;
 
-    private int level;
+    private int correct;
 
-    public void Awake()
+    protected override void Awake()
     {
-        level = 0;
-
         millionairePanel = FindObjectOfType<MillionairePanel>();
-        joker = FindObjectOfType<Joker>();
-        endPanel = FindObjectOfType<EndPanel>();
-        questionPanel = FindObjectOfType<QuestionPanel>();
-        answerController = FindObjectOfType<AnswerController>();
-        timer = FindObjectOfType<Timer>();
 
-        answerController.OnAnswer += CheckAnswer;
-        timer.OnTimesUp += TimesUp;
+        base.Awake();
 
         QuestionHTTP.GetQuestion(() =>
         {
             Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
             {
                 millionairePanel.Disappear(null);
-                FindObjectOfType<Countdown>().StartCountDown(StartMillionare);
+                FindObjectOfType<Countdown>().StartCountDown(BeginGetQuestion);
             });
         }, 10 - QuestionPool.GetInstance.GetQuestionCount());
     }
 
-    void StartMillionare()
+    protected override void BeginGetQuestion()
     {
         Question question = QuestionPool.GetInstance.GetQuestion();
         currentQuestion = question;
@@ -56,7 +42,7 @@ public class MillionareManager : MonoBehaviour
         answerController.ChangeAnswer(question.answers);
     }
 
-    private void NextQuestion()
+    protected override void EndGetQuestion()
     {
         Question question = QuestionPool.GetInstance.GetQuestion();
         currentQuestion = question;
@@ -74,22 +60,9 @@ public class MillionareManager : MonoBehaviour
 
         answerController.ChangeAnswer(question.answers);
     }
-
-    public void Pass()
+    public override void CheckAnswer(int answerId)
     {
-        joker.LockButton(true);
-        answerController.LockAnswers(false);
-
-        timer.StopCountdown();
-        timer.RestartCountdown();
-        StartMillionare();
-    }
-
-    public void CheckAnswer(int answerId)
-    {
-        joker.LockButton(true);
-        answerController.LockAnswers(false);
-        timer.StopCountdown();
+        base.CheckAnswer(answerId);
 
         answerController.ShowCorrect(currentQuestion.correct, answerId);
 
@@ -97,9 +70,9 @@ public class MillionareManager : MonoBehaviour
         {
             QuestionHTTP.Answer(currentQuestion, true);
 
-            level++;
+            correct++;
 
-            if (level >= 10)
+            if (correct >= 10)
             {
                 EndGame();
                 return;
@@ -107,14 +80,14 @@ public class MillionareManager : MonoBehaviour
 
             millionairePanel.Appear(() =>
             {
-                millionairePanel.SetLevel(level, () =>
+                millionairePanel.SetLevel(correct, () =>
                 {
                     Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
                     {
                         millionairePanel.Disappear(() =>
                         {
                             timer.RestartCountdown();
-                            NextQuestion();
+                            EndGetQuestion();
                         });
                     });
                 });
@@ -122,7 +95,7 @@ public class MillionareManager : MonoBehaviour
         }
         else
         {
-            level = 0;
+            correct = 0;
             millionairePanel.Appear(() =>
             {
                 millionairePanel.FallIndicator();
@@ -132,33 +105,29 @@ public class MillionareManager : MonoBehaviour
     }
 
 
-    void TimesUp()
+    protected override void TimesUp()
     {
-        questionPanel.Fall();
-        answerController.Fall();
-        joker.Fall();
-
-        answerController.LockAnswers(false);
-        joker.LockButton(true);
-
-        level = 0;
+        base.TimesUp();
+        
+        correct = 0;
         millionairePanel.Appear(() =>
         {
             millionairePanel.FallIndicator();
             EndGame();
         });
-        
+
         EndGame();
     }
 
+
     void EndGame()
     {
-        int earningCoin = millionairePanel.GetMoney(level);
+        int earningCoin = millionairePanel.GetMoney(correct);
 
         Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
         {
             endPanel.gameObject.SetActive(true);
-            endPanel.SetValues(earningCoin, level);
+            endPanel.SetValues(earningCoin, correct);
         });
     }
 }

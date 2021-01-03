@@ -26,6 +26,4 @@ public abstract class UserBase
         energy = Convert.ToInt16(info[0]["user"]["profile"]["money"].ToString());
         money = Convert.ToInt16(info[0]["user"]["profile"]["energy"].ToString());
     }
-
-
 }

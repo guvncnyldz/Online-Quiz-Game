@@ -229,7 +229,9 @@
               <e p="AnswerController.cs" t="Include" />
               <e p="Joker.cs" t="Include" />
               <e p="Question.cs" t="Include" />
+              <e p="QuestionBase.cs" t="Include" />
               <e p="QuestionPanel.cs" t="Include" />
+              <e p="Spell.cs" t="Include" />
               <e p="Timer.cs" t="Include" />
             </e>
             <e p="Race.cs" t="Include" />
@@ -284,6 +286,7 @@
             </e>
             <e p="User" t="Include">
               <e p="CosmeticData.cs" t="Include" />
+              <e p="JokerData.cs" t="Include" />
               <e p="Player.cs" t="Include" />
               <e p="User.cs" t="Include" />
               <e p="UserBase.cs" t="Include" />

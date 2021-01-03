@@ -4,36 +4,20 @@ using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 
-public class TrainingManager : MonoBehaviour
+public class TrainingManager : QuestionBase
 {
-    private QuestionPanel questionPanel;
-    private AnswerController answerController;
-    private Joker joker;
-    private Timer timer;
-    private EndPanel endPanel;
-    public Question currentQuestion;
-
     private int correct;
 
-    public void Awake()
+    protected override void Awake()
     {
-        correct = 0;
-
-        joker = FindObjectOfType<Joker>();
-        endPanel = FindObjectOfType<EndPanel>();
-        questionPanel = FindObjectOfType<QuestionPanel>();
-        answerController = FindObjectOfType<AnswerController>();
-        timer = FindObjectOfType<Timer>();
-
-        answerController.OnAnswer += CheckAnswer;
-        timer.OnTimesUp += TimesUp;
+        base.Awake();
 
         QuestionHTTP.GetQuestion(null, 10 - QuestionPool.GetInstance.GetQuestionCount());
 
         FindObjectOfType<Countdown>().StartCountDown(BeginGetQuestion);
     }
 
-    void BeginGetQuestion()
+    protected override void BeginGetQuestion()
     {
         if (QuestionPool.GetInstance.GetQuestionCount() > 0)
         {
@@ -50,7 +34,7 @@ public class TrainingManager : MonoBehaviour
         }
     }
 
-    void EndGetQuestion()
+    protected override void EndGetQuestion()
     {
         Question question = QuestionPool.GetInstance.GetQuestion();
         currentQuestion = question;
@@ -67,22 +51,9 @@ public class TrainingManager : MonoBehaviour
 
         answerController.ChangeAnswer(question.answers);
     }
-
-    public void Pass()
+    public override void CheckAnswer(int answerId)
     {
-        joker.LockButton(true);
-        answerController.LockAnswers(false);
-
-        timer.StopCountdown();
-        timer.RestartCountdown();
-        BeginGetQuestion();
-    }
-
-    public void CheckAnswer(int answerId)
-    {
-        joker.LockButton(true);
-        answerController.LockAnswers(false);
-        timer.StopCountdown();
+        base.CheckAnswer(answerId);
 
         answerController.ShowCorrect(currentQuestion.correct, answerId);
 
@@ -112,15 +83,10 @@ public class TrainingManager : MonoBehaviour
         }
     }
 
-    void TimesUp()
+    protected override void TimesUp()
     {
-        questionPanel.Fall();
-        answerController.Fall();
-        joker.Fall();
+        base.TimesUp();
 
-        answerController.LockAnswers(false);
-        joker.LockButton(true);
-        
         int earningCoin = correct * 7;
         User.GetInstance().Coin += earningCoin;
 
