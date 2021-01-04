@@ -65,7 +65,7 @@ public class TrainingManager : QuestionBase
     public override void CheckAnswer(int answerId)
     {
         base.CheckAnswer(answerId);
-
+        
         answerController.ShowCorrect(currentQuestion.correct, answerId);
 
         if (answerId == currentQuestion.correct)

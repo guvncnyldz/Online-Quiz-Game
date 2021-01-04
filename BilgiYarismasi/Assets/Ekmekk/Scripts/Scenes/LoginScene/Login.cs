@@ -46,13 +46,15 @@ public class Login : MonoBehaviour
 
     void SuccessLogin()
     {
+        AsyncSceneLoader sceneLoader = gameObject.AddComponent<AsyncSceneLoader>();
+       
         if (User.GetInstance().Race == -1)
         {
-            SceneManager.LoadScene((int) Scenes.Race);
+            sceneLoader.LoadScene(Scenes.Race);
         }
         else
         {
-            SceneManager.LoadScene((int) Scenes.Main);
+            sceneLoader.LoadScene(Scenes.Main);
         }
     }
 

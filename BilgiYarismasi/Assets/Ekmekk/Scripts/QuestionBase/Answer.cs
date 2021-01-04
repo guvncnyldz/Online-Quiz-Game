@@ -17,7 +17,7 @@ public class Answer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txt_answer;
     public Image img_choice, img_answer;
 
-    [SerializeField] private Sprite correctChoice, wrongChoice, defaulChoice;
+    [SerializeField] private Sprite correctChoice, wrongChoice, defaulChoice, pendingChoice;
 
     private Button btn_answer;
 
@@ -30,7 +30,11 @@ public class Answer : MonoBehaviour
         defaulChoice = img_choice.sprite;
 
         btn_answer = GetComponent<Button>();
-        btn_answer.onClick.AddListener(() => OnClickAnswer?.Invoke(buttonId));
+        btn_answer.onClick.AddListener(() =>
+        {
+            img_choice.sprite = pendingChoice;
+            OnClickAnswer?.Invoke(buttonId);
+        });
 
         img_choice.rectTransform.anchoredPosition = new Vector2(CHOICEOUTPOSX, 0);
         img_answer.rectTransform.anchoredPosition = new Vector2(ANSWEROUTPOSX, 0);

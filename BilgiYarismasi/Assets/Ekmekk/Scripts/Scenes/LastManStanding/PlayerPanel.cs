@@ -18,7 +18,6 @@ public class PlayerPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txt_questionCounter, txt_userCounter;
 
     private bool isGameStart;
-
     public int userCount;
 
     private void Awake()
@@ -55,8 +54,32 @@ public class PlayerPanel : MonoBehaviour
                 playerHolder.gameObject.SetActive(false);
             }
         }
+    }
 
-        isGameStart = true;
+    public void UpdatePanel(string pid, bool isHere)
+    {
+        foreach (PlayerHolder playerHolder in playerHolders)
+        {
+            if (isHere)
+            {
+                if (!playerHolder.gameObject.activeSelf)
+                {
+                    playerHolder.gameObject.SetActive(true);
+                    PlayerHTTP.GetPlayerInfo(pid, playerHolder);
+                    userCount++;
+                    return;
+                }
+            }
+            else
+            {
+                if (playerHolder.player.ProfileId == pid)
+                {
+                    playerHolder.gameObject.SetActive(false);
+                    userCount--;
+                    return;
+                }
+            }
+        }
     }
 
     public void AnswerQuestion(int answer, string pid)
@@ -97,7 +120,7 @@ public class PlayerPanel : MonoBehaviour
     {
         foreach (PlayerHolder playerHolder in playerHolders)
         {
-            if (playerHolder.gameObject.activeSelf && !playerHolder.isFail)
+            if (playerHolder.gameObject.activeSelf)
             {
                 playerHolder.NextQuestion();
             }
@@ -106,9 +129,6 @@ public class PlayerPanel : MonoBehaviour
 
     private void Update()
     {
-        if (!isGameStart)
-            return;
-
         txt_userCounter.text = "Kalan: " + userCount;
         txt_questionCounter.text = "Soru: " + lastManManager.GetCorrectCount();
     }
@@ -127,6 +147,9 @@ public class PlayerPanel : MonoBehaviour
 
     public void Fall(string pid)
     {
+        if (!isGameStart)
+            return;
+
         foreach (PlayerHolder playerHolder in playerHolders)
         {
             if (playerHolder.gameObject.activeSelf && !playerHolder.isFail)
@@ -138,5 +161,11 @@ public class PlayerPanel : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void StartGame()
+    {
+        if (!isGameStart)
+            isGameStart = true;
     }
 }

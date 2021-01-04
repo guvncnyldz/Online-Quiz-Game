@@ -209,6 +209,9 @@
               <e p="CharacterAnimation.cs" t="Include" />
               <e p="CharacterCosmetics.cs" t="Include" />
             </e>
+            <e p="ErrorScene" t="Include">
+              <e p="ErrorUI.cs" t="Include" />
+            </e>
             <e p="HTTPUtil" t="Include">
               <e p="ErrorHandler.cs" t="Include" />
               <e p="HTTPApiUtil.cs" t="Include" />
@@ -275,8 +278,10 @@
                 <e p="TrainingManager.cs" t="Include" />
               </e>
               <e p="Utils" t="Include">
+                <e p="AsyncSceneLoader.cs" t="Include" />
                 <e p="Countdown.cs" t="Include" />
                 <e p="EndPanel.cs" t="Include" />
+                <e p="PopUp.cs" t="Include" />
               </e>
               <e p="WordHunt" t="Include">
                 <e p="Letterboard.cs" t="Include" />

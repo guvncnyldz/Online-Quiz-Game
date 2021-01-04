@@ -61,7 +61,9 @@ public class Register : MonoBehaviour
 
     void SuccessRegister()
     {
-        SceneManager.LoadScene((int) Scenes.Race);
+        AsyncSceneLoader sceneLoader = gameObject.AddComponent<AsyncSceneLoader>();
+
+        sceneLoader.LoadScene(Scenes.Race);
     }
 
     void FailRegister(string error)

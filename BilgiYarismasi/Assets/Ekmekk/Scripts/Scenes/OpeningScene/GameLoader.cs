@@ -14,6 +14,8 @@ public class GameLoader : MonoBehaviour
 
     async void DeviceControl()
     {
+        AsyncSceneLoader sceneLoader = gameObject.AddComponent<AsyncSceneLoader>();
+
         var values = new Dictionary<string, string>
         {
             {"version", Application.version},
@@ -32,7 +34,8 @@ public class GameLoader : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene((int) Scenes.Login);
+
+                sceneLoader.LoadScene(Scenes.Login);
             }
 
             return;
@@ -42,11 +45,11 @@ public class GameLoader : MonoBehaviour
 
         if (User.GetInstance().Race == -1)
         {
-            SceneManager.LoadScene((int) Scenes.Race);
+            sceneLoader.LoadScene(Scenes.Race);
         }
         else
         {
-            SceneManager.LoadScene((int) Scenes.Main);
+            sceneLoader.LoadScene(Scenes.Main);
         }
     }
 }

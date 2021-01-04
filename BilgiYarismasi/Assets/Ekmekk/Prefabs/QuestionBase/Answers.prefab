@@ -109,6 +109,7 @@ MonoBehaviour:
   correctChoice: {fileID: 21300000, guid: 7122899f09c438848a26692c55ed7406, type: 3}
   wrongChoice: {fileID: 21300000, guid: 98e258387bf1bdf4ea737e690f9a4a33, type: 3}
   defaulChoice: {fileID: 0}
+  pendingChoice: {fileID: 21300000, guid: 08d1829a0d10b1d4b934943a3b68dec7, type: 3}
   buttonId: 2
 --- !u!1 &613192532650480942
 GameObject:
@@ -219,6 +220,7 @@ MonoBehaviour:
   correctChoice: {fileID: 21300000, guid: 194b139745a9f0b41a9f28811530187b, type: 3}
   wrongChoice: {fileID: 21300000, guid: c03638146699fb04baa2bca146c37823, type: 3}
   defaulChoice: {fileID: 0}
+  pendingChoice: {fileID: 21300000, guid: 4965763da1367d84589b33209a02cac7, type: 3}
   buttonId: 0
 --- !u!1 &613192532671023159
 GameObject:
@@ -1119,6 +1121,7 @@ MonoBehaviour:
   correctChoice: {fileID: 21300000, guid: 851c909df1eae5e4c8f297beb06f7982, type: 3}
   wrongChoice: {fileID: 21300000, guid: 6d1b9de6197f80b4ba389fb18117413b, type: 3}
   defaulChoice: {fileID: 0}
+  pendingChoice: {fileID: 21300000, guid: 1f3dcaf9309810e4cacae90e34c6762c, type: 3}
   buttonId: 1
 --- !u!1 &613192533944940076
 GameObject:
@@ -1229,6 +1232,7 @@ MonoBehaviour:
   correctChoice: {fileID: 21300000, guid: 1807bf600704ecf4c9a74a47ddfc23ab, type: 3}
   wrongChoice: {fileID: 21300000, guid: 5cd984c1f7fe21e42b55093a7a843d9d, type: 3}
   defaulChoice: {fileID: 0}
+  pendingChoice: {fileID: 21300000, guid: 7fc42de09111714489d3c4b6231b931a, type: 3}
   buttonId: 3
 --- !u!1 &613192534060309694
 GameObject:

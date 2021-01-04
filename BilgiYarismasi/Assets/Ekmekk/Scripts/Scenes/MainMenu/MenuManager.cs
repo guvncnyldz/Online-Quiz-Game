@@ -32,13 +32,11 @@ public class MenuManager : MonoBehaviour
     }
     public void Millionaire()
     {
-        Debug.Log("asd");
         SceneManager.LoadScene((int) Scenes.Millionaire);
     }
     
     public void WordHunt()
     {
-        Debug.Log("asd");
         SceneManager.LoadScene((int) Scenes.WordHunt);
 
     }

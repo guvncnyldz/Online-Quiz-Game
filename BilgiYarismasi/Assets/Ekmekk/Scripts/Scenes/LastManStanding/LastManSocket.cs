@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,10 +15,13 @@ public class LastManSocket : MonoBehaviour
     private bool isConnected;
 
     private string totalCount;
-    [SerializeField] private Text loadingText;
+    [SerializeField] private GameObject loadingPanel;
+    [SerializeField] private TextMeshProUGUI loadingText;
+    [SerializeField] private Button button;
 
     public void Awake()
     {
+        button.onClick.AddListener(() => { SceneManager.LoadScene((int) Scenes.Main); });
         playerPanel = FindObjectOfType<PlayerPanel>();
         lastManManager = FindObjectOfType<LastManManager>();
 
@@ -50,8 +54,11 @@ public class LastManSocket : MonoBehaviour
                 case "connected":
                     Connected(data);
                     break;
-                case "setcount":
-                    SetCount(data);
+                case "addplayer":
+                    AddPlayer(data);
+                    break;
+                case "removeplayer":
+                    RemovePlayer(data);
                     break;
                 case "start":
                     StartGame(data);
@@ -76,23 +83,41 @@ public class LastManSocket : MonoBehaviour
         }
     }
 
+    private void RemovePlayer(JObject data)
+    {
+        UnityMainThreadDispatcher.Instance().Enqueue(() =>
+        {
+            loadingText.text = data["player_count"] + "/" + totalCount;
+            playerPanel.UpdatePanel(data["pid"].ToString(),false);
+        });
+    }
+
     private void Connected(JObject data)
     {
         SocketUtil.ws.OnClose += WsOnOnClose;
         isConnected = true;
         totalCount = data["total_count"].ToString();
+        int userCount = Convert.ToInt16(data["player_count"].ToString());
+        string[] userIds = new string[userCount];
+
+        for (int i = 0; i < userCount; i++)
+        {
+            userIds[i] = data["pids"][i].ToString();
+        }
 
         UnityMainThreadDispatcher.Instance().Enqueue(() =>
         {
             loadingText.text = data["player_count"] + "/" + totalCount;
+            playerPanel.SetPanel(userIds);
         });
     }
 
-    private void SetCount(JObject data)
+    private void AddPlayer(JObject data)
     {
         UnityMainThreadDispatcher.Instance().Enqueue(() =>
         {
             loadingText.text = data["player_count"] + "/" + totalCount;
+            playerPanel.UpdatePanel(data["pid"].ToString(),true);
         });
     }
 
@@ -110,18 +135,10 @@ public class LastManSocket : MonoBehaviour
 
     private void StartGame(JObject data)
     {
-        int userCount = Convert.ToInt16(data["player_count"].ToString());
-        string[] userIds = new string[userCount];
-
-        for (int i = 0; i < userCount; i++)
-        {
-            userIds[i] = data["pids"][i].ToString();
-        }
-
         UnityMainThreadDispatcher.Instance().Enqueue(() =>
         {
-            playerPanel.SetPanel(userIds);
-            loadingText.transform.parent.gameObject.SetActive(false);
+            playerPanel.StartGame();
+            loadingPanel.gameObject.SetActive(false);
         });
     }
 
@@ -139,7 +156,6 @@ public class LastManSocket : MonoBehaviour
 
         UnityMainThreadDispatcher.Instance().Enqueue(() =>
         {
-
             for (int i = 0; i < playerCount; i++)
             {
                 if (data["results"][i]["result"].ToString().Equals("0"))

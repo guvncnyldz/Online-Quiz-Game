@@ -121,7 +121,7 @@ public class LastManManager : QuestionBase
     {
         return correct;
     }
-    
+
     public void EndGame(int extraCoin)
     {
         Destroy(FindObjectOfType<LastManSocket>());
@@ -133,9 +133,12 @@ public class LastManManager : QuestionBase
             earningCoin += Random.Range(1, 10);
         }
 
-        User.GetInstance().Coin += earningCoin;
+        Observable.Timer(TimeSpan.FromSeconds(2.5f)).Subscribe(_ =>
+        {
+            User.GetInstance().Coin += earningCoin;
 
-        endPanel.gameObject.SetActive(true);
-        endPanel.SetValues(earningCoin, correct);
+            endPanel.gameObject.SetActive(true);
+            endPanel.SetValues(earningCoin, correct);
+        });
     }
 }

@@ -11,6 +11,7 @@ public class PlayerHolder : MonoBehaviour
     public Player player;
     private Character character;
 
+    [SerializeField] private Transform eliminated;
     [SerializeField] private TextMeshProUGUI txt_answer, txt_nickname;
     [SerializeField] private Image background, race;
     [SerializeField] private Sprite[] backgrounds;
@@ -46,8 +47,6 @@ public class PlayerHolder : MonoBehaviour
                 txt_answer.color = Color.yellow;
                 break;
         }
-
-        
     }
 
     public void Correct()
@@ -56,7 +55,7 @@ public class PlayerHolder : MonoBehaviour
 
         background.sprite = backgrounds[1];
         txt_answer.color = Color.green;
-        
+
         character.charAnim.SetTrigger(CharAnimsTag.win);
     }
 
@@ -67,16 +66,23 @@ public class PlayerHolder : MonoBehaviour
         background.sprite = backgrounds[2];
         txt_answer.color = Color.red;
         isFail = true;
-        
+
         character.charAnim.SetTrigger(CharAnimsTag.lose);
     }
 
     public void NextQuestion()
     {
-        background.gameObject.SetActive(false);
         txt_answer.text = "";
-        
-        character.charAnim.SetTrigger(CharAnimsTag.idle);
+
+        if (!isFail)
+        {
+            background.gameObject.SetActive(false);
+            character.charAnim.SetTrigger(CharAnimsTag.idle);
+        }
+        else
+        {
+            eliminated.gameObject.SetActive(true);
+        }
     }
 
     public void SetPlayer(JArray response)
@@ -86,6 +92,7 @@ public class PlayerHolder : MonoBehaviour
         player.SetUser(response);
 
         txt_nickname.text = player.Username;
+        txt_nickname.color = Color.white;
         race.sprite = races[player.Race];
 
         character.cosmetic.SetCosmetic(player.cosmeticData);
@@ -98,8 +105,9 @@ public class PlayerHolder : MonoBehaviour
         player.Username = User.GetInstance().Username;
         player.SetManuelProfileId(User.GetInstance().ProfileId);
         txt_nickname.text = player.Username;
+        txt_nickname.color = Color.yellow;
         race.sprite = races[player.Race];
-        
+
         character.cosmetic.SetCosmetic(User.GetInstance().cosmeticData);
     }
 
