@@ -131,6 +131,8 @@ public class MillionareManager : QuestionBase
     {
         int earningCoin = millionairePanel.GetMoney(correct);
 
+        ScoreHTTP.SaveScore(correct,earningCoin,2);
+
         Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
         {
             endPanel.gameObject.SetActive(true);

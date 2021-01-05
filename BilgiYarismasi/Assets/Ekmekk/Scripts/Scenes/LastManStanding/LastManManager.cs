@@ -132,6 +132,7 @@ public class LastManManager : QuestionBase
         {
             earningCoin += Random.Range(1, 10);
         }
+        ScoreHTTP.SaveScore(correct,earningCoin,1);
 
         Observable.Timer(TimeSpan.FromSeconds(2.5f)).Subscribe(_ =>
         {

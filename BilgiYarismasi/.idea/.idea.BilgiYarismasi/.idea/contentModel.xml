@@ -219,6 +219,7 @@
               <e p="LoginHttp.cs" t="Include" />
               <e p="PlayerHTTP.cs" t="Include" />
               <e p="QuestionHTTP.cs" t="Include" />
+              <e p="ScoreHTTP.cs" t="Include" />
               <e p="WordHttp.cs" t="Include" />
             </e>
             <e p="JSONUtil" t="Include">

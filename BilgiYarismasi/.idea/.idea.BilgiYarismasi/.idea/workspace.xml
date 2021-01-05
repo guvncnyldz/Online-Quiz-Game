@@ -44,6 +44,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/WordHttp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/Countdown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionairePanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/ScoreHTTP.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/ScrollMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SocketClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Character/Character.cs" root0="FORCE_HIGHLIGHTING" />
@@ -61,7 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/EndPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/QuestionPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/Answer.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/WordHolderPanel.cs" />
@@ -71,7 +71,6 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionairePanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Spell.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/LetterSetter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/WordHuntManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/WordHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/ErrorHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Joker.cs" />
@@ -84,20 +83,16 @@
         <option value="$PROJECT_DIR$/Assets/SocketClient.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/LoginHttp.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Question.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/User.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/SocketUtil/SocketUtil.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Scenes.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/HTTPAuthUtil.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/PlayerHTTP.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Character/CharacterCosmetics.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/ScrollMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/UserBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/QuestionBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionareManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/AnswerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Timer.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Character/CharacterAnimation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/TrainingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Answer.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManSocket.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/QuestionPanel.cs" />
@@ -105,13 +100,19 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/ErrorScene/ErrorUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/PlayerPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/PlayerHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/AsyncLevelLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LoginScene/Login.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LoginScene/Register.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/OpeningScene/GameLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LoginScene/ErrorText.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/ScoreHTTP.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/TrainingManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionareManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/WordHuntManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/User.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/UserBase.cs" />
       </list>
     </option>
   </component>
@@ -146,10 +147,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="4716">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3836">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="4716" />
+      <option name="pid" value="3836" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -174,6 +175,7 @@
       <workItem from="1605193302076" duration="776000" />
       <workItem from="1609283096236" duration="59834000" />
       <workItem from="1609628058223" duration="64336000" />
+      <workItem from="1609800724931" duration="4315000" />
     </task>
     <servers />
   </component>
@@ -322,6 +324,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/TrainingManager.cs</url>
+          <line>113</line>
+          <properties documentPath="C:\Users\guvnc\Desktop\Projects\BilgiYarismasi\bilgiyarimasi-unity\BilgiYarismasi\Assets\Ekmekk\Scripts\Scenes\TrainingGame\TrainingManager.cs" initialLine="113">
+            <startOffsets>
+              <option value="2875" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2918" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

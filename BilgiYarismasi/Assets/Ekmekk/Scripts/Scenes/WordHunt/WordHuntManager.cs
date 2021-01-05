@@ -64,7 +64,7 @@ public class WordHuntManager : MonoBehaviour
     {
         for (int i = 0; i < words.Count; i++)
         {
-            Transform temp = Instantiate(obj_word,wordHolderPanel.transform.GetChild(0)).transform;
+            Transform temp = Instantiate(obj_word, wordHolderPanel.transform.GetChild(0)).transform;
             WordHolder tempWordHolder = temp.GetComponent<WordHolder>();
             tempWordHolder.SetWord(words[i].word);
             wordHolders.Add(tempWordHolder);
@@ -107,6 +107,7 @@ public class WordHuntManager : MonoBehaviour
                         earningCoin += Random.Range(1, 13 - wordCount);
                     }
 
+                    ScoreHTTP.SaveScore(correctWordCount, earningCoin, 3);
                     User.GetInstance().Coin += earningCoin;
 
                     endPanel.SetValues(earningCoin, correctWordCount);

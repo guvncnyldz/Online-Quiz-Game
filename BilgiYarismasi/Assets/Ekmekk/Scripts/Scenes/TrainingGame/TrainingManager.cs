@@ -90,6 +90,7 @@ public class TrainingManager : QuestionBase
 
             User.GetInstance().Coin += earningCoin;
             QuestionHTTP.Answer(currentQuestion, false);
+            ScoreHTTP.SaveScore(correct,earningCoin,0);
 
             Observable.Timer(TimeSpan.FromSeconds(1.5f)).Subscribe(_ =>
             {
@@ -111,7 +112,7 @@ public class TrainingManager : QuestionBase
         }
         
         User.GetInstance().Coin += earningCoin;
-
+        ScoreHTTP.SaveScore(correct,earningCoin,0);
         Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
         {
             endPanel.gameObject.SetActive(true);
