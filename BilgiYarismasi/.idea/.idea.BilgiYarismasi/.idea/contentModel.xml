@@ -282,6 +282,7 @@
                 <e p="AsyncSceneLoader.cs" t="Include" />
                 <e p="Countdown.cs" t="Include" />
                 <e p="EndPanel.cs" t="Include" />
+                <e p="MenuPopup.cs" t="Include" />
                 <e p="PopUp.cs" t="Include" />
               </e>
               <e p="WordHunt" t="Include">

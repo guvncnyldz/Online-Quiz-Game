@@ -92,7 +92,8 @@ MonoBehaviour:
   index: 0
   letter: 0
   isClicked: 0
-  clicked: {fileID: 8774448600865531942, guid: 9ef426ee9ac27994a8d0661721aa1f7e, type: 3}
+  isLetterSet: 0
+  clicked: {fileID: 21300000, guid: 9ef426ee9ac27994a8d0661721aa1f7e, type: 3}
   notClicked: {fileID: 21300000, guid: d449023ee6e74194990ac8112506103a, type: 3}
 --- !u!65 &8928280364452664782
 BoxCollider:

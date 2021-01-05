@@ -15,6 +15,7 @@ public class Joker : MonoBehaviour
     [SerializeField] private GameObject[] spells;
 
     private TextMeshProUGUI txt_correct, txt_bomb, txt_pass;
+    private bool absoluteLock;
 
     private void Awake()
     {
@@ -88,6 +89,8 @@ public class Joker : MonoBehaviour
         {
             User.GetInstance().jokerData.Correct--;
 
+            FindObjectOfType<Timer>().StopCountdown();
+            FindObjectOfType<MenuPopup>().gameObject.SetActive(false);
             AnswerController answerController = FindObjectOfType<AnswerController>();
 
             int correct = Convert.ToInt16(FindObjectOfType<QuestionBase>().currentQuestion.correct);
@@ -115,6 +118,9 @@ public class Joker : MonoBehaviour
 
     public void LockButton(bool isLocked)
     {
+        if (absoluteLock)
+            return;
+
         btn_bomb.enabled = !isLocked;
         btn_correct.enabled = !isLocked;
         btn_pass.enabled = !isLocked;
@@ -125,5 +131,14 @@ public class Joker : MonoBehaviour
         Spell spell = Instantiate(spells[User.GetInstance().Race], projectile).GetComponent<Spell>();
         spell.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         return spell;
+    }
+
+    public void AbsoluteLockButton()
+    {
+        absoluteLock = true;
+
+        btn_bomb.enabled = false;
+        btn_correct.enabled = false;
+        btn_pass.enabled = false;
     }
 }

@@ -12,10 +12,13 @@ public class LastManManager : QuestionBase
     private PlayerPanel playerPanel;
     private int myAnswer;
 
+    private GameObject menuPopup;
+
     protected override void Awake()
     {
         base.Awake();
-
+        menuPopup = FindObjectOfType<MenuPopup>().gameObject;
+        menuPopup.SetActive(false);
         playerPanel = FindObjectOfType<PlayerPanel>();
     }
 
@@ -52,6 +55,7 @@ public class LastManManager : QuestionBase
             {
                 timer.StartCountdown();
                 joker.LockButton(false);
+                menuPopup.SetActive(true);
             });
         });
 
@@ -61,6 +65,7 @@ public class LastManManager : QuestionBase
     public override void Pass()
     {
         base.Pass();
+        menuPopup.SetActive(false);
 
         myAnswer = -1;
         Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ => { playerPanel.AppearPanel(true); });
@@ -74,6 +79,7 @@ public class LastManManager : QuestionBase
     public override void CheckAnswer(int answerId)
     {
         base.CheckAnswer(answerId);
+
         myAnswer = answerId;
         playerPanel.AppearPanel(true);
 
@@ -122,9 +128,13 @@ public class LastManManager : QuestionBase
         return correct;
     }
 
-    public void EndGame(int extraCoin)
+    public override void EndGame(int extraCoin)
     {
+        base.EndGame(0);
+
         Destroy(FindObjectOfType<LastManSocket>());
+
+        menuPopup.SetActive(false);
 
         int earningCoin = extraCoin;
 
@@ -132,7 +142,9 @@ public class LastManManager : QuestionBase
         {
             earningCoin += Random.Range(1, 10);
         }
-        ScoreHTTP.SaveScore(correct,earningCoin,1);
+
+        ScoreHTTP.SaveScore(correct, earningCoin, 1);
+
 
         Observable.Timer(TimeSpan.FromSeconds(2.5f)).Subscribe(_ =>
         {

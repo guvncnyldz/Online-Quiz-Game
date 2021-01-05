@@ -24,6 +24,8 @@ public class Timer : MonoBehaviour
 
     public Action OnTimesUp;
 
+    private bool absoluteStop;
+
     private void Awake()
     {
         fireAnimator = img_fire.GetComponent<Animator>();
@@ -32,6 +34,9 @@ public class Timer : MonoBehaviour
 
     public void StartCountdown()
     {
+        if(absoluteStop)
+            return;
+        
         currentTime = lastTime;
         img_fire.gameObject.SetActive(true);
         fireAnimator.enabled = true;
@@ -57,6 +62,9 @@ public class Timer : MonoBehaviour
 
     public void RestartCountdown()
     {
+        if(absoluteStop)
+            return;
+        
         lastTime = startTime;
         img_time.fillAmount = 1;
         img_fire.rectTransform.anchoredPosition = new Vector2(FIRESTARTX, 0);
@@ -80,8 +88,12 @@ public class Timer : MonoBehaviour
     IEnumerator Countdown()
     {
         img_fire.rectTransform.anchoredPosition = new Vector2(FIRESTARTX, 0);
+        
         while (currentTime >= 0)
         {
+            if(absoluteStop)
+                yield break;
+            
             currentTime -= Time.deltaTime;
 
             img_time.fillAmount = Mathf.InverseLerp(0, startTime, currentTime);
@@ -92,5 +104,11 @@ public class Timer : MonoBehaviour
         }
 
         TimesUp();
+    }
+
+    public void AbsoluteStopCountdown()
+    {
+        absoluteStop = true;
+        StopCountdown();
     }
 }

@@ -7,10 +7,14 @@ using Random = UnityEngine.Random;
 
 public class TrainingManager : QuestionBase
 {
+    private GameObject menuPopup;
+
     protected override void Awake()
     {
         base.Awake();
 
+        menuPopup = FindObjectOfType<MenuPopup>().gameObject;
+        menuPopup.SetActive(false);
         QuestionHTTP.GetQuestion(null, 10 - QuestionPool.GetInstance.GetQuestionCount());
 
         FindObjectOfType<Countdown>().StartCountDown(BeginGetQuestion);
@@ -19,8 +23,9 @@ public class TrainingManager : QuestionBase
     public override void Pass()
     {
         base.Pass();
-        
-                
+
+        menuPopup.SetActive(false);
+
         Observable.Timer(TimeSpan.FromSeconds(1.5f)).Subscribe(_ =>
         {
             timer.RestartCountdown();
@@ -30,6 +35,11 @@ public class TrainingManager : QuestionBase
 
     protected override void BeginGetQuestion()
     {
+        if (QuestionPool.GetInstance.GetQuestionCount() <= 4)
+        {
+            QuestionHTTP.GetQuestion(null, 6);
+        }
+
         if (QuestionPool.GetInstance.GetQuestionCount() > 0)
         {
             EndGetQuestion();
@@ -37,11 +47,6 @@ public class TrainingManager : QuestionBase
         else
         {
             QuestionHTTP.GetQuestion(EndGetQuestion);
-        }
-
-        if (QuestionPool.GetInstance.GetQuestionCount() <= 4)
-        {
-            QuestionHTTP.GetQuestion(null, 6);
         }
     }
 
@@ -57,15 +62,18 @@ public class TrainingManager : QuestionBase
             {
                 timer.StartCountdown();
                 joker.LockButton(false);
+                menuPopup.SetActive(true);
             });
         });
 
         answerController.ChangeAnswer(question.answers);
     }
+
     public override void CheckAnswer(int answerId)
     {
         base.CheckAnswer(answerId);
-        
+        menuPopup.SetActive(false);
+
         answerController.ShowCorrect(currentQuestion.correct, answerId);
 
         if (answerId == currentQuestion.correct)
@@ -81,22 +89,7 @@ public class TrainingManager : QuestionBase
         }
         else
         {
-            int earningCoin = 0;
-        
-            for (int i = 0; i < correct; i++)
-            {
-                earningCoin += Random.Range(1, 10);
-            }
-
-            User.GetInstance().Coin += earningCoin;
-            QuestionHTTP.Answer(currentQuestion, false);
-            ScoreHTTP.SaveScore(correct,earningCoin,0);
-
-            Observable.Timer(TimeSpan.FromSeconds(1.5f)).Subscribe(_ =>
-            {
-                endPanel.gameObject.SetActive(true);
-                endPanel.SetValues(earningCoin, correct);
-            });
+            EndGame(0);
         }
     }
 
@@ -104,15 +97,24 @@ public class TrainingManager : QuestionBase
     {
         base.TimesUp();
 
+        EndGame(0);
+    }
+
+    public override void EndGame(int extraCoin)
+    {
+        base.EndGame(extraCoin);
+        menuPopup.SetActive(false);
+
         int earningCoin = 0;
-        
+
         for (int i = 0; i < correct; i++)
         {
             earningCoin += Random.Range(1, 10);
         }
-        
+
         User.GetInstance().Coin += earningCoin;
-        ScoreHTTP.SaveScore(correct,earningCoin,0);
+        ScoreHTTP.SaveScore(correct, earningCoin, 0);
+        
         Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
         {
             endPanel.gameObject.SetActive(true);

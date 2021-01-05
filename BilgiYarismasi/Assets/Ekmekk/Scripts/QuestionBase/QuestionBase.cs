@@ -55,6 +55,13 @@ public abstract class QuestionBase : MonoBehaviour
         joker.LockButton(true);
 
     }
+
+    public virtual void EndGame(int exraCoin)
+    {
+        joker.AbsoluteLockButton();
+        answerController.AbsoluteLockButton();
+        timer.AbsoluteStopCountdown();
+    }
     protected abstract void BeginGetQuestion();
     protected abstract void EndGetQuestion();
 }

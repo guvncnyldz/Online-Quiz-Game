@@ -22,7 +22,7 @@ public class MillionairePanel : MonoBehaviour
     public void SetLevel(int level, Action onComplete)
     {
         if (level >= levels.Length)
-            return;
+            level = levels.Length - 1;
 
         indicator.DOAnchorPosY(levels[level].anchoredPosition.y, 0.75f).OnComplete(() => onComplete?.Invoke());
     }

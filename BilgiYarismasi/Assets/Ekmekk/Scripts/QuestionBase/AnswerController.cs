@@ -14,6 +14,7 @@ public class AnswerController : MonoBehaviour
     public Action<int> OnAnswer;
 
     [SerializeField] private Sprite[] raceJokerEffect;
+    private bool absoluteLock;
 
     public void Awake()
     {
@@ -76,6 +77,9 @@ public class AnswerController : MonoBehaviour
 
     public void LockAnswers(bool isUnlocked)
     {
+        if(absoluteLock)
+            return;
+        
         foreach (Button btn_answer in btn_answers)
         {
             btn_answer.enabled = isUnlocked;
@@ -98,6 +102,16 @@ public class AnswerController : MonoBehaviour
         {
             answers[correctAnswer].ResultAnswer(true);
             answers[choosenAnswer].ResultAnswer(false);
+        }
+    }
+
+    public void AbsoluteLockButton()
+    {
+        absoluteLock = true;
+        
+        foreach (Button btn_answer in btn_answers)
+        {
+            btn_answer.enabled = false;
         }
     }
 }

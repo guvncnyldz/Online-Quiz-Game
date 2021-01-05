@@ -7,8 +7,14 @@ using UnityEngine;
 public class MillionareManager : QuestionBase
 {
     private MillionairePanel millionairePanel;
+
+    private GameObject menuPopup;
+
     protected override void Awake()
     {
+        menuPopup = FindObjectOfType<MenuPopup>().gameObject;
+        menuPopup.SetActive(false);
+
         millionairePanel = FindObjectOfType<MillionairePanel>();
 
         base.Awake();
@@ -34,6 +40,7 @@ public class MillionareManager : QuestionBase
         {
             timer.StartCountdown();
             joker.LockButton(false);
+            menuPopup.SetActive(true);
         });
 
         answerController.ChangeAnswer(question.answers);
@@ -41,6 +48,11 @@ public class MillionareManager : QuestionBase
 
     protected override void EndGetQuestion()
     {
+        if (QuestionPool.GetInstance.GetQuestionCount() <= 4)
+        {
+            QuestionHTTP.GetQuestion(null, 6);
+        }
+
         Question question = QuestionPool.GetInstance.GetQuestion();
         currentQuestion = question;
 
@@ -52,14 +64,18 @@ public class MillionareManager : QuestionBase
             {
                 timer.StartCountdown();
                 joker.LockButton(false);
+                menuPopup.SetActive(true);
             });
         });
 
         answerController.ChangeAnswer(question.answers);
     }
+
     public override void CheckAnswer(int answerId)
     {
         base.CheckAnswer(answerId);
+
+        menuPopup.SetActive(false);
 
         answerController.ShowCorrect(currentQuestion.correct, answerId);
 
@@ -71,9 +87,10 @@ public class MillionareManager : QuestionBase
 
             if (correct >= 10)
             {
-                EndGame();
+                EndGame(1);
                 return;
             }
+
 
             millionairePanel.Appear(() =>
             {
@@ -83,6 +100,7 @@ public class MillionareManager : QuestionBase
                     {
                         millionairePanel.Disappear(() =>
                         {
+                            menuPopup.gameObject.SetActive(true);
                             timer.RestartCountdown();
                             EndGetQuestion();
                         });
@@ -93,11 +111,7 @@ public class MillionareManager : QuestionBase
         else
         {
             correct = 0;
-            millionairePanel.Appear(() =>
-            {
-                millionairePanel.FallIndicator();
-                EndGame();
-            });
+            EndGame(correct);
         }
     }
 
@@ -105,38 +119,91 @@ public class MillionareManager : QuestionBase
     protected override void TimesUp()
     {
         base.TimesUp();
-        
-        correct = 0;
-        millionairePanel.Appear(() =>
-        {
-            millionairePanel.FallIndicator();
-            EndGame();
-        });
 
-        EndGame();
+        correct = 0;
+        EndGame(0);
     }
 
     public override void Pass()
     {
         base.Pass();
-        
-                
+        menuPopup.SetActive(false);
+
         Observable.Timer(TimeSpan.FromSeconds(1.5f)).Subscribe(_ =>
         {
             timer.RestartCountdown();
             EndGetQuestion();
         });
     }
-    void EndGame()
+
+    public override void EndGame(int extraCoin)
     {
-        int earningCoin = millionairePanel.GetMoney(correct);
+        base.EndGame(extraCoin);
 
-        ScoreHTTP.SaveScore(correct,earningCoin,2);
+        menuPopup.SetActive(false);
 
-        Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
+        if (extraCoin == 0)
         {
-            endPanel.gameObject.SetActive(true);
-            endPanel.SetValues(earningCoin, correct);
+            Fail();
+        }
+        else
+        {
+            if (correct <= 2)
+            {
+                correct = 0;
+                Fail();
+            }
+            else if (correct > 2 && correct <= 5)
+            {
+                correct = 2;
+                Win();
+            }
+            else if (correct > 5 && correct < 10)
+            {
+                correct = 5;
+                Win();
+            }
+            else
+            {
+                Win();
+            }
+        }
+    }
+
+    void Fail()
+    {
+        millionairePanel.Appear(() =>
+        {
+            millionairePanel.FallIndicator();
+
+            int earningCoin = millionairePanel.GetMoney(correct);
+
+            ScoreHTTP.SaveScore(correct, earningCoin, 2);
+
+            Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
+            {
+                endPanel.gameObject.SetActive(true);
+                endPanel.SetValues(earningCoin, correct);
+            });
+        });
+    }
+
+    void Win()
+    {
+        millionairePanel.Appear(() =>
+        {
+            millionairePanel.SetLevel(correct, () =>
+            {
+                int earningCoin = millionairePanel.GetMoney(correct);
+
+                ScoreHTTP.SaveScore(correct, earningCoin, 2);
+
+                Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
+                {
+                    endPanel.gameObject.SetActive(true);
+                    endPanel.SetValues(earningCoin, correct);
+                });
+            });
         });
     }
 }

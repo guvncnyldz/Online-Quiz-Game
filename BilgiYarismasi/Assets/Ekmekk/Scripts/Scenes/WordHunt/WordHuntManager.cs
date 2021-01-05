@@ -98,19 +98,7 @@ public class WordHuntManager : MonoBehaviour
                 }
                 else
                 {
-                    FindObjectOfType<WordHuntInput>().enabled = false;
-
-                    int earningCoin = 0;
-
-                    for (int i = 0; i < correctWordCount; i++)
-                    {
-                        earningCoin += Random.Range(1, 13 - wordCount);
-                    }
-
-                    ScoreHTTP.SaveScore(correctWordCount, earningCoin, 3);
-                    User.GetInstance().Coin += earningCoin;
-
-                    endPanel.SetValues(earningCoin, correctWordCount);
+                    EndGame();
                 }
 
                 return;
@@ -118,5 +106,23 @@ public class WordHuntManager : MonoBehaviour
         }
 
         letterboard.EndButtonClickUp(false);
+    }
+
+    public void EndGame()
+    {
+        FindObjectOfType<WordHuntInput>().enabled = false;
+        FindObjectOfType<MenuPopup>().gameObject.SetActive(false);
+
+        int earningCoin = 0;
+
+        for (int i = 0; i < correctWordCount; i++)
+        {
+            earningCoin += Random.Range(1, 13 - wordCount);
+        }
+
+        ScoreHTTP.SaveScore(correctWordCount, earningCoin, 3);
+        User.GetInstance().Coin += earningCoin;
+
+        endPanel.SetValues(earningCoin, correctWordCount);
     }
 }
