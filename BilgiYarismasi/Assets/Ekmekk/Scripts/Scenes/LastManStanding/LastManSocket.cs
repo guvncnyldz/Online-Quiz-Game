@@ -21,6 +21,7 @@ public class LastManSocket : MonoBehaviour
 
     public void Awake()
     {
+        Debug.Log(User.GetInstance().Race);
         button.onClick.AddListener(() => { SceneManager.LoadScene((int) Scenes.Main); });
         playerPanel = FindObjectOfType<PlayerPanel>();
         lastManManager = FindObjectOfType<LastManManager>();
@@ -55,6 +56,7 @@ public class LastManSocket : MonoBehaviour
                     Connected(data);
                     break;
                 case "addplayer":
+                    Debug.Log(data);
                     AddPlayer(data);
                     break;
                 case "removeplayer":
@@ -88,7 +90,7 @@ public class LastManSocket : MonoBehaviour
         UnityMainThreadDispatcher.Instance().Enqueue(() =>
         {
             loadingText.text = data["player_count"] + "/" + totalCount;
-            playerPanel.UpdatePanel(data["pid"].ToString(),false);
+            playerPanel.UpdatePanel(data["pid"].ToString(), false);
         });
     }
 
@@ -117,7 +119,7 @@ public class LastManSocket : MonoBehaviour
         UnityMainThreadDispatcher.Instance().Enqueue(() =>
         {
             loadingText.text = data["player_count"] + "/" + totalCount;
-            playerPanel.UpdatePanel(data["pid"].ToString(),true);
+            playerPanel.UpdatePanel(data["pid"].ToString(), true);
         });
     }
 

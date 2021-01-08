@@ -213,6 +213,7 @@
               <e p="ErrorUI.cs" t="Include" />
             </e>
             <e p="HTTPUtil" t="Include">
+              <e p="Config.cs" t="Include" />
               <e p="ErrorHandler.cs" t="Include" />
               <e p="HTTPApiUtil.cs" t="Include" />
               <e p="HTTPAuthUtil.cs" t="Include" />

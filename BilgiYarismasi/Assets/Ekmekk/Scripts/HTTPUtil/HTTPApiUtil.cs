@@ -33,7 +33,8 @@ public static class HTTPApiUtil
 
         try
         {
-            var response = await client.PostAsync("http://192.168.1.34:8000/api/" + route + "/" + method, content);
+            var response = await client.PostAsync("http://" + Config.serverIP + ":" + Config.port + "/api/" + route + "/" + method,
+                content);
 
             responseString = await response.Content.ReadAsStringAsync();
 
@@ -64,7 +65,7 @@ public static class HTTPApiUtil
 
         return jArray;
     }
-    
+
     public static async Task<JArray> Put(Dictionary<string, string> values, string route, string method)
     {
         JArray jArray = new JArray();
@@ -89,7 +90,8 @@ public static class HTTPApiUtil
 
         try
         {
-            var response = await client.PutAsync("http://192.168.1.34:8000/api/" + route + "/" + method, content);
+            var response = await client.PutAsync("http://" + Config.serverIP + ":" + Config.port + "/api/" + route + "/" + method,
+                content);
 
             responseString = await response.Content.ReadAsStringAsync();
 
