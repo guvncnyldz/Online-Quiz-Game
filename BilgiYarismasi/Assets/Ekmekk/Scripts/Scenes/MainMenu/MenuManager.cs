@@ -15,6 +15,11 @@ public class MenuManager : MonoBehaviour
         FindObjectOfType<Character>().cosmetic.SetCosmetic(User.GetInstance().cosmeticData);
     }
 
+    public void LeaderBoard()
+    {
+        SceneManager.LoadScene((int) Scenes.LeaderBoard);
+    }
+
     public void Logout()
     {
         LoginHttp.Logout();

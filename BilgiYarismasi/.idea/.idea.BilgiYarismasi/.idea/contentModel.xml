@@ -240,14 +240,22 @@
               <e p="Spell.cs" t="Include" />
               <e p="Timer.cs" t="Include" />
             </e>
-            <e p="Race.cs" t="Include" />
-            <e p="Races.cs" t="Include" />
+            <e p="Race" t="Include">
+              <e p="Race.cs" t="Include" />
+              <e p="Races.cs" t="Include" />
+            </e>
             <e p="Scenes" t="Include">
+              <e p="GameMods.cs" t="Include" />
               <e p="LastManStanding" t="Include">
                 <e p="LastManManager.cs" t="Include" />
                 <e p="LastManSocket.cs" t="Include" />
                 <e p="PlayerHolder.cs" t="Include" />
                 <e p="PlayerPanel.cs" t="Include" />
+              </e>
+              <e p="Leaderboard" t="Include">
+                <e p="LeaderBoardManager.cs" t="Include" />
+                <e p="LeaderHolder.cs" t="Include" />
+                <e p="LearderBoard.cs" t="Include" />
               </e>
               <e p="LoginScene" t="Include">
                 <e p="ErrorText.cs" t="Include" />
@@ -291,6 +299,7 @@
                 <e p="LetterBoardPanel.cs" t="Include" />
                 <e p="LetterButton.cs" t="Include" />
                 <e p="LetterSetter.cs" t="Include" />
+                <e p="Word.cs" t="Include" />
                 <e p="WordHolder.cs" t="Include" />
                 <e p="WordHolderPanel.cs" t="Include" />
                 <e p="WordHuntGridUtil.cs" t="Include" />
@@ -309,7 +318,6 @@
               <e p="User.cs" t="Include" />
               <e p="UserBase.cs" t="Include" />
             </e>
-            <e p="Word.cs" t="Include" />
           </e>
         </e>
         <e p="Packages" t="Include">

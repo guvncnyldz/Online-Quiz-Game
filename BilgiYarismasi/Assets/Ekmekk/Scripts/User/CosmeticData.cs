@@ -41,13 +41,13 @@ public class CosmeticData
         }
     }
 
-    public void SetCosmetic(JArray info)
+    public void SetCosmetic(JToken info)
     {
-        head = info[0]["user"]["profile"]["cosmetic"]["head"].ToString();
-        body = info[0]["user"]["profile"]["cosmetic"]["body"].ToString();
-        handLeft = handRight = info[0]["user"]["profile"]["cosmetic"]["hand"].ToString();
-        footLeft = footRight = info[0]["user"]["profile"]["cosmetic"]["foot"].ToString();
-        hair = info[0]["user"]["profile"]["cosmetic"]["hair"].ToString();
-        eye = info[0]["user"]["profile"]["cosmetic"]["eye"].ToString();
+        head = info["head"].ToString();
+        body = info["body"].ToString();
+        handLeft = handRight = info["hand"].ToString();
+        footLeft = footRight = info["foot"].ToString();
+        hair = info["hair"].ToString();
+        eye = info["eye"].ToString();
     }
 }

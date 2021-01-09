@@ -88,7 +88,6 @@ public class PlayerHolder : MonoBehaviour
     public void SetPlayer(JArray response)
     {
         player = new Player();
-        Debug.Log(response.ToString());
         player.SetUser(response);
 
         txt_nickname.text = player.Username;

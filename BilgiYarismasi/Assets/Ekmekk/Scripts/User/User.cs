@@ -78,9 +78,9 @@ public class User : UserBase
     {
         jokerData = new JokerData();
     }
-    public override void SetUser(JArray info)
+    public override void SetUser(JToken info)
     {
-        base.SetUser(info);
+        base.SetUser(info[0]["user"]["profile"]);
 
         email = info[0]["user"]["e_mail"].ToString();
         UserId = info[0]["user"]["_id"].ToString();
@@ -90,7 +90,7 @@ public class User : UserBase
         coin = Convert.ToInt16(info[0]["user"]["profile"]["coin"].ToString());
         
         jokerData = new JokerData();
-        jokerData.SetJoker(info);
+        jokerData.SetJoker(info[0]["user"]["profile"]["joker"]);
     }
 
     private async void UpdateProfile()

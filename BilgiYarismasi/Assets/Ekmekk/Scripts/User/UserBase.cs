@@ -16,13 +16,13 @@ public abstract class UserBase
     protected string username;
     protected string email;
 
-    public virtual void SetUser(JArray info)
+    public virtual void SetUser(JToken info)
     {
-        ProfileId = info[0]["user"]["profile"]["_id"].ToString();
-        username = info[0]["user"]["profile"]["user_name"].ToString();
-        race = Convert.ToInt16(info[0]["user"]["profile"]["race"].ToString());
+        ProfileId = info["_id"].ToString();
+        username = info["user_name"].ToString();
+        race = Convert.ToInt16(info["race"].ToString());
 
         cosmeticData = new CosmeticData();
-        cosmeticData.SetCosmetic(info);
+        cosmeticData.SetCosmetic(info["cosmetic"]);
     }
 }

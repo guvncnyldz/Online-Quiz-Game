@@ -120,7 +120,7 @@ public class WordHuntManager : MonoBehaviour
             earningCoin += Random.Range(1, 13 - wordCount);
         }
 
-        ScoreHTTP.SaveScore(correctWordCount, earningCoin, 3);
+        ScoreHTTP.SaveScore(correctWordCount, earningCoin, (int) GameMods.wordHunt);
         User.GetInstance().Coin += earningCoin;
 
         endPanel.SetValues(earningCoin, correctWordCount);

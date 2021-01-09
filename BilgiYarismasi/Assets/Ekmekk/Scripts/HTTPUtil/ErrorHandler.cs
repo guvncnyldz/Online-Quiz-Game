@@ -18,6 +18,9 @@ public static class ErrorHandler
     {
         Error error = new Error();
 
+        if (value.Count == 0)
+            return error;
+
         if (value[0]["code"] != null)
         {
             string currentCore = value[0]["code"].ToString();

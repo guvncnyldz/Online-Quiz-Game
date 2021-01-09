@@ -24,6 +24,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/58/b20d9b9c/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/a9/0f2cbdb2/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Leaderboard/LearderBoard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/PlayerHTTP.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/ErrorHandler.cs" root0="FORCE_HIGHLIGHTING" />
@@ -42,13 +43,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/MenuPopup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Pool/QuestionPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Pool/WordPool.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Races.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Word.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/AsyncSceneLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/00/ff99e89d/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Race.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/JokerData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/ErrorScene/ErrorUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Leaderboard/LeaderHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Copter-Pursuit/Assets/Ekmekk/Scripts/Input/TouchInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/SocketUtil/SocketUtil.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/2e/e5ce9b4e/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
@@ -58,12 +57,16 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/33/2b4fc439/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1742A54D-6446-41FE-9C64-CDF067BA7012/7F/JToken.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/623DD1C5-ED6E-43BC-8659-6AF9203BEC21/d4/484b6a8e/DOTweenComponent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/GameMods.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/623DD1C5-ED6E-43BC-8659-6AF9203BEC21/3e/b8a6b258/TweenManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Leaderboard/LeaderBoardManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/OpeningScene/GameLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/WordHttp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/Countdown.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/2e/f9690c99/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/623DD1C5-ED6E-43BC-8659-6AF9203BEC21/63/6205f4bc/Tween.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/3b/0406e808/AsyncTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Character/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManSocket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/e7/5d9b0d10/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -71,21 +74,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/MenuChanger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/UIMenuManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Spell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/LetterSetter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/WordHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/ErrorHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/OnlinePanelGrid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/CosmeticData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/JokerData.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/LetterButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/SocketClient.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/LoginHttp.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Question.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Scenes.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/PlayerHTTP.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Character/CharacterCosmetics.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/ScrollMenu.cs" />
@@ -100,28 +94,37 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LoginScene/Register.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/OpeningScene/GameLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LoginScene/ErrorText.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/MenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/ScoreHTTP.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/User.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/UserBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/MenuButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/WordHuntManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Timer.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/Countdown.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/TrainingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/QuestionBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/AnswerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Joker.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionairePanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionareManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/MenuPopup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManSocket.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/SocketUtil/SocketUtil.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/Config.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/HTTPApiUtil.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/HTTPAuthUtil.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/UIMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/GameMods.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionareManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/TrainingManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/WordHuntManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/CosmeticData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/UserBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/JokerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/User.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/PlayerHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Scenes.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/HTTPApiUtil.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/ErrorHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Leaderboard/LeaderHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Leaderboard/LeaderBoardManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Leaderboard/LearderBoard.cs" />
       </list>
     </option>
   </component>
@@ -156,10 +159,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="13924">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="13924" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -186,7 +189,7 @@
       <workItem from="1609628058223" duration="64336000" />
       <workItem from="1609800724931" duration="13432000" />
       <workItem from="1609872531397" duration="692000" />
-      <workItem from="1610144015154" duration="665000" />
+      <workItem from="1610144015154" duration="11862000" />
     </task>
     <servers />
   </component>
@@ -199,108 +202,104 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="444" height="436" key="DebuggerActiveHint" timestamp="1609703756190">
+    <state width="444" height="436" key="DebuggerActiveHint" timestamp="1610152874069">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="444" height="436" key="DebuggerActiveHint/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601905937549" />
-    <state width="444" height="436" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1609703756190" />
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom" timestamp="1609820928965">
+    <state width="444" height="436" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1610152874069" />
+    <state width="1493" height="158" key="GridCell.Tab.0.bottom" timestamp="1610157602072">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112441" />
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.0.center" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610157602072" />
+    <state width="1493" height="158" key="GridCell.Tab.0.center" timestamp="1610157602072">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.0.center/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112441" />
-    <state width="1493" height="158" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.0.left" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610157602072" />
+    <state width="1493" height="158" key="GridCell.Tab.0.left" timestamp="1610157602072">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.0.left/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112441" />
-    <state width="1493" height="158" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.0.right" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610157602072" />
+    <state width="1493" height="158" key="GridCell.Tab.0.right" timestamp="1610157602072">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.0.right/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112441" />
-    <state width="1493" height="158" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.1.bottom" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610157602072" />
+    <state width="1493" height="158" key="GridCell.Tab.1.bottom" timestamp="1610157603811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112441" />
-    <state width="1493" height="158" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.1.center" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610157603811" />
+    <state width="1493" height="158" key="GridCell.Tab.1.center" timestamp="1610157603810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.1.center/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112441" />
-    <state width="1493" height="158" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.1.left" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610157603810" />
+    <state width="1493" height="158" key="GridCell.Tab.1.left" timestamp="1610157603810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.1.left/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112441" />
-    <state width="1493" height="158" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.1.right" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610157603810" />
+    <state width="1493" height="158" key="GridCell.Tab.1.right" timestamp="1610157603810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.1.right/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112441" />
-    <state width="1493" height="158" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.2.bottom" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610157603810" />
+    <state width="1493" height="158" key="GridCell.Tab.2.bottom" timestamp="1610157601783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.2.bottom/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112441" />
-    <state width="1493" height="158" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.2.center" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610157601783" />
+    <state width="1493" height="158" key="GridCell.Tab.2.center" timestamp="1610157601782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.2.center/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112441" />
-    <state width="1493" height="158" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.2.left" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1610157601782" />
+    <state width="1493" height="158" key="GridCell.Tab.2.left" timestamp="1610157601782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.2.left/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112441" />
-    <state width="1493" height="158" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.2.right" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1610157601782" />
+    <state width="1493" height="158" key="GridCell.Tab.2.right" timestamp="1610157601783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.2.right/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112441" />
-    <state width="1493" height="158" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.3.bottom" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1610157601783" />
+    <state width="1493" height="158" key="GridCell.Tab.3.bottom" timestamp="1610157601783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.3.bottom/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112442" />
-    <state width="1493" height="158" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.3.center" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610157601783" />
+    <state width="1493" height="158" key="GridCell.Tab.3.center" timestamp="1610157601783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.3.center/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112442" />
-    <state width="1493" height="158" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.3.left" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1610157601783" />
+    <state width="1493" height="158" key="GridCell.Tab.3.left" timestamp="1610157601783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.3.left/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112442" />
-    <state width="1493" height="158" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state width="1493" height="158" key="GridCell.Tab.3.right" timestamp="1609820928965">
+    <state width="1493" height="158" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1610157601783" />
+    <state width="1493" height="158" key="GridCell.Tab.3.right" timestamp="1610157601783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="29" key="GridCell.Tab.3.right/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601916112442" />
-    <state width="1493" height="158" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1609820928965" />
-    <state x="361" y="144" key="Rider.ProjectTemplateDialog.Size" timestamp="1601290162196">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="144" key="Rider.ProjectTemplateDialog.Size/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601290162196" />
+    <state width="1493" height="158" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1610157601783" />
     <state x="535" y="137" key="RiderGenerateDialog" timestamp="1609662555378">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="535" y="137" key="RiderGenerateDialog/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601898045858" />
     <state x="535" y="137" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1609662555378" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1601393436779">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1610153084466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601393436779" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1609662681362">
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1610153084466" />
+    <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1610152543968">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1609662681362" />
+    <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1610152543968" />
     <state x="329" y="149" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1609313671866">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -314,40 +313,27 @@
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601893950969" />
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1609629012008" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1609812438402">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1610148591947">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.-81.1920.1040@0.0.1536.824" timestamp="1601902359218" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1609812438402" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1610148591947" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionairePanel.cs</url>
-          <line>46</line>
-          <properties documentPath="C:\Users\guvnc\Desktop\Projects\BilgiYarismasi\bilgiyarimasi-unity\BilgiYarismasi\Assets\Ekmekk\Scripts\Scenes\Millionaire\MillionairePanel.cs" initialLine="46">
+          <url>file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Leaderboard/LearderBoard.cs</url>
+          <line>36</line>
+          <properties documentPath="C:\Users\guvnc\Desktop\Projects\BilgiYarismasi\bilgiyarimasi-unity\BilgiYarismasi\Assets\Ekmekk\Scripts\Scenes\Leaderboard\LearderBoard.cs" initialLine="36">
             <startOffsets>
-              <option value="1376" />
+              <option value="809" />
             </startOffsets>
             <endOffsets>
-              <option value="1403" />
+              <option value="871" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManManager.cs</url>
-          <line>134</line>
-          <properties documentPath="C:\Users\guvnc\Desktop\Projects\BilgiYarismasi\bilgiyarimasi-unity\BilgiYarismasi\Assets\Ekmekk\Scripts\Scenes\LastManStanding\LastManManager.cs" initialLine="132">
-            <startOffsets>
-              <option value="3112" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3155" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="31" />
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

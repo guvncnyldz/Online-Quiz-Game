@@ -12,5 +12,6 @@ public enum Scenes
     TrainingGame,
     WordHunt,
     Millionaire,
-    LastManStanding
+    LastManStanding,
+    LeaderBoard
 }

@@ -39,11 +39,11 @@ public class JokerData
         }
     }
 
-    public void SetJoker(JArray info)
+    public void SetJoker(JToken info)
     {
-        correct = Convert.ToInt16(info[0]["user"]["profile"]["joker"]["correct"].ToString());
-        pass = Convert.ToInt16(info[0]["user"]["profile"]["joker"]["pass"].ToString());
-        bomb = Convert.ToInt16(info[0]["user"]["profile"]["joker"]["bomb"].ToString());
+        correct = Convert.ToInt16(info["correct"].ToString());
+        pass = Convert.ToInt16(info["pass"].ToString());
+        bomb = Convert.ToInt16(info["bomb"].ToString());
     }
 
     public async void UpdateJoker()

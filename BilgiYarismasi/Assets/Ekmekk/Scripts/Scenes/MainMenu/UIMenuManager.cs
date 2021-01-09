@@ -9,8 +9,8 @@ using UnityEngine.UI;
 public class UIMenuManager : MonoBehaviour
 {
     [SerializeField] private RaceMenuSprites[] raceMenuSpriteses;
-    [SerializeField] private Image background, bottomMenu, settingsButton, shopButton, energyBar, topMenu, playButton;
-    [SerializeField] private RectTransform topRect, bottomRect, gameTypeRect;
+    [SerializeField] private Image background, bottomMenu, settingsButton, shopButton, energyBar, playButton;
+    [SerializeField] private RectTransform topRect, bottomRect, gameTypeRect, leftRect, rightRect;
 
     private Button[] buttons;
 
@@ -23,11 +23,12 @@ public class UIMenuManager : MonoBehaviour
         settingsButton.sprite = raceMenuSpriteses[User.GetInstance().Race].settingsButton;
         shopButton.sprite = raceMenuSpriteses[User.GetInstance().Race].shopButton;
         energyBar.sprite = raceMenuSpriteses[User.GetInstance().Race].energyBar;
-        topMenu.sprite = raceMenuSpriteses[User.GetInstance().Race].topMenu;
         playButton.sprite = raceMenuSpriteses[User.GetInstance().Race].playButton;
 
         MoveTop();
         MoveBottom();
+        MoveLeft();
+        MoveRight();
     }
 
     public void MoveTop()
@@ -46,6 +47,19 @@ public class UIMenuManager : MonoBehaviour
         bottomRect.DOAnchorPosY(pos, 0.5f).SetEase(Ease.Linear).OnComplete(() => LockButton(false));
     }
 
+    public void MoveLeft()
+    {
+        float pos = leftRect.anchoredPosition.x * -1;
+
+        leftRect.DOAnchorPosX(pos, 0.5f).SetEase(Ease.Linear);
+    }
+
+    public void MoveRight()
+    {
+        float pos = rightRect.anchoredPosition.x * -1;
+
+        rightRect.DOAnchorPosX(pos, 0.5f).SetEase(Ease.Linear);
+    }
     public void MoveGameType()
     {
         float pos = gameTypeRect.anchoredPosition.y * -1;
@@ -65,5 +79,5 @@ public class UIMenuManager : MonoBehaviour
 [Serializable]
 public class RaceMenuSprites
 {
-    public Sprite background, bottomMenu, settingsButton, shopButton, energyBar, topMenu, playButton;
+    public Sprite background, bottomMenu, settingsButton, shopButton, energyBar, playButton;
 }
