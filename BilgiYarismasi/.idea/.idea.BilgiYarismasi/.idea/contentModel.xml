@@ -266,11 +266,23 @@
                 <e p="Register.cs" t="Include" />
               </e>
               <e p="MainMenu" t="Include">
+                <e p="GameTypeScrollMenu.cs" t="Include" />
                 <e p="MenuManager.cs" t="Include" />
                 <e p="ModSelectPanel.cs" t="Include" />
-                <e p="ScrollMenu.cs" t="Include" />
                 <e p="ScrollMenuButton.cs" t="Include" />
                 <e p="UIMenuManager.cs" t="Include" />
+              </e>
+              <e p="Market" t="Include">
+                <e p="CosmeticTypes.cs" t="Include" />
+                <e p="MarketData.cs" t="Include" />
+                <e p="MarketItemButton.cs" t="Include" />
+                <e p="MarketJokerItemButton.cs" t="Include" />
+                <e p="MarketJokerScrollPanel.cs" t="Include" />
+                <e p="MarketManager.cs" t="Include" />
+                <e p="MarketMoneyItemButton.cs" t="Include" />
+                <e p="MarketMoneyScrollPanel.cs" t="Include" />
+                <e p="MarketPopUp.cs" t="Include" />
+                <e p="MarketScrollPanel.cs" t="Include" />
               </e>
               <e p="Millionaire" t="Include">
                 <e p="MillionairePanel.cs" t="Include" />
@@ -313,6 +325,7 @@
             </e>
             <e p="User" t="Include">
               <e p="CosmeticData.cs" t="Include" />
+              <e p="InventorySystem.cs" t="Include" />
               <e p="JokerData.cs" t="Include" />
               <e p="Player.cs" t="Include" />
               <e p="User.cs" t="Include" />

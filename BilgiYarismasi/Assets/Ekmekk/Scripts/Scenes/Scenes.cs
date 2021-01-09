@@ -13,5 +13,6 @@ public enum Scenes
     WordHunt,
     Millionaire,
     LastManStanding,
-    LeaderBoard
+    LeaderBoard,
+    Market
 }

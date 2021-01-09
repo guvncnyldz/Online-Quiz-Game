@@ -8,17 +8,8 @@ public class CosmeticData
 {
     public string head, body, handLeft, handRight, footLeft, footRight, eye, hair;
 
-    public async void SaveCosmetics(CosmeticData cosmeticData)
+    public async void SaveCosmetics()
     {
-        head = cosmeticData.head;
-        body = cosmeticData.body;
-        handLeft = cosmeticData.handLeft;
-        handRight = cosmeticData.handRight;
-        footLeft = cosmeticData.footLeft;
-        footRight = cosmeticData.footRight;
-        eye = cosmeticData.eye;
-        hair = cosmeticData.hair;
-
         var values = new Dictionary<string, string>
         {
             //User id ile daha güvenli olur. Şimdilik durabilir
@@ -49,5 +40,15 @@ public class CosmeticData
         footLeft = footRight = info["foot"].ToString();
         hair = info["hair"].ToString();
         eye = info["eye"].ToString();
+    }
+
+    public void SetCosmetic(CosmeticData cosmeticData)
+    {
+        head = cosmeticData.head;
+        body = cosmeticData.body;
+        handLeft = handRight = cosmeticData.handRight;
+        footLeft =  footRight = cosmeticData.footRight;
+        hair = cosmeticData.hair;
+        eye = cosmeticData.eye;
     }
 }

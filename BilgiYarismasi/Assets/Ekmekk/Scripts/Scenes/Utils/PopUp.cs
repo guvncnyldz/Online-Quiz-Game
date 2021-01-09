@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 public class PopUp : MonoBehaviour
 {
-    private const float APPEARY = -362.4f;
-    private const float DISAPPEARY = 413f;
+    [SerializeField] private float APPEARY = -362.4f;
+    [SerializeField] private float DISAPPEARY = 413f;
 
     private RectTransform rectTransform;
 
@@ -27,42 +27,41 @@ public class PopUp : MonoBehaviour
     {
         Set(header, message);
         Appear();
-        
+
         return this;
     }
 
     public PopUp AddListenerToButton(Action action)
     {
         button.onClick.AddListener(() => { action?.Invoke(); });
-        
-        return this;
 
+        return this;
     }
 
-    public PopUp ResetListenerFromButton()
+    public PopUp ResetListenerFromButton(bool isDefault = true)
     {
         button.onClick.RemoveAllListeners();
-        
-        return this;
 
+        if (isDefault)
+            button.onClick.AddListener(() => { Disappear(); });
+
+        return this;
     }
 
     public PopUp Set(string header, string message)
     {
         this.header.text = header;
         this.message.text = message;
-        
-        return this;
 
+        return this;
     }
 
     public PopUp Appear(float duration = 0.5f, Action onComplete = null)
     {
         rectTransform.DOAnchorPos(new Vector2(0, APPEARY), 0.5f).OnComplete(() =>
             onComplete?.Invoke()).SetEase(Ease.Linear);
-        
-        return this;
 
+        return this;
     }
 
     public PopUp Disappear(float duration = 0.5f, Action onComplete = null)

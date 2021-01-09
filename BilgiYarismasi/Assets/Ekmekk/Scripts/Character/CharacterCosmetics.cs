@@ -9,21 +9,33 @@ public class CharacterCosmetics : MonoBehaviour
 
     public void SetCosmetic(CosmeticData cosmeticData)
     {
-        /*head.sprite = Resources.Load<Sprite>(cosmeticData.head);
-        body.sprite = Resources.Load<Sprite>(cosmeticData.body);
-        handLeft.sprite = Resources.Load<Sprite>(cosmeticData.handLeft);
-        handRight.sprite = Resources.Load<Sprite>(cosmeticData.handRight);
-        footLeft.sprite = Resources.Load<Sprite>(cosmeticData.footLeft);
-        footRight.sprite = Resources.Load<Sprite>(cosmeticData.footRight);
-        eye.sprite = Resources.Load<Sprite>(cosmeticData.eye);
-        hair.sprite = Resources.Load<Sprite>(cosmeticData.hair);*/
-        head.sprite = Resources.Load<Sprite>("Cosmetics/Character/Head/head_1");
-        body.sprite = Resources.Load<Sprite>("Cosmetics/Character/Clothing/clth_air_default_body");
-        handLeft.sprite = Resources.Load<Sprite>("Cosmetics/Character/Clothing/clth_air_default_hand");
-        handRight.sprite = Resources.Load<Sprite>("Cosmetics/Character/Clothing/clth_air_default_hand");
-        footLeft.sprite = Resources.Load<Sprite>("Cosmetics/Character/Clothing/clth_air_default_foot");
-        footRight.sprite = Resources.Load<Sprite>("Cosmetics/Character/Clothing/clth_air_default_foot");
-        eye.sprite = Resources.Load<Sprite>("Cosmetics/Character/Eye/eye_angry");
-        hair.sprite = Resources.Load<Sprite>("Cosmetics/Character/Hair/hair_clean_black");
+        Sprite headSprite = Resources.Load<Sprite>("Cosmetics/Character/Head/" + cosmeticData.head);
+        if (headSprite)
+            head.sprite = headSprite;
+
+        Sprite bodySprite = Resources.Load<Sprite>("Cosmetics/Character/Body/" + cosmeticData.body);
+
+        if (bodySprite)
+            body.sprite = bodySprite;
+
+        Sprite handSprite = Resources.Load<Sprite>("Cosmetics/Character/Hand/" + cosmeticData.handLeft);
+
+        if (handSprite)
+            handLeft.sprite = handRight.sprite = handSprite;
+
+        Sprite footSprite = Resources.Load<Sprite>("Cosmetics/Character/Foot/" + cosmeticData.footLeft);
+
+        if (footSprite)
+            footLeft.sprite = footRight.sprite = footSprite;
+
+        Sprite eyeSprite = Resources.Load<Sprite>("Cosmetics/Character/Eye/" + cosmeticData.eye);
+
+        if (eyeSprite)
+            eye.sprite = eyeSprite;
+
+        Sprite hairSprite = Resources.Load<Sprite>("Cosmetics/Character/Hair/" + cosmeticData.hair);
+
+        if (hairSprite)
+            hair.sprite = hairSprite;
     }
 }

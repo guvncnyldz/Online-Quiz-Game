@@ -18,7 +18,6 @@ public abstract class UserBase
 
     public virtual void SetUser(JToken info)
     {
-        Debug.Log(info.ToString());
         ProfileId = info["_id"].ToString();
         username = info["user_name"].ToString();
         race = Convert.ToInt16(info["race"].ToString());

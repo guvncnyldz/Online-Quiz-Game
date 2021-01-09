@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ScrollMenu : MonoBehaviour
+public class GameTypeScrollMenu : MonoBehaviour
 {
     private EventTrigger eventTrigger;
     private Button buttonRunner;

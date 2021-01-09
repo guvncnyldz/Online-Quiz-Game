@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Ekmekk/Scenes/Leaderboard.unity
     guid: fbde236a99e651f4389e0047a82bfcb6
+  - enabled: 1
+    path: Assets/Ekmekk/Scenes/Market.unity
+    guid: bb25fbf48e81c4c48b84652f55c40d85
   m_configObjects: {}

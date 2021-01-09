@@ -10,6 +10,7 @@ public class User : UserBase
     private static User instance;
 
     public JokerData jokerData;
+    public InventorySystem inventorySystem;
     public string UserId { get; private set; }
 
     public string Username
@@ -77,6 +78,7 @@ public class User : UserBase
     public User()
     {
         jokerData = new JokerData();
+        inventorySystem = new InventorySystem();
     }
     public override void SetUser(JToken info)
     {
@@ -85,12 +87,14 @@ public class User : UserBase
         email = info[0]["user"]["e_mail"].ToString();
         UserId = info[0]["user"]["_id"].ToString();
         Token = info[0]["token"].ToString();
-        energy = Convert.ToInt16(info[0]["user"]["profile"]["money"].ToString());
-        money = Convert.ToInt16(info[0]["user"]["profile"]["energy"].ToString());
-        coin = Convert.ToInt16(info[0]["user"]["profile"]["coin"].ToString());
+        money = Convert.ToInt16(info[0]["user"]["profile"]["money"].ToString());
+        energy = Convert.ToInt32(info[0]["user"]["profile"]["energy"].ToString());
+        coin = Convert.ToInt32(info[0]["user"]["profile"]["coin"].ToString());
         
         jokerData = new JokerData();
         jokerData.SetJoker(info[0]["user"]["profile"]["joker"]);
+        
+        inventorySystem.GetInventory(UserId);
     }
 
     private async void UpdateProfile()
