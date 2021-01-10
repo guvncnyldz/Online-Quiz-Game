@@ -87,7 +87,7 @@ public class User : UserBase
         email = info[0]["user"]["e_mail"].ToString();
         UserId = info[0]["user"]["_id"].ToString();
         Token = info[0]["token"].ToString();
-        money = Convert.ToInt16(info[0]["user"]["profile"]["money"].ToString());
+        money = Convert.ToInt32(info[0]["user"]["profile"]["money"].ToString());
         energy = Convert.ToInt32(info[0]["user"]["profile"]["energy"].ToString());
         coin = Convert.ToInt32(info[0]["user"]["profile"]["coin"].ToString());
         
