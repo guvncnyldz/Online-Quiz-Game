@@ -273,7 +273,9 @@
                 <e p="Register.cs" t="Include" />
               </e>
               <e p="MainMenu" t="Include">
+                <e p="DailyGifts.cs" t="Include" />
                 <e p="GameTypeScrollMenu.cs" t="Include" />
+                <e p="Gift.cs" t="Include" />
                 <e p="MenuManager.cs" t="Include" />
                 <e p="ModSelectPanel.cs" t="Include" />
                 <e p="ScrollMenuButton.cs" t="Include" />

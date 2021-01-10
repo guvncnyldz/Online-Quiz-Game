@@ -9,13 +9,17 @@ using UnityEngine.UI;
 public class UIMenuManager : MonoBehaviour
 {
     [SerializeField] private RaceMenuSprites[] raceMenuSpriteses;
-    [SerializeField] private Image background, bottomMenu, settingsButton, shopButton, energyBar, playButton;
+    [SerializeField] private Image background, bottomMenu, settingsButton, shopButton, energyBar,energyBarFillable, playButton;
     [SerializeField] private RectTransform topRect, bottomRect, gameTypeRect, leftRect, rightRect;
-
+    [SerializeField] private TextMeshProUGUI txt_gold, txt_money;
     private Button[] buttons;
 
     public void Awake()
     {
+        txt_gold.text = User.GetInstance().Coin.ToString();
+        txt_money.text = User.GetInstance().Money.ToString();
+        energyBarFillable.fillAmount = Mathf.InverseLerp(0, 20, User.GetInstance().Energy);
+        
         buttons = FindObjectsOfType<Button>();
 
         background.sprite = raceMenuSpriteses[User.GetInstance().Race].background;

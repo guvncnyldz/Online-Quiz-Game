@@ -15,14 +15,14 @@ public static class HTTPApiUtil
 
         HttpClient client = new HttpClient()
         {
-            //DefaultRequestHeaders = {{"x-access-token", User.GetInstance().Token}}
-            DefaultRequestHeaders =
+            DefaultRequestHeaders = {{"x-access-token", User.GetInstance().Token}}
+            /*DefaultRequestHeaders =
             {
                 {
                     "x-access-token",
                     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXZpY2VfaWQiOiJEcG9zdDIiLCJpYXQiOjE2MTAxNjcwODYsImV4cCI6NDc2NTkyNzA4Nn0.2YZdbqMJ_yImKBmMGF8YED8rtRjF-r6kUI_WtlIutzw"
                 }
-            }
+            }*/
         };
 
         client.Timeout = TimeSpan.FromSeconds(timeOut);
