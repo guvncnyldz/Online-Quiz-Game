@@ -15,6 +15,10 @@ public class MenuManager : MonoBehaviour
         FindObjectOfType<Character>().cosmetic.SetCosmetic(User.GetInstance().cosmeticData);
     }
 
+    public void Tournament()
+    {
+        SceneManager.LoadScene((int) Scenes.Tournament);
+    }
     public void Inventory()
     {
         SceneManager.LoadScene((int) Scenes.Inventory);

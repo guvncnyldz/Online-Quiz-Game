@@ -16,5 +16,6 @@ public enum Scenes
     LeaderBoard,
     Market,
     Profile,
-    Inventory
+    Inventory,
+    Tournament
 }

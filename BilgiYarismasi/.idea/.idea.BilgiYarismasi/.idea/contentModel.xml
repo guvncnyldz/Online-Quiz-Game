@@ -277,6 +277,7 @@
                 <e p="GameTypeScrollMenu.cs" t="Include" />
                 <e p="Gift.cs" t="Include" />
                 <e p="MenuManager.cs" t="Include" />
+                <e p="MenuTournament.cs" t="Include" />
                 <e p="ModSelectPanel.cs" t="Include" />
                 <e p="ScrollMenuButton.cs" t="Include" />
                 <e p="UIMenuManager.cs" t="Include" />
@@ -309,6 +310,11 @@
                 <e p="RaceSelector.cs" t="Include" />
               </e>
               <e p="Scenes.cs" t="Include" />
+              <e p="Tournament" t="Include">
+                <e p="TournamentBoard.cs" t="Include" />
+                <e p="TournamentData.cs" t="Include" />
+                <e p="TournamentManager.cs" t="Include" />
+              </e>
               <e p="TrainingGame" t="Include">
                 <e p="TrainingManager.cs" t="Include" />
               </e>

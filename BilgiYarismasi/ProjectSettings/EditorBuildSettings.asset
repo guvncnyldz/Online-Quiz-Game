@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Ekmekk/Scenes/Inventory.unity
     guid: 27ce00bb7008aac4eb49af11466c4bb1
+  - enabled: 1
+    path: Assets/Ekmekk/Scenes/Tournament.unity
+    guid: 00addd88f52e2384893863f369b13cdb
   m_configObjects: {}

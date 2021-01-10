@@ -297,4 +297,4 @@ MonoBehaviour:
   img_time: {fileID: 7731111472974648577}
   img_fire: {fileID: 7731111472757307114}
   img_backFire: {fileID: 7731111471464444936}
-  startTime: 5
+  startTime: 15

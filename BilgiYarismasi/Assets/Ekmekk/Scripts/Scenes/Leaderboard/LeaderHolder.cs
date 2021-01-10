@@ -14,20 +14,28 @@ public class LeaderHolder : MonoBehaviour
     [SerializeField] private Character character;
     [SerializeField] private TextMeshProUGUI txt_name, txt_score, txt_rank;
 
-    public void SetData(JToken info, int index)
+    public void SetData(JToken info, JToken profile, int index)
     {
         player = new Player();
 
-        player.SetUser(info["profile"][0]);
-        
+        player.SetUser(profile);
+
         if (player.ProfileId == User.GetInstance().ProfileId)
         {
             txt_name.color = Color.yellow;
         }
-        
+
         character.cosmetic.SetCosmetic(player.cosmeticData);
         txt_name.text = player.Username;
-        img_race.sprite = races[player.Race];
+        if (player.Race == -1)
+        {
+            img_race.gameObject.SetActive(false);
+        }
+        else
+        {
+            img_race.sprite = races[player.Race];
+        }
+
         txt_rank.text = (index + 1).ToString();
         txt_score.text = info["true_answer"].ToString();
 
@@ -43,7 +51,7 @@ public class LeaderHolder : MonoBehaviour
                 img_rank.sprite = ranks[index];
                 break;
             default:
-                img_rank.sprite = ranks[4];
+                img_rank.sprite = ranks[3];
                 break;
         }
     }

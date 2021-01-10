@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class LearderBoard : MonoBehaviour
 {
-    private const int LEADERCOUNTINONEPAGE = 2;
+    private const int LEADERCOUNTINONEPAGE = 8;
     [SerializeField] private GameObject leaderHolder;
 
     private List<JToken> leaderList;
@@ -72,7 +72,7 @@ public class LearderBoard : MonoBehaviour
                 break;
 
             GameObject temp = Instantiate(leaderHolder, transform);
-            temp.GetComponent<LeaderHolder>().SetData(leaderList[i], i);
+            temp.GetComponent<LeaderHolder>().SetData(leaderList[i],leaderList[i]["profile"][0], i);
             leaderHolders.Add(temp);
         }
     }
