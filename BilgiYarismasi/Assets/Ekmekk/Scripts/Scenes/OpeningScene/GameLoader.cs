@@ -92,6 +92,10 @@ public class GameLoader : MonoBehaviour
 
     void StartLoading()
     {
+        messageText.text = "Yükleniyor...";
+        progressBar.fillAmount = 0.3f;
+        progressText.text = "%30";
+        
         startLoading = true;
         startFillAmount = progressBar.fillAmount;
         startProgressText = progressBar.fillAmount * 100;
