@@ -63,7 +63,7 @@ public static class FormInputControl
     //Util
     static bool IsAllowed(string value)
     {
-        string allowedChars = "!#$%&'*+-/=?^_`{|}~.1234567890ABCDEFGHIJKLMNOPRSTUVYZabcdefghijklmnoprstuvyz";
+        string allowedChars = "!#$%&'*+-/=?^_`{|}~.1234567890ABCDEFGHIJKLMNOPRSTUVYZQWXabcdefghijklmnoprstuvyzqwx";
         bool wrongChar;
         
         foreach (char character in value)
