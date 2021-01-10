@@ -97,6 +97,9 @@ public class InventoryScrollPanel : MonoBehaviour
 
     public void GetClosestButton()
     {
+        if(buttons.Length == 0)
+            return;
+        
         float currentDis = Mathf.Infinity;
         InventoryItemButton closestButton = buttons[0];
 

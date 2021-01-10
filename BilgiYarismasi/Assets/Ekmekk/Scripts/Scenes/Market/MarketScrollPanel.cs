@@ -103,6 +103,9 @@ public class MarketScrollPanel : MonoBehaviour
 
     public void GetClosestButton()
     {
+        if(buttons.Length == 0)
+            return;
+        
         float currentDis = Mathf.Infinity;
         MarketItemButton closestButton = buttons[0];
 
@@ -169,6 +172,9 @@ public class MarketScrollPanel : MonoBehaviour
 
     public void SetScrollPos()
     {
+        if(buttons.Length == 0)
+            return;
+        
         float currentDis = Mathf.Infinity;
         MarketItemButton closestButton = buttons[0];
 
@@ -227,6 +233,9 @@ public class MarketScrollPanel : MonoBehaviour
     {
         yield return null;
 
+        if(buttons.Length == 0)
+            yield break;
+        
         MarketItemButton choosenButton = buttons[0];
 
         foreach (MarketItemButton button in buttons)
