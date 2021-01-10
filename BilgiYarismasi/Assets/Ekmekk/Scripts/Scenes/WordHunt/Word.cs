@@ -11,7 +11,7 @@ public class Word
 
     public void Set(JToken jWord)
     {
-        word = jWord["word"].ToString();
+        word = jWord["word"].ToString().ToUpper();
         length = word.Length;
     }
 }
