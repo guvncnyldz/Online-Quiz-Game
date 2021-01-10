@@ -14,5 +14,7 @@ public enum Scenes
     Millionaire,
     LastManStanding,
     LeaderBoard,
-    Market
+    Market,
+    Profile,
+    Inventory
 }

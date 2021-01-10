@@ -178,7 +178,7 @@ public class MillionareManager : QuestionBase
 
             int earningCoin = millionairePanel.GetMoney(correct);
 
-            ScoreHTTP.SaveScore(correct, earningCoin, 2);
+            ScoreHTTP.SaveScore(correct, earningCoin, 2,0);
 
             Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
             {
@@ -196,7 +196,7 @@ public class MillionareManager : QuestionBase
             {
                 int earningCoin = millionairePanel.GetMoney(correct);
 
-                ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.millionaire);
+                ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.millionaire,1);
 
                 Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
                 {

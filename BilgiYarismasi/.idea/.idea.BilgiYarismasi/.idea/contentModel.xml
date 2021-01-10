@@ -246,6 +246,13 @@
             </e>
             <e p="Scenes" t="Include">
               <e p="GameMods.cs" t="Include" />
+              <e p="Inventory" t="Include">
+                <e p="InventoryItemButton.cs" t="Include" />
+                <e p="InventoryJokerItemButton.cs" t="Include" />
+                <e p="InventoryJokerScrollPanel.cs" t="Include" />
+                <e p="InventoryManager.cs" t="Include" />
+                <e p="InventoryScrollPanel.cs" t="Include" />
+              </e>
               <e p="LastManStanding" t="Include">
                 <e p="LastManManager.cs" t="Include" />
                 <e p="LastManSocket.cs" t="Include" />
@@ -291,6 +298,10 @@
               <e p="OpeningScene" t="Include">
                 <e p="GameLoader.cs" t="Include" />
               </e>
+              <e p="Profile" t="Include">
+                <e p="ProfileManager.cs" t="Include" />
+                <e p="ProfileStatistic.cs" t="Include" />
+              </e>
               <e p="RaceSelect" t="Include">
                 <e p="RacePanel.cs" t="Include" />
                 <e p="RaceSelector.cs" t="Include" />
@@ -301,10 +312,12 @@
               </e>
               <e p="Utils" t="Include">
                 <e p="AsyncSceneLoader.cs" t="Include" />
+                <e p="BackButton.cs" t="Include" />
                 <e p="Countdown.cs" t="Include" />
                 <e p="EndPanel.cs" t="Include" />
                 <e p="MenuPopup.cs" t="Include" />
                 <e p="PopUp.cs" t="Include" />
+                <e p="ProfilePopUp.cs" t="Include" />
               </e>
               <e p="WordHunt" t="Include">
                 <e p="Letterboard.cs" t="Include" />

@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class InventorySystem : MonoBehaviour
 {
-    private List<Inventory> cosmetic;
+    public List<InventoryCosmetic> cosmetics;
 
     public InventorySystem()
     {
-        cosmetic = new List<Inventory>();
+        cosmetics = new List<InventoryCosmetic>();
     }
 
     public async void GetInventory(string userId)
@@ -32,35 +32,36 @@ public class InventorySystem : MonoBehaviour
 
         foreach (JToken jToken in response)
         {
-            Inventory inventory = new Inventory();
-            inventory.sprite_name = jToken["sprite_name"].ToString();
+            InventoryCosmetic inventoryCosmetic = new InventoryCosmetic();
+            inventoryCosmetic.sprite_name = jToken["sprite_name"].ToString();
+            inventoryCosmetic.name = jToken["name"].ToString();
 
             switch (jToken["type"].ToString())
             {
-                case "Head":
-                    inventory.type = CosmeticTypes.Head;
-                    break;
                 case "Hair":
-                    inventory.type = CosmeticTypes.Hair;
+                    inventoryCosmetic.type = CosmeticTypes.Hair;
                     break;
                 case "Hand":
-                    inventory.type = CosmeticTypes.Hand;
+                    inventoryCosmetic.type = CosmeticTypes.Hand;
                     break;
                 case "Foot":
-                    inventory.type = CosmeticTypes.Foot;
+                    inventoryCosmetic.type = CosmeticTypes.Foot;
                     break;
                 case "Body":
-                    inventory.type = CosmeticTypes.Body;
+                    inventoryCosmetic.type = CosmeticTypes.Body;
+                    break;
+                case "Eye":
+                    inventoryCosmetic.type = CosmeticTypes.Eye;
                     break;
             }
 
-            cosmetic.Add(inventory);
+            cosmetics.Add(inventoryCosmetic);
         }
     }
 
     public bool CheckExist(string sprite_name)
     {
-        foreach (Inventory inventory in cosmetic)
+        foreach (InventoryCosmetic inventory in cosmetics)
         {
             if (inventory.sprite_name == sprite_name)
                 return true;
@@ -69,18 +70,20 @@ public class InventorySystem : MonoBehaviour
         return false;
     }
 
-    public void AddCosmetic(string spriteName, CosmeticTypes type)
+    public void AddCosmetic(string name, string spriteName, CosmeticTypes type)
     {
-        Inventory inventory = new Inventory();
-        inventory.sprite_name = spriteName;
-        inventory.type = type;
+        InventoryCosmetic inventoryCosmetic = new InventoryCosmetic();
+        inventoryCosmetic.sprite_name = spriteName;
+        inventoryCosmetic.type = type;
+        inventoryCosmetic.name = name; 
         
-        cosmetic.Add(inventory);
+        cosmetics.Add(inventoryCosmetic);
     }
 }
 
-public class Inventory
+public class InventoryCosmetic
 {
     public string sprite_name;
     public CosmeticTypes type;
+    public string name;
 }

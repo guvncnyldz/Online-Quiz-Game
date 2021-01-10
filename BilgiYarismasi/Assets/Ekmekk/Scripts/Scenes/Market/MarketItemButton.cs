@@ -38,6 +38,7 @@ public class MarketItemButton : MonoBehaviour
                 {"user_id", User.GetInstance().UserId},
                 {"sprite_name", sprite_name},
                 {"type", type.ToString()},
+                {"name", name},
             };
 
             JArray response = await HTTPApiUtil.Post(values, "inventory", "addinventory");
@@ -51,7 +52,7 @@ public class MarketItemButton : MonoBehaviour
 
             User.GetInstance().Coin -= gold;
             User.GetInstance().Money -= money;
-            User.GetInstance().inventorySystem.AddCosmetic(sprite_name, type);
+            User.GetInstance().inventorySystem.AddCosmetic(name,sprite_name, type);
             onBuy?.Invoke();
         }
         else

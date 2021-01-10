@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class ScoreHTTP
 {
-    public static void SaveScore(int trueAnswer, int earn, int modId)
+    public static void SaveScore(int trueAnswer, int earn, int modId, int win)
     {
         var values = new Dictionary<string, string>
         {
@@ -13,7 +13,8 @@ public static class ScoreHTTP
             {"race", User.GetInstance().Race.ToString()},
             {"true_answer", trueAnswer.ToString()},
             {"earn", earn.ToString()},
-            {"mod_id", modId.ToString()}
+            {"mod_id", modId.ToString()},
+            {"win", win.ToString()}
         };
 
         HTTPApiUtil.Put(values, "score", "savescore");

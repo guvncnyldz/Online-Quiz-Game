@@ -113,7 +113,7 @@ public class TrainingManager : QuestionBase
         }
 
         User.GetInstance().Coin += earningCoin;
-        ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.training);
+        ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.training,1);
         
         Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
         {

@@ -143,7 +143,10 @@ public class LastManManager : QuestionBase
             earningCoin += Random.Range(1, 10);
         }
 
-        ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.lastman);
+        if (extraCoin > 0)
+            ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.lastman, 1);
+        else
+            ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.lastman, 0);
 
 
         Observable.Timer(TimeSpan.FromSeconds(2.5f)).Subscribe(_ =>
