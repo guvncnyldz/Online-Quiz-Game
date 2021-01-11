@@ -101,7 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/GameTypeScrollMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Market/ItemTypes.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/CosmeticData.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/QuestionPanel.cs" />
@@ -116,7 +115,6 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Market/MarketManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Market/MarketMoneyScrollPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Market/MarketJokerScrollPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/BackButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/ScoreHTTP.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionareManager.cs" />
@@ -152,6 +150,8 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/User.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/MenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/Word.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/BackButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/MenuPopup.cs" />
       </list>
     </option>
   </component>
@@ -186,10 +186,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="29548">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="29548" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -218,6 +218,7 @@
       <workItem from="1609872531397" duration="692000" />
       <workItem from="1610144015154" duration="36699000" />
       <workItem from="1610224364209" duration="32524000" />
+      <workItem from="1610331519075" duration="541000" />
     </task>
     <servers />
   </component>

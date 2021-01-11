@@ -15,8 +15,7 @@ public class MenuPopup : MonoBehaviour
     {
         GetComponent<Button>().onClick.AddListener(() =>
         {
-            isOpen = !isOpen;
-            menu.SetActive(isOpen);
+            PanelOpen();
         });
         
         exit.onClick.AddListener(() =>
@@ -61,6 +60,20 @@ public class MenuPopup : MonoBehaviour
         {
         });
     }
+
+    private void PanelOpen()
+    {
+        isOpen = !isOpen;
+        menu.SetActive(isOpen);
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PanelOpen();
+        }
+    }
+
     private void OnDisable()
     {
         menu.SetActive(false);
