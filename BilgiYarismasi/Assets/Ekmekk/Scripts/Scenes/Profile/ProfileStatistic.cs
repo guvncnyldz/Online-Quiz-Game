@@ -14,6 +14,7 @@ public class ProfileStatistic : MonoBehaviour
         lastManWin,
         wordHuntCorrect,
         wordHuntCoin,
+        wordHuntWin,
         millionaireCorrect,
         millionaireCoin,
         millionaireWin;
@@ -41,6 +42,7 @@ public class ProfileStatistic : MonoBehaviour
                 case (int) GameMods.wordHunt:
                     wordHuntCoin.text = statistic["earn"].ToString();
                     wordHuntCorrect.text = statistic["true_answer"].ToString();
+                    wordHuntWin.text = statistic["win"].ToString();
                     break;
             }
         }

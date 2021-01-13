@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class UIMenuManager : MonoBehaviour
 {
     [SerializeField] private RaceMenuSprites[] raceMenuSpriteses;
-    [SerializeField] private Image background, bottomMenu, settingsButton, shopButton, energyBar,energyBarFillable, playButton;
+    [SerializeField] private Image background, bottomMenu, settingsButton, shopButton, playButton;
     [SerializeField] private RectTransform topRect, bottomRect, gameTypeRect, leftRect, rightRect;
     [SerializeField] private TextMeshProUGUI txt_gold, txt_money;
     private Button[] buttons;
@@ -18,15 +18,13 @@ public class UIMenuManager : MonoBehaviour
     {
         txt_gold.text = User.GetInstance().Coin.ToString();
         txt_money.text = User.GetInstance().Money.ToString();
-        energyBarFillable.fillAmount = Mathf.InverseLerp(0, 20, User.GetInstance().Energy);
         
         buttons = FindObjectsOfType<Button>();
 
         background.sprite = raceMenuSpriteses[User.GetInstance().Race].background;
         bottomMenu.sprite = raceMenuSpriteses[User.GetInstance().Race].bottomMenu;
-        settingsButton.sprite = raceMenuSpriteses[User.GetInstance().Race].settingsButton;
-        shopButton.sprite = raceMenuSpriteses[User.GetInstance().Race].shopButton;
-        energyBar.sprite = raceMenuSpriteses[User.GetInstance().Race].energyBar;
+        settingsButton.sprite = raceMenuSpriteses[User.GetInstance().Race].bottomButton;
+        shopButton.sprite = raceMenuSpriteses[User.GetInstance().Race].bottomButton;
         playButton.sprite = raceMenuSpriteses[User.GetInstance().Race].playButton;
 
         MoveTop();
@@ -83,5 +81,5 @@ public class UIMenuManager : MonoBehaviour
 [Serializable]
 public class RaceMenuSprites
 {
-    public Sprite background, bottomMenu, settingsButton, shopButton, energyBar, playButton;
+    public Sprite background, bottomMenu, bottomButton, playButton;
 }

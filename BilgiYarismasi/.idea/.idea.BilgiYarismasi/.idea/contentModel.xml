@@ -328,6 +328,7 @@
                 <e p="ProfilePopUp.cs" t="Include" />
               </e>
               <e p="WordHunt" t="Include">
+                <e p="HintSystem.cs" t="Include" />
                 <e p="Letterboard.cs" t="Include" />
                 <e p="LetterBoardPanel.cs" t="Include" />
                 <e p="LetterButton.cs" t="Include" />

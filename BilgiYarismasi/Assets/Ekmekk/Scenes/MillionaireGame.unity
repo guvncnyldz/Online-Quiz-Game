@@ -2686,11 +2686,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1224143208}
     m_Modifications:
-    - target: {fileID: 4911231674435648586, guid: a92cb112637dead44a9615d918c038e5,
-        type: 3}
-      propertyPath: m_text
-      value: "Ula\u015Ft\u0131\u011F\u0131n Basamak"
-      objectReference: {fileID: 0}
     - target: {fileID: 4911231674536237530, guid: a92cb112637dead44a9615d918c038e5,
         type: 3}
       propertyPath: m_Name
@@ -2754,22 +2749,22 @@ PrefabInstance:
     - target: {fileID: 4911231674536237533, guid: a92cb112637dead44a9615d918c038e5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4
+      value: -0.26222
       objectReference: {fileID: 0}
     - target: {fileID: 4911231674536237533, guid: a92cb112637dead44a9615d918c038e5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 615
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4911231674536237533, guid: a92cb112637dead44a9615d918c038e5,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 450
+      value: 387.55548
       objectReference: {fileID: 0}
     - target: {fileID: 4911231674536237533, guid: a92cb112637dead44a9615d918c038e5,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 450
+      value: 719.9999
       objectReference: {fileID: 0}
     - target: {fileID: 4911231674536237533, guid: a92cb112637dead44a9615d918c038e5,
         type: 3}
@@ -2853,7 +2848,7 @@ PrefabInstance:
     - target: {fileID: 6261985976432879663, guid: 60966d535feef2844bf69618c0c7151f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6261985976432879663, guid: 60966d535feef2844bf69618c0c7151f,
         type: 3}

@@ -9,7 +9,7 @@ public class GameTypeScrollMenu : MonoBehaviour
 {
     private EventTrigger eventTrigger;
     private Button buttonRunner;
-    private TextMeshProUGUI txt_button;
+    private TextMeshProUGUI txt_button, txt_info;
 
     [SerializeField] private RectTransform chosenButton, scrollPanel;
     [SerializeField] private ScrollMenuButton[] buttons;
@@ -18,7 +18,8 @@ public class GameTypeScrollMenu : MonoBehaviour
     {
         buttonRunner = GetComponentInChildren<Button>();
         txt_button = buttonRunner.GetComponentInChildren<TextMeshProUGUI>();
-
+        txt_info = GetComponentInChildren<TextMeshProUGUI>();
+        
         eventTrigger = GetComponentInChildren<EventTrigger>();
 
         EventTrigger.Entry pointerDrag = new EventTrigger.Entry();
@@ -53,7 +54,8 @@ public class GameTypeScrollMenu : MonoBehaviour
             }
         }
 
-        txt_button.text = closestButton.ButtonName;
+        txt_button.text = closestButton.buttonName;
+        txt_info.text = closestButton.modInfo;
     }
 
     public void SetScrollPos()
@@ -76,18 +78,21 @@ public class GameTypeScrollMenu : MonoBehaviour
         Vector3 pos = scrollPanel.position;
         pos.x -= dirClosest.x;
         scrollPanel.position = pos;
-        
-        if (!closestButton.ButtonName.Equals("Kilitli"))
+
+        if (!closestButton.buttonName.Equals("Kilitli"))
         {
             buttonRunner.interactable = true;
-            txt_button.text = closestButton.ButtonName;
+            txt_button.text = closestButton.buttonName;
+            txt_info.text = closestButton.modInfo;
+
             buttonRunner.onClick.RemoveAllListeners();
             buttonRunner.onClick.AddListener(() => { closestButton.OnClickEvent.Invoke(); });
         }
         else
         {
             buttonRunner.interactable = false;
-            txt_button.text = closestButton.ButtonName;
+            txt_button.text = closestButton.buttonName;
+            txt_info.text = closestButton.modInfo;
         }
     }
 }

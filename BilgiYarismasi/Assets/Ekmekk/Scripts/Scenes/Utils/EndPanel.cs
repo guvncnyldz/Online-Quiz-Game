@@ -11,12 +11,12 @@ public class EndPanel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI txt_score, txt_correct;
     [SerializeField] private Button btn_home, btn_restart;
-    [SerializeField] private Image glow;
+    [SerializeField] private Image glow,blackScreen;
 
     private void Start()
     {
         gameObject.SetActive(false);
-
+        blackScreen.enabled = false;
         btn_home.onClick.AddListener(() => SceneManager.LoadScene((int) Scenes.Main));
         btn_restart.onClick.AddListener(() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex));
     }
@@ -24,6 +24,8 @@ public class EndPanel : MonoBehaviour
     public void SetValues(int score, int correct)
     {
         gameObject.SetActive(true);
+        blackScreen.enabled = true;
+
         int currentCorrect = 0;
         int currentScore = 0;
 

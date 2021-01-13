@@ -7,7 +7,8 @@ using UnityEngine.EventSystems;
 
 public class ScrollMenuButton : MonoBehaviour
 {
-    public string ButtonName;
+    public string buttonName;
+    public string modInfo;
     public ScrollButtonEvent OnClickEvent;
 }
 

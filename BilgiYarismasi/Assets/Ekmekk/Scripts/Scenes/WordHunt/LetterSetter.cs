@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public static class LetterSetter
 {
-    public static void SetLetters(List<Word> words, LetterButton[] buttons)
+    public static void SetLetters(List<Word> words, LetterButton[] buttons, HintSystem hintSystem)
     {
         bool isWordSet = false;
 
@@ -42,6 +42,7 @@ public static class LetterSetter
 
                         if (WordHuntGridUtil.IsButtonsEmpty(index, word, randDir, buttons))
                         {
+                            hintSystem.AddWord(word, index);
                             WordHuntGridUtil.SetLetter(index, word, randDir, buttons);
                             isWordSet = true;
                             break;

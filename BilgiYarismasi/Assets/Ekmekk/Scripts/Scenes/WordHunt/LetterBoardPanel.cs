@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class LetterBoardPanel : MonoBehaviour
@@ -11,9 +12,10 @@ public class LetterBoardPanel : MonoBehaviour
     const float OUTPOSY = 549;
 
     private RectTransform rectTransform;
-
+    private GridLayoutGroup gridLayout;
     private void Awake()
     {
+        gridLayout = GetComponent<GridLayoutGroup>();
         rectTransform = GetComponent<RectTransform>();
     }
 
@@ -30,5 +32,17 @@ public class LetterBoardPanel : MonoBehaviour
                         });
             }
         ).SetEase(Ease.Linear);
+    }
+
+    public void Fall()
+    {
+        gridLayout.enabled = false;
+
+        Letterboard letterboard = GetComponent<Letterboard>();
+
+        foreach (LetterButton letterButton in letterboard.letterButtons)
+        {
+            letterButton.Fall();
+        }
     }
 }

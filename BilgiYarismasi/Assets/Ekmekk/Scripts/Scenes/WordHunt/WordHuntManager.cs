@@ -14,6 +14,8 @@ public class WordHuntManager : MonoBehaviour
     private LetterBoardPanel letterBoardPanel;
     private WordHolderPanel wordHolderPanel;
     private EndPanel endPanel;
+    private HintSystem hintSystem;
+    private Timer timer;
 
     //Buralar düzenlenecek
     [SerializeField] private GameObject obj_word;
@@ -23,21 +25,34 @@ public class WordHuntManager : MonoBehaviour
 
     private void Awake()
     {
-        wordCount = Random.Range(3, 10);
-        //wordCount = 10;
+        //wordCount = Random.Range(3, 10);
+        wordCount = 3;
         letterboard = FindObjectOfType<Letterboard>();
         letterBoardPanel = FindObjectOfType<LetterBoardPanel>();
         wordHolderPanel = FindObjectOfType<WordHolderPanel>();
         endPanel = FindObjectOfType<EndPanel>();
+        timer = FindObjectOfType<Timer>();
+        hintSystem = FindObjectOfType<HintSystem>();
 
         wordHolders = new List<WordHolder>();
         letterboard.OnButtonClickUp += ControlWord;
         words = new List<Word>();
+        timer.OnTimesUp += TimesUp;
     }
 
     private void Start()
     {
         BeginGetWord();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            int hint = hintSystem.GetHintIndex();
+            if (hint >= 0)
+                letterboard.Hint(hint);
+        }
     }
 
     void BeginGetWord()
@@ -57,7 +72,8 @@ public class WordHuntManager : MonoBehaviour
         }
 
         wordHolderPanel.ChangeWordHolderPanel(() => SetWords());
-        letterBoardPanel.ChangeLetterPanel(() => LetterSetter.SetLetters(words, letterboard.letterButtons), null);
+        letterBoardPanel.ChangeLetterPanel(() => LetterSetter.SetLetters(words, letterboard.letterButtons, hintSystem),
+            () => { timer.StartCountdown(); });
     }
 
     void SetWords()
@@ -90,6 +106,7 @@ public class WordHuntManager : MonoBehaviour
                 }
 
                 wordHolders.RemoveAt(wordHolderIndex);
+                hintSystem.HuntWord(targetWord);
                 letterboard.EndButtonClickUp(true);
                 correctWordCount++;
                 if (words.Count > 1)
@@ -98,7 +115,7 @@ public class WordHuntManager : MonoBehaviour
                 }
                 else
                 {
-                    EndGame();
+                    EndGame(true);
                 }
 
                 return;
@@ -108,19 +125,29 @@ public class WordHuntManager : MonoBehaviour
         letterboard.EndButtonClickUp(false);
     }
 
-    public void EndGame()
+    void TimesUp()
+    {
+        letterBoardPanel.Fall();
+
+        EndGame(false);
+    }
+
+    public void EndGame(bool isWin)
     {
         FindObjectOfType<WordHuntInput>().enabled = false;
         FindObjectOfType<MenuPopup>().gameObject.SetActive(false);
 
         int earningCoin = 0;
 
-        for (int i = 0; i < correctWordCount; i++)
+        if (isWin)
         {
-            earningCoin += Random.Range(1, 13 - wordCount);
+            for (int i = 0; i < correctWordCount; i++)
+            {
+                earningCoin += Random.Range(1, 13 - wordCount);
+            }
         }
 
-        ScoreHTTP.SaveScore(correctWordCount, earningCoin, (int) GameMods.wordHunt,1);
+        ScoreHTTP.SaveScore(correctWordCount, earningCoin, (int) GameMods.wordHunt, isWin ? 1 : 0);
         User.GetInstance().Coin += earningCoin;
 
         endPanel.SetValues(earningCoin, correctWordCount);

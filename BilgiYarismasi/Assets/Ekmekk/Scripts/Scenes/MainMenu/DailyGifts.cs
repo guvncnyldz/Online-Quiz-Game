@@ -6,6 +6,7 @@ using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DailyGifts : MonoBehaviour
 {
@@ -15,15 +16,18 @@ public class DailyGifts : MonoBehaviour
     [SerializeField] private Gift[] gifts;
     [SerializeField] private Transform indicator;
     [SerializeField] private TextMeshProUGUI txt_money, txt_gold;
-
+    [SerializeField] private Image blackScreen;
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         disappearY = rectTransform.anchoredPosition.y;
-
-        CheckGift();
+        blackScreen.enabled = false;
     }
 
+    void Start()
+    {
+        CheckGift();
+    }
     async void CheckGift()
     {
         var values = new Dictionary<string, string>
@@ -58,12 +62,17 @@ public class DailyGifts : MonoBehaviour
 
     void Disappear(Action onComplete)
     {
-        rectTransform.DOAnchorPosY(disappearY, 0.5f).SetEase(Ease.Linear).SetDelay(1).OnComplete(() => onComplete?.Invoke());
+        rectTransform.DOAnchorPosY(disappearY, 0.5f).SetEase(Ease.Linear).SetDelay(1).OnComplete(() =>
+        {
+            blackScreen.enabled = false;
+            onComplete?.Invoke();
+        });
     }
 
     void Appear(Action onComplete)
     {
         rectTransform.DOAnchorPosY(0, 1f).SetEase(Ease.Linear).OnComplete(() => onComplete?.Invoke());
+        blackScreen.enabled = true;
     }
 
     void MoveIndicator(int targetPosIndex, Action onComplete)

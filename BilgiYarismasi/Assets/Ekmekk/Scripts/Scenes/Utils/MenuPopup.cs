@@ -8,6 +8,7 @@ public class MenuPopup : MonoBehaviour
 {
     [SerializeField] private GameObject menu;
     [SerializeField] private Button exit, play, sound;
+    [SerializeField] private Image blackScreen;
 
     private bool isOpen;
 
@@ -46,12 +47,13 @@ public class MenuPopup : MonoBehaviour
             }
 
             WordHuntManager wordHuntManager = FindObjectOfType<WordHuntManager>();
-            wordHuntManager.EndGame();
+            wordHuntManager.EndGame(false);
             
         });
         
         play.onClick.AddListener(() =>
         {
+            blackScreen.enabled = false;
             menu.SetActive(false);
             isOpen = false;
         });
@@ -64,6 +66,7 @@ public class MenuPopup : MonoBehaviour
     private void PanelOpen()
     {
         isOpen = !isOpen;
+        blackScreen.enabled = isOpen;
         menu.SetActive(isOpen);
     }
     private void Update()
@@ -77,6 +80,7 @@ public class MenuPopup : MonoBehaviour
     private void OnDisable()
     {
         menu.SetActive(false);
+        blackScreen.enabled = false;
         isOpen = false;
     }
 

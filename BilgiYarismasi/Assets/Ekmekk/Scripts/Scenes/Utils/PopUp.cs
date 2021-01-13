@@ -15,11 +15,12 @@ public class PopUp : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI message, header;
     [SerializeField] private Button button;
+    [SerializeField] private Image blackScreen;
 
     private void Awake()
     {
         button.onClick.AddListener(() => { Disappear(); });
-
+        blackScreen.enabled = false;
         rectTransform = GetComponent<RectTransform>();
     }
 
@@ -60,6 +61,8 @@ public class PopUp : MonoBehaviour
     {
         rectTransform.DOAnchorPos(new Vector2(0, APPEARY), 0.5f).OnComplete(() =>
             onComplete?.Invoke()).SetEase(Ease.Linear);
+        blackScreen.enabled = true;
+
 
         return this;
     }
@@ -67,7 +70,11 @@ public class PopUp : MonoBehaviour
     public PopUp Disappear(float duration = 0.5f, Action onComplete = null)
     {
         rectTransform.DOAnchorPos(new Vector2(0, DISAPPEARY), 0.5f).OnComplete(() =>
-            onComplete?.Invoke()).SetEase(Ease.Linear);
+        {
+            blackScreen.enabled = false;
+            onComplete?.Invoke();
+        }).SetEase(Ease.Linear);
+
 
         return this;
     }

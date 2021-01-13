@@ -5,10 +5,7 @@ using UnityEngine.UI;
 
 public class Letterboard : MonoBehaviour
 {
-    [SerializeField] private GameObject obj_letter;
-
     public LetterButton[] letterButtons;
-    public Button[] btn_letterButtons;
     private List<LetterButton> clickedButton;
 
     private CellDirection currentDir;
@@ -114,5 +111,10 @@ public class Letterboard : MonoBehaviour
 
         clickedButton.Clear();
         word = "";
+    }
+
+    public void Hint(int index)
+    {
+        letterButtons[index].Hint();
     }
 }
