@@ -10,6 +10,8 @@ public class MillionareManager : QuestionBase
 
     private GameObject menuPopup;
 
+    [SerializeField] private EndPanel normalEndPanel, winEndPanel;
+    [SerializeField] private GameObject golds;
     protected override void Awake()
     {
         menuPopup = FindObjectOfType<MenuPopup>().gameObject;
@@ -110,6 +112,8 @@ public class MillionareManager : QuestionBase
         }
         else
         {
+            QuestionHTTP.Answer(currentQuestion, false);
+
             correct = 0;
             EndGame(correct);
         }
@@ -178,12 +182,12 @@ public class MillionareManager : QuestionBase
 
             int earningCoin = millionairePanel.GetMoney(correct);
 
-            ScoreHTTP.SaveScore(correct, earningCoin, 2,0);
+            ScoreHTTP.SaveScore(correct, earningCoin, 2, 0);
 
             Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
             {
                 endPanel.gameObject.SetActive(true);
-                endPanel.SetValues(earningCoin, correct);
+                normalEndPanel.SetValues(earningCoin, correct, false);
             });
         });
     }
@@ -196,12 +200,25 @@ public class MillionareManager : QuestionBase
             {
                 int earningCoin = millionairePanel.GetMoney(correct);
 
-                ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.millionaire,1);
+                ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.millionaire, 1);
 
+                if (correct == 10)
+                {
+                    golds.SetActive(true);
+                    Destroy(golds,3);
+                }
+ 
                 Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
                 {
                     endPanel.gameObject.SetActive(true);
-                    endPanel.SetValues(earningCoin, correct);
+                    if (correct == 10)
+                    {
+                        winEndPanel.SetValues(earningCoin, correct, true);
+                    }
+                    else
+                    {
+                        normalEndPanel.SetValues(earningCoin, correct, true);
+                    }
                 });
             });
         });

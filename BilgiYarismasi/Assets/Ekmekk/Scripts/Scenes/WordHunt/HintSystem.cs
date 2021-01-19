@@ -7,8 +7,9 @@ using Random = UnityEngine.Random;
 public class HintSystem : MonoBehaviour
 {
     private List<HintWord> hintWords;
-    private int hintCount = 3;
     private Timer timer;
+    
+    public int hintCount = 3;
     private void Awake()
     {
         timer = FindObjectOfType<Timer>();
@@ -24,13 +25,13 @@ public class HintSystem : MonoBehaviour
         hintWords.Add(hintWord);
     }
 
-    public void HuntWord(Word word)
+    public void HuntWord(Word word,int firstIndex)
     {
         int index = 0;
 
         foreach (HintWord hintWord in hintWords)
         {
-            if (hintWord.word.word == word.word)
+            if (hintWord.word.word == word.word && hintWord.firstIndex == firstIndex)
             {
                 break;
             }
@@ -57,8 +58,12 @@ public class HintSystem : MonoBehaviour
         }
 
         if (!flag)
+        {
+            timer.StartCountdown();
             return -1;
+        }
 
+        hintCount--;
         int randomHint = 0;
 
         do

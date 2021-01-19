@@ -326,6 +326,7 @@
                 <e p="MenuPopup.cs" t="Include" />
                 <e p="PopUp.cs" t="Include" />
                 <e p="ProfilePopUp.cs" t="Include" />
+                <e p="SecondPopUp.cs" t="Include" />
               </e>
               <e p="WordHunt" t="Include">
                 <e p="HintSystem.cs" t="Include" />

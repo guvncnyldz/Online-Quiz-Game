@@ -14,6 +14,8 @@ public class MenuPopup : MonoBehaviour
 
     private void Awake()
     {
+        blackScreen.enabled = false;
+        
         GetComponent<Button>().onClick.AddListener(() =>
         {
             PanelOpen();

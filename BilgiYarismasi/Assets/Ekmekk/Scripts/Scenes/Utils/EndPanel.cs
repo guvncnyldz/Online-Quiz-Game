@@ -12,6 +12,7 @@ public class EndPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txt_score, txt_correct;
     [SerializeField] private Button btn_home, btn_restart;
     [SerializeField] private Image glow,blackScreen;
+    [SerializeField] private GameObject star;
 
     private void Start()
     {
@@ -21,13 +22,15 @@ public class EndPanel : MonoBehaviour
         btn_restart.onClick.AddListener(() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex));
     }
 
-    public void SetValues(int score, int correct)
+    public void SetValues(int score, int correct, bool isWin)
     {
         gameObject.SetActive(true);
         blackScreen.enabled = true;
 
         int currentCorrect = 0;
         int currentScore = 0;
+
+        star.SetActive(isWin);
 
         GetComponent<RectTransform>().DOAnchorPosY(0, 0.7f).OnComplete(() =>
         {

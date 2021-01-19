@@ -86,7 +86,7 @@ public class GameLoader : MonoBehaviour
         if (startLoading)
         {
             progressBar.fillAmount = Mathf.Lerp(startFillAmount, 1, sceneLoader.Progress);
-            progressText.text = "%" + Mathf.Lerp(startProgressText, 100, sceneLoader.Progress);
+            progressText.text = "%" + Convert.ToInt32(Mathf.Lerp(startProgressText, 100, sceneLoader.Progress));
         }
     }
 

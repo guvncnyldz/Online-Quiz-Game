@@ -175,6 +175,7 @@ MonoBehaviour:
   btn_restart: {fileID: 2548670136804803332}
   glow: {fileID: 2548670137108632542}
   blackScreen: {fileID: 2777449602627604760}
+  star: {fileID: 2548670135666540805}
 --- !u!1 &2548670135666540805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,8 +1589,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000018597, y: -0.000038146973}
-  m_SizeDelta: {x: 405, y: 720.3999}
+  m_AnchoredPosition: {x: 1.1, y: -0.000038146973}
+  m_SizeDelta: {x: 407.2204, y: 720.3999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2434817537587177964
 CanvasRenderer:
@@ -1661,8 +1662,8 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 4, y: 615}
   m_SizeDelta: {x: 450, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}

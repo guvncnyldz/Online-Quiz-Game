@@ -89,6 +89,8 @@ public class TrainingManager : QuestionBase
         }
         else
         {
+            QuestionHTTP.Answer(currentQuestion, false);
+
             EndGame(0);
         }
     }
@@ -113,12 +115,15 @@ public class TrainingManager : QuestionBase
         }
 
         User.GetInstance().Coin += earningCoin;
-        ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.training,1);
-        
+        ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.training, 1);
+
         Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
         {
             endPanel.gameObject.SetActive(true);
-            endPanel.SetValues(earningCoin, correct);
+            if (correct > 0)
+                endPanel.SetValues(earningCoin, correct, true);
+            else
+                endPanel.SetValues(earningCoin, correct, false);
         });
     }
 }

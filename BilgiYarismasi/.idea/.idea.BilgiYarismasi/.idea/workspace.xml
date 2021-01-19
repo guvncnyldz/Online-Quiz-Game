@@ -37,6 +37,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Tournament/TournamentBoard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/ErrorHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Inventory/InventoryManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/SecondPopUp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../wifecarrying/Assets/Ekmekk/Scripts/UIManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionairePanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/ScoreHTTP.cs" root0="FORCE_HIGHLIGHTING" />
@@ -102,13 +103,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Market/MarketManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Market/MarketMoneyScrollPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Market/MarketJokerScrollPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/ScoreHTTP.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionareManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/TrainingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Spell.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Profile/ProfileManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Inventory/InventoryCosmeticItem.cs" />
@@ -120,7 +116,6 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Market/MarketItemButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Inventory/InventoryScrollPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Market/MarketScrollPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/OpeningScene/GameLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/Gift.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/HTTPApiUtil.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Scenes.cs" />
@@ -132,14 +127,11 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/MenuTournament.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LoginScene/FormInputControl.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/User.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/MenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/Word.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/BackButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Config.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/ScrollMenuButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/GameTypeScrollMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/UIMenuManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/EndPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/ProfilePopUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/PopUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Market/MarketPopUp.cs" />
@@ -148,11 +140,20 @@
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/LetterBoardPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/LetterSetter.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/LetterButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/Letterboard.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/MenuPopup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/WordHuntManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/HintSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Profile/ProfileStatistic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Timer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/Letterboard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/HintSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/EndPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/WordHunt/WordHuntManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionareManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Config.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/SecondPopUp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/OpeningScene/GameLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Utils/MenuPopup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/TrainingManager.cs" />
       </list>
     </option>
   </component>
@@ -220,7 +221,8 @@
       <workItem from="1610144015154" duration="36699000" />
       <workItem from="1610224364209" duration="32524000" />
       <workItem from="1610331519075" duration="1144000" />
-      <workItem from="1610427286168" duration="10060000" />
+      <workItem from="1610427286168" duration="17783000" />
+      <workItem from="1610545363603" duration="1239000" />
     </task>
     <servers />
   </component>

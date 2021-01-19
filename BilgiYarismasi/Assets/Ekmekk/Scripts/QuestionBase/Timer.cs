@@ -106,6 +106,11 @@ public class Timer : MonoBehaviour
         TimesUp();
     }
 
+    public void SetTime(float time)
+    {
+        startTime = time;
+        lastTime = startTime;
+    }
     public void AbsoluteStopCountdown()
     {
         absoluteStop = true;

@@ -11,8 +11,9 @@ public class Letterboard : MonoBehaviour
     private CellDirection currentDir;
 
     private string word = "";
+    private int firstIndex = 0;
 
-    public Action<string> OnButtonClickUp;
+    public Action<string,int> OnButtonClickUp;
 
     private void Awake()
     {
@@ -39,9 +40,14 @@ public class Letterboard : MonoBehaviour
     void ButtonClick(int index)
     {
         //Eğer ilk tıklama ise
-        if (clickedButton.Count == 0)
+        if (clickedButton.Count == 0 && !letterButtons[index].isClicked)
         {
+            firstIndex = index;
             AddClickedLetter(index);
+            return;
+        }
+        else if(letterButtons[index].isClicked)
+        {
             return;
         }
 
@@ -96,7 +102,7 @@ public class Letterboard : MonoBehaviour
 
     void BeginButtonClickUp()
     {
-        OnButtonClickUp?.Invoke(word);
+        OnButtonClickUp?.Invoke(word,firstIndex);
     }
 
     public void EndButtonClickUp(bool isScore)

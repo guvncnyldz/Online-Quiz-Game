@@ -143,10 +143,17 @@ public class LastManManager : QuestionBase
             earningCoin += Random.Range(1, 10);
         }
 
+        bool isWin = false;
         if (extraCoin > 0)
+        {
             ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.lastman, 1);
+            isWin = true;
+        }
         else
+        {
             ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.lastman, 0);
+            isWin = false;
+        }
 
 
         Observable.Timer(TimeSpan.FromSeconds(2.5f)).Subscribe(_ =>
@@ -154,7 +161,7 @@ public class LastManManager : QuestionBase
             User.GetInstance().Coin += earningCoin;
 
             endPanel.gameObject.SetActive(true);
-            endPanel.SetValues(earningCoin, correct);
+            endPanel.SetValues(earningCoin, correct, isWin);
         });
     }
 }
