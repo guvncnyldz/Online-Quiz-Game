@@ -19,8 +19,8 @@ public class IOSPostProcessBuild : MonoBehaviour
             PlistElementDict rootDict = plist.root;
 
             string buildKey = "CFBundleVersion";
-            rootDict.SetString(buildKey, "2.1");
-            rootDict.SetString("CFBundleShortVersionString", "2.0");
+            rootDict.SetString(buildKey, "2.2");
+            rootDict.SetString("CFBundleShortVersionString", "0.2");
 
             rootDict["GADApplicationIdentifier"] = new PlistElementString("ca-app-pub-8277769580123099~5627625490");
 
