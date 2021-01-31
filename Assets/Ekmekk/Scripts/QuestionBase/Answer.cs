@@ -32,7 +32,7 @@ public class Answer : MonoBehaviour
         btn_answer = GetComponent<Button>();
         btn_answer.onClick.AddListener(() =>
         {
-            img_choice.sprite = pendingChoice;
+            OnClick();
             OnClickAnswer?.Invoke(buttonId);
         });
 
@@ -42,6 +42,10 @@ public class Answer : MonoBehaviour
         btn_answer.enabled = false;
     }
 
+    public void OnClick()
+    {
+        img_choice.sprite = pendingChoice;
+    }
     public void ResultAnswer(bool isCorrect)
     {
         img_choice.transform.DOScale(new Vector3(0, 0, 1f), 0.25f).OnComplete(() =>

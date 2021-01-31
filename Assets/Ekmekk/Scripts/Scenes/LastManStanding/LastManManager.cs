@@ -80,6 +80,8 @@ public class LastManManager : QuestionBase
     {
         base.CheckAnswer(answerId);
 
+        answerController.answers[answerId].OnClick();
+
         myAnswer = answerId;
         playerPanel.AppearPanel(true);
 

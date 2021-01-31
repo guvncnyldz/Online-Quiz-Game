@@ -14,6 +14,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Editor/IOSPostProcessBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/HTTPUtil/LoginHttp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Config.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/QuestionBase/Answer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/TrainingGame/TrainingManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/Millionaire/MillionareManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/LastManStanding/LastManManager.cs" />
       </list>
     </option>
   </component>
@@ -41,6 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611264988777</updated>
       <workItem from="1611264993018" duration="672000" />
+      <workItem from="1612107535702" duration="1493000" />
     </task>
     <servers />
   </component>

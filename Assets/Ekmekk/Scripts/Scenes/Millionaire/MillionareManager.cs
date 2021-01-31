@@ -78,6 +78,7 @@ public class MillionareManager : QuestionBase
         base.CheckAnswer(answerId);
 
         menuPopup.SetActive(false);
+        answerController.answers[answerId].OnClick();
 
         answerController.ShowCorrect(currentQuestion.correct, answerId);
 

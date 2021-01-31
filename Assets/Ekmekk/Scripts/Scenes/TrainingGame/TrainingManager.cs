@@ -73,7 +73,8 @@ public class TrainingManager : QuestionBase
     {
         base.CheckAnswer(answerId);
         menuPopup.SetActive(false);
-
+        
+        answerController.answers[answerId].OnClick();
         answerController.ShowCorrect(currentQuestion.correct, answerId);
 
         if (answerId == currentQuestion.correct)
