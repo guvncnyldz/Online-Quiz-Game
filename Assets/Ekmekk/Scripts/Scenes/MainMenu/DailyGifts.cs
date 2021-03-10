@@ -24,11 +24,7 @@ public class DailyGifts : MonoBehaviour
         blackScreen.enabled = false;
     }
 
-    void Start()
-    {
-        CheckGift();
-    }
-    async void CheckGift()
+    public async void CheckGift(Action then)
     {
         var values = new Dictionary<string, string>
         {
@@ -52,11 +48,18 @@ public class DailyGifts : MonoBehaviour
 
             User.GetInstance().Coin += gifts[targetIndex].gold;
             User.GetInstance().Money += gifts[targetIndex].money;
-
-
+            
             SetStartPosIndicator(lastIndex);
 
-            Appear(() => { MoveIndicator(targetIndex, () => { SetMoney(targetIndex, () => { Disappear(null); }); }); });
+            Appear(() => { MoveIndicator(targetIndex, () => { SetMoney(targetIndex, () => { Disappear(() =>
+            {
+                FindObjectOfType<UIMenuManager>().SetMoney();
+                then?.Invoke();
+            }); }); }); });
+        }
+        else
+        {
+            then?.Invoke();
         }
     }
 

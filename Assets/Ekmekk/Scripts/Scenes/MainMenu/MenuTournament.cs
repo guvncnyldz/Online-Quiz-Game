@@ -13,7 +13,6 @@ public class MenuTournament : MonoBehaviour
     private void Awake()
     {
         GetTournament();
-        CheckResult();
     }
 
     async void GetTournament()
@@ -44,31 +43,6 @@ public class MenuTournament : MonoBehaviour
         {
             btn_tournament.SetActive(true);
             TournamentData.SetTournament(response[0]);
-        }
-    }
-
-    async void CheckResult()
-    {
-        var values = new Dictionary<string, string>
-        {
-            {"user_id", User.GetInstance().UserId}
-        };
-
-        JArray response = await HTTPApiUtil.Post(values, "tournament", "checktournamentresult");
-
-        Error error = ErrorHandler.Handle(response);
-
-        if (error.isError)
-        {
-            if (error.errorCode == ErrorHandler.NotFound)
-            {
-                return;
-            }
-            else
-            {
-                SceneManager.LoadScene((int) Scenes.Fail);
-                return;
-            }
         }
     }
 }

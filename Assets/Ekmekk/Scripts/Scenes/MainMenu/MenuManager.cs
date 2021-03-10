@@ -69,12 +69,13 @@ public class MenuManager : MonoBehaviour
     public void TrainingMode()
     {
         isPanelOpen = true;
-        secondPopUp.ResetListenerFromSecondButton().ResetListenerFromButton().AddListenerToButton(() =>
+        SceneManager.LoadScene((int) Scenes.TrainingGame);
+        /*secondPopUp.ResetListenerFromSecondButton().ResetListenerFromButton().AddListenerToButton(() =>
             {
                 isPanelOpen = false;
             })
-            .AddListenerToSecondButton(() => { SceneManager.LoadScene((int) Scenes.TrainingGame); })
-            .SetAndShow("Eğitim", "1 enerji harcanacak", "Oyna");
+            .AddListenerToSecondButton(() => {  })
+            .SetAndShow("Eğitim", "1 enerji harcanacak", "Oyna");*/
     }
 
     public void LastManStanding()

@@ -16,8 +16,7 @@ public class UIMenuManager : MonoBehaviour
 
     public void Awake()
     {
-        txt_gold.text = User.GetInstance().Coin.ToString();
-        txt_money.text = User.GetInstance().Money.ToString();
+        SetMoney();
         
         buttons = FindObjectsOfType<Button>();
 
@@ -33,6 +32,35 @@ public class UIMenuManager : MonoBehaviour
         MoveRight();
     }
 
+    private void Start()
+    {
+        FindObjectOfType<DailyGifts>().CheckGift(() =>
+        {
+            FindObjectOfType<TournamentResult>().CheckResult();
+        });
+    }
+
+    public void SetMoney()
+    {
+        float currentGold = Convert.ToInt64(txt_gold.text);
+        float currentMoney = Convert.ToInt64(txt_money.text);
+
+        DOTween.To(() => currentGold, x => currentGold = Mathf.Floor(x), User.GetInstance().Coin, 1).OnUpdate(() =>
+        {
+            txt_gold.text = currentGold.ToString();
+        }).OnComplete(() =>
+        {
+            txt_gold.text = User.GetInstance().Coin.ToString();
+        });;
+        
+        DOTween.To(() => currentMoney, x => currentMoney = Mathf.Floor(x), User.GetInstance().Money, 1).OnUpdate(() =>
+        {
+            txt_money.text = currentMoney.ToString();
+        }).OnComplete(() =>
+        {
+            txt_money.text = User.GetInstance().Money.ToString();
+        });
+    }
     public void MoveTop()
     {
         float pos = topRect.anchoredPosition.y * -1;
