@@ -50,7 +50,7 @@ public class Interstitial : MonoBehaviour
 
     public void ShowAd()
     {
-        if (DataManager.GameSeries > 3)
+        if (DataManager.GameSeries >= 3)
         {
             interstitial.Show();
             DataManager.GameSeries = 0;

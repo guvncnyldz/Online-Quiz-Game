@@ -31,7 +31,8 @@ public class EndPanel : MonoBehaviour
         int currentScore = 0;
 
         star.SetActive(isWin);
-
+        
+        Interstitial.instance.ShowAd();
         GetComponent<RectTransform>().DOAnchorPosY(0, 0.7f).OnComplete(() =>
         {
             DOTween.To(() => currentScore, x => currentScore = x, correct, 1).OnUpdate(() =>
