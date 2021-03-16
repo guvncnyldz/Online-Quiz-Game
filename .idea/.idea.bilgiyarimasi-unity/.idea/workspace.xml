@@ -11,6 +11,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@1.1.4/Rider/Editor/EditorPluginInterop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/MainMenu/TournamentResult.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -78,6 +79,7 @@
       <workItem from="1611264993018" duration="672000" />
       <workItem from="1612107535702" duration="1493000" />
       <workItem from="1615376244676" duration="5838000" />
+      <workItem from="1615917482853" duration="400000" />
     </task>
     <servers />
   </component>
