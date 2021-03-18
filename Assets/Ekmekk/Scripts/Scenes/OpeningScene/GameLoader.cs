@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameLoader : MonoBehaviour
@@ -19,6 +19,8 @@ public class GameLoader : MonoBehaviour
     private void Awake()
     {
         DeviceControl();
+        
+        
 
         progressBar.fillAmount = 0;
         progressText.text = "%0";
