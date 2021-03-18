@@ -13,7 +13,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Config.cs" />
         <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/Scenes/OpeningScene/GameLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ekmekk/Scripts/User/UserBase.cs" />
       </list>
     </option>
   </component>
@@ -62,6 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1616009261663</updated>
       <workItem from="1616009267225" duration="1499000" />
+      <workItem from="1616024115319" duration="2210000" />
     </task>
     <servers />
   </component>
@@ -72,5 +75,15 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="415" y="145" width="706" height="534" key="find.popup" timestamp="1616025207328">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="415" y="145" width="706" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616025207328" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1616025945588">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1616025945588" />
   </component>
 </project>

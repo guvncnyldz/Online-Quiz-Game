@@ -18,9 +18,9 @@ public class GameLoader : MonoBehaviour
 
     private void Awake()
     {
+        Application.targetFrameRate = 60;
+
         DeviceControl();
-        
-        
 
         progressBar.fillAmount = 0;
         progressText.text = "%0";

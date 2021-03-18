@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\guvnc\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\guvnc\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_bilgiyarimasi-unity.601322867.00" t="ExcludeRecursive" />
-    <e p="C:\Users\guvnc\Desktop\Projects\Bilgi Yarişmasi\bilgiyarimasi-unity" t="IncludeRecursive">
+    <e p="C:\Users\guvnc\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_bilgiyarimasi-unity.-463279462.00" t="ExcludeRecursive" />
+    <e p="C:\Users\guvnc\Desktop\Projects\Bilgi-Yarismasi\bilgiyarimasi-unity" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -372,6 +372,31 @@
             <e p="external-dependency-manager_version-1.2.164_manifest.txt" t="Include" />
           </e>
         </e>
+        <e p="FacebookSDK" t="Include">
+          <e p="Examples" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ConsoleBase.cs" t="Include" />
+              <e p="LogView.cs" t="Include" />
+              <e p="MenuBase.cs" t="Include" />
+              <e p="SubMenus" t="Include">
+                <e p="AccessTokenMenu.cs" t="Include" />
+                <e p="AppEvents.cs" t="Include" />
+                <e p="AppLinks.cs" t="Include" />
+                <e p="AppRequests.cs" t="Include" />
+                <e p="DialogShare.cs" t="Include" />
+                <e p="GraphRequest.cs" t="Include" />
+                <e p="MainMenu.cs" t="Include" />
+                <e p="Pay.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="link.xml" t="Include" />
+          <e p="Plugins" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Dependencies.xml" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="GoogleMobileAds" t="Include">
           <e p="Api" t="Include">
             <e p="AdLoader.cs" t="Include" />
@@ -497,6 +522,11 @@
                 <e p="websocket-sharp.xml" t="Include" />
               </e>
             </e>
+          </e>
+        </e>
+        <e p="PlayServicesResolver" t="Include">
+          <e p="Editor" t="Include">
+            <e p="play-services-resolver_v1.2.135.0.txt" t="Include" />
           </e>
         </e>
         <e p="Plugins" t="Include">
