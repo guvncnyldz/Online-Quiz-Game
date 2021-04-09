@@ -11,12 +11,30 @@ public class IAP : MonoBehaviour, IStoreListener
     private static IStoreController m_StoreController;
     private static IExtensionProvider m_StoreExtensionProvider;
 
-    public static string kProductIDDiomand1 = "diamond1";
-    public static string kProductIDDiomand2 = "diamond2";
-    public static string kProductIDDiomand3 = "diamond3";
+    public static string kProductIDDiamond1 = "diamond1";
+    public static string kProductIDDiamond2 = "diamond2";
+    public static string kProductIDDiamond3 = "diamond3";
+    public static string kProductIDchangeName = "changeName";
+    public static string kProductIDchangeRace = "changeRace";
 
-    private Action onPurchased;
+    
+    public delegate void OnPurchased();
 
+    private OnPurchased onPurchased; 
+    
+    void Awake()
+    {
+        IAP[] iaps = FindObjectsOfType<IAP>();
+
+        if (iaps.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this);
+        }
+    }
     void Start()
     {
         if (m_StoreController == null)
@@ -34,9 +52,11 @@ public class IAP : MonoBehaviour, IStoreListener
 
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
-        builder.AddProduct(kProductIDDiomand1, ProductType.Consumable);
-        builder.AddProduct(kProductIDDiomand2, ProductType.Consumable);
-        builder.AddProduct(kProductIDDiomand3, ProductType.Consumable);
+        builder.AddProduct(kProductIDDiamond1, ProductType.Consumable);
+        builder.AddProduct(kProductIDDiamond2, ProductType.Consumable);
+        builder.AddProduct(kProductIDDiamond3, ProductType.Consumable);
+        builder.AddProduct(kProductIDchangeName, ProductType.Consumable);
+        builder.AddProduct(kProductIDchangeRace, ProductType.Consumable);
 
         UnityPurchasing.Initialize(this, builder);
     }
@@ -48,8 +68,9 @@ public class IAP : MonoBehaviour, IStoreListener
     }
 
 
-    public void BuyConsumable(string productId, Action onPurchased)
+    public void BuyConsumable(string productId, OnPurchased onPurchased)
     {
+        this.onPurchased = delegate {  };
         this.onPurchased = onPurchased;
         BuyProductID(productId);
     }
@@ -58,7 +79,6 @@ public class IAP : MonoBehaviour, IStoreListener
     {
         if (IsInitialized())
         {
-
             Product product = m_StoreController.products.WithID(productId);
 
             if (product != null && product.availableToPurchase)
@@ -76,7 +96,6 @@ public class IAP : MonoBehaviour, IStoreListener
         }
         else
         {
-
             Debug.Log("BuyProductID FAIL. Not initialized.");
         }
     }
@@ -139,21 +158,29 @@ public class IAP : MonoBehaviour, IStoreListener
     public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs args)
     {
         // A consumable product has been purchased by this user.
-        if (String.Equals(args.purchasedProduct.definition.id, kProductIDDiomand1, StringComparison.Ordinal))
+        if (String.Equals(args.purchasedProduct.definition.id, kProductIDDiamond1, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
         }
         // Or ... a non-consumable product has been purchased by this user.
-        else if (String.Equals(args.purchasedProduct.definition.id, kProductIDDiomand2, StringComparison.Ordinal))
+        else if (String.Equals(args.purchasedProduct.definition.id, kProductIDDiamond2, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
             // TODO: The non-consumable item has been successfully purchased, grant this item to the player.
         }
         // Or ... a subscription product has been purchased by this user.
-        else if (String.Equals(args.purchasedProduct.definition.id, kProductIDDiomand3, StringComparison.Ordinal))
+        else if (String.Equals(args.purchasedProduct.definition.id, kProductIDDiamond3, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
             // TODO: The subscription item has been successfully purchased, grant this to the player.
+        }
+        else if (String.Equals(args.purchasedProduct.definition.id, kProductIDchangeName, StringComparison.Ordinal))
+        {
+            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+        }
+        else if (String.Equals(args.purchasedProduct.definition.id, kProductIDchangeRace, StringComparison.Ordinal))
+        {
+            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
         }
         // Or ... an unknown product has been purchased by this user. Fill in additional products here....
         else
@@ -162,17 +189,15 @@ public class IAP : MonoBehaviour, IStoreListener
                 args.purchasedProduct.definition.id));
             onPurchased = null;
         }
-        
+
         onPurchased?.Invoke();
-
-
+        
         return PurchaseProcessingResult.Complete;
     }
 
 
     public void OnPurchaseFailed(Product product, PurchaseFailureReason failureReason)
     {
-
         Debug.Log(string.Format("OnPurchaseFailed: FAIL. Product: '{0}', PurchaseFailureReason: {1}",
             product.definition.storeSpecificId, failureReason));
     }

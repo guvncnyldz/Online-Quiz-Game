@@ -16,6 +16,7 @@ public class InventoryScrollPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txt_name;
     [SerializeField] private RectTransform chosenButton, scrollPanel;
     [SerializeField] private GameObject itemButton;
+    [SerializeField] private ItemData itemData;
 
     private List<GameObject> itemButtons;
     private ScrollRect scrollRect;
@@ -37,24 +38,28 @@ public class InventoryScrollPanel : MonoBehaviour
             itemButtons.Clear();
         }
 
-        if (cosmeticTypes == CosmeticTypes.Head)
+        foreach (Item item in itemData.items)
         {
-            for (int i = 1; i <= 4; i++)
+            if (item.isFree && item.isFree && cosmeticTypes == item.cosmeticTypes)
             {
                 GameObject temp = Instantiate(itemButton, scrollPanel);
-                temp.GetComponent<InventoryItemButton>().Set("Head_" + i,"Kafa " + i);
+                temp.GetComponent<InventoryItemButton>().Set(item);
                 itemButtons.Add(temp);
             }
         }
-        else
+
+        foreach (InventoryCosmetic inventoryCosmetic in User.GetInstance().inventorySystem.cosmetics)
         {
-            foreach (InventoryCosmetic inventoryCosmetic in User.GetInstance().inventorySystem.cosmetics)
+            if (inventoryCosmetic.type == cosmeticTypes)
             {
-                if (inventoryCosmetic.type == cosmeticTypes)
+                foreach (Item item in itemData.items)
                 {
-                    GameObject temp = Instantiate(itemButton, scrollPanel);
-                    temp.GetComponent<InventoryItemButton>().Set(inventoryCosmetic);
-                    itemButtons.Add(temp);
+                    if (item.id == inventoryCosmetic.sprite_id)
+                    {
+                        GameObject temp = Instantiate(itemButton, scrollPanel);
+                        temp.GetComponent<InventoryItemButton>().Set(item);
+                        itemButtons.Add(temp);
+                    }
                 }
             }
         }
@@ -97,9 +102,9 @@ public class InventoryScrollPanel : MonoBehaviour
 
     public void GetClosestButton()
     {
-        if(buttons.Length == 0)
+        if (buttons.Length == 0)
             return;
-        
+
         float currentDis = Mathf.Infinity;
         InventoryItemButton closestButton = buttons[0];
 
@@ -114,17 +119,17 @@ public class InventoryScrollPanel : MonoBehaviour
             }
         }
 
-        if (User.GetInstance().cosmeticData.body == closestButton.sprite_name)
+        if (User.GetInstance().cosmeticData.body == closestButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.footLeft == closestButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.footLeft == closestButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.head == closestButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.head == closestButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.hair == closestButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.hair == closestButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.handLeft == closestButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.handLeft == closestButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.eye == closestButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.eye == closestButton.sprite_id)
             txt_button.text = "Kuşanıldı";
         else
             txt_button.text = "Kuşan";
@@ -137,22 +142,22 @@ public class InventoryScrollPanel : MonoBehaviour
         switch (marketItemButton.type)
         {
             case CosmeticTypes.Head:
-                previewCosmetic.head = marketItemButton.sprite_name;
+                previewCosmetic.head = marketItemButton.sprite_id;
                 break;
             case CosmeticTypes.Body:
-                previewCosmetic.body = marketItemButton.sprite_name;
+                previewCosmetic.body = marketItemButton.sprite_id;
                 break;
             case CosmeticTypes.Eye:
-                previewCosmetic.eye = marketItemButton.sprite_name;
+                previewCosmetic.eye = marketItemButton.sprite_id;
                 break;
             case CosmeticTypes.Hand:
-                previewCosmetic.handLeft = previewCosmetic.handRight = marketItemButton.sprite_name;
+                previewCosmetic.handLeft = previewCosmetic.handRight = marketItemButton.sprite_id;
                 break;
             case CosmeticTypes.Foot:
-                previewCosmetic.footLeft = previewCosmetic.footRight = marketItemButton.sprite_name;
+                previewCosmetic.footLeft = previewCosmetic.footRight = marketItemButton.sprite_id;
                 break;
             case CosmeticTypes.Hair:
-                previewCosmetic.hair = marketItemButton.sprite_name;
+                previewCosmetic.hair = marketItemButton.sprite_id;
                 break;
         }
 
@@ -161,9 +166,9 @@ public class InventoryScrollPanel : MonoBehaviour
 
     public void SetScrollPos()
     {
-        if(buttons.Length == 0)
+        if (buttons.Length == 0)
             return;
-        
+
         float currentDis = Mathf.Infinity;
         InventoryItemButton closestButton = buttons[0];
 
@@ -184,17 +189,17 @@ public class InventoryScrollPanel : MonoBehaviour
         scrollPanel.position = pos;
 
 
-        if (User.GetInstance().cosmeticData.body == closestButton.sprite_name)
+        if (User.GetInstance().cosmeticData.body == closestButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.footLeft == closestButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.footLeft == closestButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.head == closestButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.head == closestButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.hair == closestButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.hair == closestButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.handLeft == closestButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.handLeft == closestButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.eye == closestButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.eye == closestButton.sprite_id)
             txt_button.text = "Kuşanıldı";
         else
             txt_button.text = "Kuşan";
@@ -213,10 +218,10 @@ public class InventoryScrollPanel : MonoBehaviour
     private IEnumerator SetScrollPosSpecify()
     {
         yield return null;
-    
-        if(buttons.Length == 0)
+
+        if (buttons.Length == 0)
             yield break;
-        
+
         InventoryItemButton choosenButton = buttons[0];
 
         foreach (InventoryItemButton button in buttons)
@@ -225,7 +230,7 @@ public class InventoryScrollPanel : MonoBehaviour
             {
                 case CosmeticTypes.Head:
 
-                    if (button.sprite_name == previewCosmetic.head)
+                    if (button.sprite_id == previewCosmetic.head)
                     {
                         choosenButton = button;
                     }
@@ -233,35 +238,35 @@ public class InventoryScrollPanel : MonoBehaviour
                     break;
                 case CosmeticTypes.Body:
 
-                    if (button.sprite_name == previewCosmetic.body)
+                    if (button.sprite_id == previewCosmetic.body)
                     {
                         choosenButton = button;
                     }
 
                     break;
                 case CosmeticTypes.Eye:
-                    if (button.sprite_name == previewCosmetic.eye)
+                    if (button.sprite_id == previewCosmetic.eye)
                     {
                         choosenButton = button;
                     }
 
                     break;
                 case CosmeticTypes.Hand:
-                    if (button.sprite_name == previewCosmetic.handLeft)
+                    if (button.sprite_id == previewCosmetic.handLeft)
                     {
                         choosenButton = button;
                     }
 
                     break;
                 case CosmeticTypes.Foot:
-                    if (button.sprite_name == previewCosmetic.footLeft)
+                    if (button.sprite_id == previewCosmetic.footLeft)
                     {
                         choosenButton = button;
                     }
 
                     break;
                 case CosmeticTypes.Hair:
-                    if (button.sprite_name == previewCosmetic.hair)
+                    if (button.sprite_id == previewCosmetic.hair)
                     {
                         choosenButton = button;
                     }
@@ -275,17 +280,17 @@ public class InventoryScrollPanel : MonoBehaviour
         pos.x -= dirClosest.x;
         scrollPanel.position = pos;
 
-        if (User.GetInstance().cosmeticData.body == choosenButton.sprite_name)
+        if (User.GetInstance().cosmeticData.body == choosenButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.footLeft == choosenButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.footLeft == choosenButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.hair == choosenButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.hair == choosenButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.head == choosenButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.head == choosenButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.handLeft == choosenButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.handLeft == choosenButton.sprite_id)
             txt_button.text = "Kuşanıldı";
-        else if (User.GetInstance().cosmeticData.eye == choosenButton.sprite_name)
+        else if (User.GetInstance().cosmeticData.eye == choosenButton.sprite_id)
             txt_button.text = "Kuşanıldı";
         else
             txt_button.text = "Kuşan";

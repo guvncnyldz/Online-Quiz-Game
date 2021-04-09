@@ -205,11 +205,15 @@
           <e p="readme_DOTweenPro.txt" t="Include" />
         </e>
         <e p="Editor" t="Include">
+          <e p="Instant Screenshot" t="Include">
+            <e p="ScreenshotTaker.cs" t="Include" />
+          </e>
           <e p="iOsPostProcessBuild.cs" t="Include" />
         </e>
         <e p="Ekmekk" t="Include">
           <e p="Scripts" t="Include">
             <e p="3rt Party" t="Include">
+              <e p="HintRewardedAd.cs" t="Include" />
               <e p="IAP.cs" t="Include" />
               <e p="Interstitial.cs" t="Include" />
             </e>
@@ -219,6 +223,10 @@
               <e p="CharacterCosmetics.cs" t="Include" />
             </e>
             <e p="Config.cs" t="Include" />
+            <e p="EditorData" t="Include">
+              <e p="EarningData.cs" t="Include" />
+              <e p="ItemData.cs" t="Include" />
+            </e>
             <e p="ErrorScene" t="Include">
               <e p="ErrorUI.cs" t="Include" />
             </e>

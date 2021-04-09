@@ -1,0 +1,391 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3198fc4f553855247b5e3047ccde0e15, type: 3}
+  m_Name: CosmeticsData
+  m_EditorClassIdentifier: 
+  items:
+  - id: head_default
+    name: Kafa 1
+    sprite: {fileID: 21300000, guid: 9b277519759ba1243890c5f4d08a9222, type: 3}
+    moneyCost: 0
+    goldCost: 0
+    cosmeticTypes: 0
+    isDefault: 1
+    isFree: 1
+  - id: head_2
+    name: Kafa 2
+    sprite: {fileID: 21300000, guid: 8c852919ce60c84449f86ebdbd9c8045, type: 3}
+    moneyCost: 0
+    goldCost: 0
+    cosmeticTypes: 0
+    isDefault: 1
+    isFree: 1
+  - id: head_3
+    name: Kafa 3
+    sprite: {fileID: 21300000, guid: c5024b0f55fa8e3418cd902a464b1910, type: 3}
+    moneyCost: 0
+    goldCost: 0
+    cosmeticTypes: 0
+    isDefault: 1
+    isFree: 1
+  - id: head_4
+    name: Kafa 4
+    sprite: {fileID: 21300000, guid: 173e52f30a530c74bbf74bc487f70aea, type: 3}
+    moneyCost: 0
+    goldCost: 0
+    cosmeticTypes: 0
+    isDefault: 1
+    isFree: 1
+  - id: eye_default
+    name: "K\u0131zg\u0131n"
+    sprite: {fileID: 21300000, guid: 169c3666a32061045a0eb601ec86323e, type: 3}
+    moneyCost: 0
+    goldCost: 0
+    cosmeticTypes: 2
+    isDefault: 1
+    isFree: 1
+  - id: eye_calm
+    name: Sakin
+    sprite: {fileID: 21300000, guid: ab48ff7c7c2ba184c90e4c5612323a6e, type: 3}
+    moneyCost: 0
+    goldCost: 2500
+    cosmeticTypes: 2
+    isDefault: 0
+    isFree: 0
+  - id: eye_kind
+    name: Kibar
+    sprite: {fileID: 21300000, guid: 98692b1cc9a1ae7418fbc41613980da5, type: 3}
+    moneyCost: 0
+    goldCost: 2500
+    cosmeticTypes: 2
+    isDefault: 0
+    isFree: 0
+  - id: eye_pretty
+    name: "Tatl\u0131"
+    sprite: {fileID: 21300000, guid: 70d5488cb8eb5364990a583a2978616f, type: 3}
+    moneyCost: 0
+    goldCost: 2500
+    cosmeticTypes: 2
+    isDefault: 0
+    isFree: 0
+  - id: eye_worried
+    name: "Endi\u015Feli"
+    sprite: {fileID: 21300000, guid: b0e8ac828c0ffba4e96457ea438db402, type: 3}
+    moneyCost: 0
+    goldCost: 2500
+    cosmeticTypes: 2
+    isDefault: 0
+    isFree: 0
+  - id: hair_default
+    name: "D\xFCz Siyah"
+    sprite: {fileID: 21300000, guid: 8bf478c5da6eb294d97c6d4a84ed217c, type: 3}
+    moneyCost: 0
+    goldCost: 0
+    cosmeticTypes: 1
+    isDefault: 1
+    isFree: 1
+  - id: hair_clean_blonde
+    name: "D\xFCz Sar\u0131"
+    sprite: {fileID: 21300000, guid: 006577c6b0424e94282f39fc372945ec, type: 3}
+    moneyCost: 0
+    goldCost: 1000
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_clean_red
+    name: "D\xFCz K\u0131rm\u0131z\u0131"
+    sprite: {fileID: 21300000, guid: 625e0e6a5b774dc47a311341dafca0ad, type: 3}
+    moneyCost: 0
+    goldCost: 1000
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_curly_black
+    name: "K\u0131sa Dalgal\u0131 Siyah"
+    sprite: {fileID: 21300000, guid: 203629885ad7f0741a2fa88f63737891, type: 3}
+    moneyCost: 0
+    goldCost: 5000
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_curly_blonde
+    name: "K\u0131sa Dalgal\u0131 Sar\u0131"
+    sprite: {fileID: 21300000, guid: e060ee5b6275041448f7a2a7c1815705, type: 3}
+    moneyCost: 0
+    goldCost: 5000
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_curly_red
+    name: "K\u0131sa Dalgal\u0131 Sar\u0131"
+    sprite: {fileID: 21300000, guid: 970415459ba11ba4a90b44c42ef53536, type: 3}
+    moneyCost: 0
+    goldCost: 5000
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_ramp_black
+    name: Rampa Siyah
+    sprite: {fileID: 21300000, guid: 323a47594dc7aac4b9e04c39e42ee644, type: 3}
+    moneyCost: 100
+    goldCost: 0
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_ramp_blonde
+    name: "Rampa Sar\u0131"
+    sprite: {fileID: 21300000, guid: 359f5a48da302a2409ca8ed931a84044, type: 3}
+    moneyCost: 100
+    goldCost: 0
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_ramp_red
+    name: "Rampa K\u0131rm\u0131z\u0131"
+    sprite: {fileID: 21300000, guid: a43852a583a528f4eb84b2ed8fae8555, type: 3}
+    moneyCost: 100
+    goldCost: 0
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_curlylong_black
+    name: "Uzun Dalgal\u0131 Siyah"
+    sprite: {fileID: 21300000, guid: c706c34299a376d41a2a59b09c66182c, type: 3}
+    moneyCost: 50
+    goldCost: 0
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_curlylong_blonde
+    name: "Uzun Dalgal\u0131 Sar\u0131"
+    sprite: {fileID: 21300000, guid: df2c3082ec6f6004f9788be924cbab72, type: 3}
+    moneyCost: 50
+    goldCost: 0
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_curlylong_red
+    name: "Uzun Dalgal\u0131 K\u0131rm\u0131z\u0131"
+    sprite: {fileID: 21300000, guid: 74877243d8266b9479561ae53dbd9f57, type: 3}
+    moneyCost: 50
+    goldCost: 0
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_straightlong_black
+    name: "Uzun D\xFCz Siyah"
+    sprite: {fileID: 21300000, guid: 4c7f94f2108ef4e47bdc927706070acd, type: 3}
+    moneyCost: 50
+    goldCost: 0
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_straightlong_blonde
+    name: "Uzun D\xFCz Sar\u0131"
+    sprite: {fileID: 21300000, guid: c8821355d00068948b5aac456f067ce0, type: 3}
+    moneyCost: 50
+    goldCost: 0
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: hair_straightlong_red
+    name: "Uzun D\xFCz K\u0131rm\u0131z\u0131"
+    sprite: {fileID: 21300000, guid: 7e5f4290fa535d34fa0d256b9e11389a, type: 3}
+    moneyCost: 50
+    goldCost: 0
+    cosmeticTypes: 1
+    isDefault: 0
+    isFree: 0
+  - id: foot_default
+    name: "D\xFCz Ayakkab\u0131"
+    sprite: {fileID: 21300000, guid: eaf5852b0e14fe54aa22cb9b4cf9f890, type: 3}
+    moneyCost: 0
+    goldCost: 0
+    cosmeticTypes: 5
+    isDefault: 1
+    isFree: 1
+  - id: clth_air_default_foot
+    name: "Hava B\xFCk\xFCc\xFC"
+    sprite: {fileID: 21300000, guid: 232d7c976ec3d5e48b691242082f15b6, type: 3}
+    moneyCost: 0
+    goldCost: 10000
+    cosmeticTypes: 5
+    isDefault: 0
+    isFree: 0
+  - id: clth_earth_default_foot
+    name: "Toprak B\xFCk\xFCc\xFC"
+    sprite: {fileID: 21300000, guid: 21fbd49b7019b8247840b4b55265edbc, type: 3}
+    moneyCost: 0
+    goldCost: 10000
+    cosmeticTypes: 5
+    isDefault: 0
+    isFree: 0
+  - id: clth_fire_default_foot
+    name: "Ate\u015F B\xFCk\xFCc\xFC"
+    sprite: {fileID: 21300000, guid: c4a1510d4a28c4e4288aecf8423ac086, type: 3}
+    moneyCost: 0
+    goldCost: 10000
+    cosmeticTypes: 5
+    isDefault: 0
+    isFree: 0
+  - id: clth_water_default_foot
+    name: "Su B\xFCk\xFCc\xFC"
+    sprite: {fileID: 21300000, guid: 8f5dafdd20423a74ea8074deccd622f6, type: 3}
+    moneyCost: 0
+    goldCost: 10000
+    cosmeticTypes: 5
+    isDefault: 0
+    isFree: 0
+  - id: hand_default
+    name: "D\xFCz Eldiven"
+    sprite: {fileID: 21300000, guid: fa210aab526e39b40a4106e2b3397d48, type: 3}
+    moneyCost: 0
+    goldCost: 0
+    cosmeticTypes: 4
+    isDefault: 1
+    isFree: 1
+  - id: clth_water_default_hand
+    name: "Su B\xFCk\xFCc\xFC"
+    sprite: {fileID: 21300000, guid: e211d20562e50234cae0f6f62605cc63, type: 3}
+    moneyCost: 0
+    goldCost: 10000
+    cosmeticTypes: 4
+    isDefault: 0
+    isFree: 0
+  - id: clth_air_default_hand
+    name: "Hava B\xFCk\xFCc\xFC"
+    sprite: {fileID: 21300000, guid: b81425a78e88cf243a39f9a621bf251e, type: 3}
+    moneyCost: 0
+    goldCost: 10000
+    cosmeticTypes: 4
+    isDefault: 0
+    isFree: 0
+  - id: clth_earth_default_hand
+    name: "Toprak B\xFCk\xFCc\xFC"
+    sprite: {fileID: 21300000, guid: c7f3a341867173f41a96b2206b8dea13, type: 3}
+    moneyCost: 0
+    goldCost: 10000
+    cosmeticTypes: 4
+    isDefault: 0
+    isFree: 0
+  - id: clth_fire_default_hand
+    name: "Ate\u015F B\xFCk\xFCc\xFC"
+    sprite: {fileID: 21300000, guid: 5676d03083c001645abd40a22fe4d887, type: 3}
+    moneyCost: 0
+    goldCost: 10000
+    cosmeticTypes: 4
+    isDefault: 0
+    isFree: 0
+  - id: clth_air_skymonk_hand
+    name: "Hava Ke\u015Fi\u015Fi"
+    sprite: {fileID: 21300000, guid: 7307c9c94698c5f48ae71ec90352a00c, type: 3}
+    moneyCost: 50
+    goldCost: 20000
+    cosmeticTypes: 4
+    isDefault: 0
+    isFree: 0
+  - id: clth_earth_stonewarrior_hand
+    name: "Ta\u015F Sava\u015F\xE7\u0131"
+    sprite: {fileID: 21300000, guid: aa22767ea32dbd64bb12c8d0004ba9ca, type: 3}
+    moneyCost: 50
+    goldCost: 20000
+    cosmeticTypes: 4
+    isDefault: 0
+    isFree: 0
+  - id: clth_fire_firerobe_hand
+    name: "Yang\u0131n \xC7\u0131kar\u0131c\u0131"
+    sprite: {fileID: 21300000, guid: 944e7ce16113dfa4d8a777bb66a21adc, type: 3}
+    moneyCost: 50
+    goldCost: 20000
+    cosmeticTypes: 4
+    isDefault: 0
+    isFree: 0
+  - id: clth_water_waterhunter_hand
+    name: "Su Avc\u0131s\u0131"
+    sprite: {fileID: 21300000, guid: 9504f35677bfafb40a6883fd6ac2bdf9, type: 3}
+    moneyCost: 50
+    goldCost: 20000
+    cosmeticTypes: 4
+    isDefault: 0
+    isFree: 0
+  - id: body_default
+    name: "D\xFCz K\u0131yafet"
+    sprite: {fileID: 21300000, guid: c1f46920f7cc8f84ab2d0c1435c9e92b, type: 3}
+    moneyCost: 0
+    goldCost: 0
+    cosmeticTypes: 3
+    isDefault: 1
+    isFree: 1
+  - id: clth_air_default_body
+    name: "Havac\u0131 K\u0131yafeti"
+    sprite: {fileID: 21300000, guid: bfa7d2da0d4fbe34089a18606e90e81b, type: 3}
+    moneyCost: 0
+    goldCost: 15000
+    cosmeticTypes: 3
+    isDefault: 0
+    isFree: 0
+  - id: clth_earth_default_body
+    name: Orman Sakini
+    sprite: {fileID: 21300000, guid: f6de207738f6ada4aa614c668b73f440, type: 3}
+    moneyCost: 0
+    goldCost: 15000
+    cosmeticTypes: 3
+    isDefault: 0
+    isFree: 0
+  - id: clth_fire_default_body
+    name: "Yak\u0131c\u0131"
+    sprite: {fileID: 21300000, guid: a24363677b85b72449838d0d6e07b6e5, type: 3}
+    moneyCost: 0
+    goldCost: 15000
+    cosmeticTypes: 3
+    isDefault: 0
+    isFree: 0
+  - id: clth_water_default_body
+    name: "Bal\u0131k \u0130nsan"
+    sprite: {fileID: 21300000, guid: 4a62b40c53ac7734fb69fa5f98ddfef5, type: 3}
+    moneyCost: 0
+    goldCost: 1500
+    cosmeticTypes: 3
+    isDefault: 0
+    isFree: 0
+  - id: clth_air_skymonk_body
+    name: "\xDCst\xFCn Hava Ke\u015Fi\u015Fi"
+    sprite: {fileID: 21300000, guid: 05b73f7332d8fd64898d122e07715f50, type: 3}
+    moneyCost: 0
+    goldCost: 0
+    cosmeticTypes: 3
+    isDefault: 0
+    isFree: 0
+  - id: clth_earth_stonewarrior_body
+    name: "\xDCst\xFCn Ta\u015F Sava\u015F\xE7\u0131"
+    sprite: {fileID: 21300000, guid: e17858650501bf74b9e04bf3cb8cc9e6, type: 3}
+    moneyCost: 100
+    goldCost: 2500
+    cosmeticTypes: 3
+    isDefault: 0
+    isFree: 0
+  - id: clth_fire_firerobe_body
+    name: "Yang\u0131n\u0131n Efendisi"
+    sprite: {fileID: 21300000, guid: 7a633862b8a61844287b91c0d3328284, type: 3}
+    moneyCost: 100
+    goldCost: 2500
+    cosmeticTypes: 3
+    isDefault: 0
+    isFree: 0
+  - id: clth_water_waterhunter_body
+    name: "Denizlerin Avc\u0131s\u0131"
+    sprite: {fileID: 21300000, guid: 2466a07013bebdc45aa0d00af74f2439, type: 3}
+    moneyCost: 100
+    goldCost: 25000
+    cosmeticTypes: 3
+    isDefault: 0
+    isFree: 0

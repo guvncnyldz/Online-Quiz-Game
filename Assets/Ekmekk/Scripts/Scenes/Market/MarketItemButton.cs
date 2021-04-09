@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class MarketItemButton : MonoBehaviour
@@ -11,20 +12,19 @@ public class MarketItemButton : MonoBehaviour
     public bool isBought;
     public int gold, money;
     public string name;
-    public string sprite_name;
+    public string id;
     public CosmeticTypes type;
 
-    public void Set(JToken info, CosmeticTypes type)
+    public void Set(Item info, CosmeticTypes type)
     {
         this.type = type;
-        name = info["item_name"].ToString();
-        gold = Convert.ToInt16(info["gold_cost"].ToString());
-        money = Convert.ToInt16(info["money_cost"].ToString());
-        sprite_name = info["sprite_name"].ToString();
-        GetComponent<Image>().sprite =
-            Resources.Load<Sprite>("Cosmetics/Character/" + type + "/" + sprite_name);
+        name = info.name;
+        gold = info.goldCost;
+        money = info.moneyCost;
+        id = info.id;
+        GetComponent<Image>().sprite = info.sprite; 
 
-        isBought = User.GetInstance().inventorySystem.CheckExist(sprite_name);
+        isBought = User.GetInstance().inventorySystem.CheckExist(id);
     }
 
     public async void Use(Action onBuy)
@@ -36,7 +36,7 @@ public class MarketItemButton : MonoBehaviour
             var values = new Dictionary<string, string>
             {
                 {"user_id", User.GetInstance().UserId},
-                {"sprite_name", sprite_name},
+                {"sprite_id", id},
                 {"type", type.ToString()},
                 {"name", name},
             };
@@ -52,7 +52,7 @@ public class MarketItemButton : MonoBehaviour
 
             User.GetInstance().Coin -= gold;
             User.GetInstance().Money -= money;
-            User.GetInstance().inventorySystem.AddCosmetic(name,sprite_name, type);
+            User.GetInstance().inventorySystem.AddCosmetic(name,id, type);
             onBuy?.Invoke();
         }
         else
@@ -61,40 +61,40 @@ public class MarketItemButton : MonoBehaviour
             {
                 case CosmeticTypes.Body:
                 {
-                    if (User.GetInstance().cosmeticData.body != sprite_name)
+                    if (User.GetInstance().cosmeticData.body != id)
                     {
-                        User.GetInstance().cosmeticData.body = sprite_name;
+                        User.GetInstance().cosmeticData.body = id;
                     }
 
                     break;
                 }
                 case CosmeticTypes.Hand:
-                    if (User.GetInstance().cosmeticData.handLeft != sprite_name)
+                    if (User.GetInstance().cosmeticData.handLeft != id)
                     {
                         User.GetInstance().cosmeticData.handLeft =
-                            User.GetInstance().cosmeticData.handRight = sprite_name;
+                            User.GetInstance().cosmeticData.handRight = id;
                     }
 
                     break;
                 case CosmeticTypes.Hair:
-                    if (User.GetInstance().cosmeticData.hair != sprite_name)
+                    if (User.GetInstance().cosmeticData.hair != id)
                     {
-                        User.GetInstance().cosmeticData.hair = sprite_name;
+                        User.GetInstance().cosmeticData.hair = id;
                     }
 
                     break;
                 case CosmeticTypes.Foot:
-                    if (User.GetInstance().cosmeticData.footLeft != sprite_name)
+                    if (User.GetInstance().cosmeticData.footLeft != id)
                     {
                         User.GetInstance().cosmeticData.footLeft =
-                            User.GetInstance().cosmeticData.footRight = sprite_name;
+                            User.GetInstance().cosmeticData.footRight = id;
                     }
 
                     break;
                 case CosmeticTypes.Eye:
-                    if (User.GetInstance().cosmeticData.eye != sprite_name)
+                    if (User.GetInstance().cosmeticData.eye != id)
                     {
-                        User.GetInstance().cosmeticData.eye = sprite_name;
+                        User.GetInstance().cosmeticData.eye = id;
                     }
 
                     break;

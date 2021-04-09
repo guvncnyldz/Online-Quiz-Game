@@ -232,6 +232,7 @@ MonoBehaviour:
   footRight: {fileID: 7437435494320842970}
   eye: {fileID: 7437435495270884744}
   hair: {fileID: 7437435494651326685}
+  itemData: {fileID: 11400000, guid: 8a0e1077c43973145995b4cfbe03874b, type: 2}
 --- !u!114 &7437435493986694758
 MonoBehaviour:
   m_ObjectHideFlags: 0

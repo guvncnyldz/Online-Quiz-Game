@@ -107,7 +107,7 @@ public class LastManManager : QuestionBase
 
             if (playerPanel.userCount <= 1)
             {
-                EndGame(Random.Range(750, 1000));
+                EndGame(Random.Range(earningData.minLastManCost, earningData.maxLastManCost));
             }
         }
         else
@@ -142,7 +142,7 @@ public class LastManManager : QuestionBase
 
         for (int i = 0; i < correct; i++)
         {
-            earningCoin += Random.Range(1, 10);
+            earningCoin += Random.Range(earningData.minCostPerCorrectLastMan, earningData.maxCostPerCorrectLastMan);
         }
 
         bool isWin = false;

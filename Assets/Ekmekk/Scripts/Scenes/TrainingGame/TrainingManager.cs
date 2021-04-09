@@ -112,8 +112,10 @@ public class TrainingManager : QuestionBase
 
         for (int i = 0; i < correct; i++)
         {
-            earningCoin += Random.Range(1, 10);
+            earningCoin += Random.Range(earningData.minCostPerCorrectTraining, earningData.maxCostPerCorrectTraining);
         }
+
+        earningCoin += correct * correct / 2;
 
         User.GetInstance().Coin += earningCoin;
         ScoreHTTP.SaveScore(correct, earningCoin, (int) GameMods.training, 1);

@@ -40,7 +40,7 @@ public class TournamentManager : MonoBehaviour
         int goldPrice = Convert.ToInt32(TournamentData.gold_price);
         int moneyPrice = Convert.ToInt32(TournamentData.money_price);
 
-        if (User.GetInstance().Coin > goldPrice && User.GetInstance().Money > moneyPrice)
+        if (User.GetInstance().Coin >= goldPrice && User.GetInstance().Money >= moneyPrice)
         {
             txt_joinButton.text = "Katıl";
             btn_join.onClick.AddListener(() =>

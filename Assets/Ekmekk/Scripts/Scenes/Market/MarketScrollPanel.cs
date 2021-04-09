@@ -30,7 +30,7 @@ public class MarketScrollPanel : MonoBehaviour
 
     public void SetMarketItems(CosmeticTypes cosmeticTypes, bool isCosmetic = true)
     {
-        List<JToken> tokens = MarketData.instance.GetData(cosmeticTypes);
+        List<Item> items = MarketData.instance.GetData(cosmeticTypes);
 
         if (itemButtons.Count > 0)
         {
@@ -42,10 +42,10 @@ public class MarketScrollPanel : MonoBehaviour
             itemButtons.Clear();
         }
 
-        foreach (JToken jtoken in tokens)
+        foreach (Item item in items)
         {
             GameObject temp = Instantiate(itemButton, scrollPanel);
-            temp.GetComponent<MarketItemButton>().Set(jtoken, cosmeticTypes);
+            temp.GetComponent<MarketItemButton>().Set(item, cosmeticTypes);
             itemButtons.Add(temp);
         }
 
@@ -127,15 +127,15 @@ public class MarketScrollPanel : MonoBehaviour
         }
         else
         {
-            if (User.GetInstance().cosmeticData.body == closestButton.sprite_name)
+            if (User.GetInstance().cosmeticData.body == closestButton.id)
                 txt_button.text = "Kuşanıldı";
-            else if (User.GetInstance().cosmeticData.footLeft == closestButton.sprite_name)
+            else if (User.GetInstance().cosmeticData.footLeft == closestButton.id)
                 txt_button.text = "Kuşanıldı";
-            else if (User.GetInstance().cosmeticData.hair == closestButton.sprite_name)
+            else if (User.GetInstance().cosmeticData.hair == closestButton.id)
                 txt_button.text = "Kuşanıldı";
-            else if (User.GetInstance().cosmeticData.handLeft == closestButton.sprite_name)
+            else if (User.GetInstance().cosmeticData.handLeft == closestButton.id)
                 txt_button.text = "Kuşanıldı";
-            else if (User.GetInstance().cosmeticData.eye == closestButton.sprite_name)
+            else if (User.GetInstance().cosmeticData.eye == closestButton.id)
                 txt_button.text = "Kuşanıldı";
             else
                 txt_button.text = "Kuşan";
@@ -151,19 +151,19 @@ public class MarketScrollPanel : MonoBehaviour
         switch (marketItemButton.type)
         {
             case CosmeticTypes.Body:
-                previewCosmetic.body = marketItemButton.sprite_name;
+                previewCosmetic.body = marketItemButton.id;
                 break;
             case CosmeticTypes.Eye:
-                previewCosmetic.eye = marketItemButton.sprite_name;
+                previewCosmetic.eye = marketItemButton.id;
                 break;
             case CosmeticTypes.Hand:
-                previewCosmetic.handLeft = previewCosmetic.handRight = marketItemButton.sprite_name;
+                previewCosmetic.handLeft = previewCosmetic.handRight = marketItemButton.id;
                 break;
             case CosmeticTypes.Foot:
-                previewCosmetic.footLeft = previewCosmetic.footRight = marketItemButton.sprite_name;
+                previewCosmetic.footLeft = previewCosmetic.footRight = marketItemButton.id;
                 break;
             case CosmeticTypes.Hair:
-                previewCosmetic.hair = marketItemButton.sprite_name;
+                previewCosmetic.hair = marketItemButton.id;
                 break;
         }
 
@@ -200,15 +200,15 @@ public class MarketScrollPanel : MonoBehaviour
         }
         else
         {
-            if (User.GetInstance().cosmeticData.body == closestButton.sprite_name)
+            if (User.GetInstance().cosmeticData.body == closestButton.id)
                 txt_button.text = "Kuşanıldı";
-            else if (User.GetInstance().cosmeticData.footLeft == closestButton.sprite_name)
+            else if (User.GetInstance().cosmeticData.footLeft == closestButton.id)
                 txt_button.text = "Kuşanıldı";
-            else if (User.GetInstance().cosmeticData.hair == closestButton.sprite_name)
+            else if (User.GetInstance().cosmeticData.hair == closestButton.id)
                 txt_button.text = "Kuşanıldı";
-            else if (User.GetInstance().cosmeticData.handLeft == closestButton.sprite_name)
+            else if (User.GetInstance().cosmeticData.handLeft == closestButton.id)
                 txt_button.text = "Kuşanıldı";
-            else if (User.GetInstance().cosmeticData.eye == closestButton.sprite_name)
+            else if (User.GetInstance().cosmeticData.eye == closestButton.id)
                 txt_button.text = "Kuşanıldı";
             else
                 txt_button.text = "Kuşan";
@@ -244,35 +244,35 @@ public class MarketScrollPanel : MonoBehaviour
             {
                 case CosmeticTypes.Body:
 
-                    if (button.sprite_name == previewCosmetic.body)
+                    if (button.id == previewCosmetic.body)
                     {
                         choosenButton = button;
                     }
 
                     break;
                 case CosmeticTypes.Eye:
-                    if (button.sprite_name == previewCosmetic.eye)
+                    if (button.id == previewCosmetic.eye)
                     {
                         choosenButton = button;
                     }
 
                     break;
                 case CosmeticTypes.Hand:
-                    if (button.sprite_name == previewCosmetic.handLeft)
+                    if (button.id == previewCosmetic.handLeft)
                     {
                         choosenButton = button;
                     }
 
                     break;
                 case CosmeticTypes.Foot:
-                    if (button.sprite_name == previewCosmetic.footLeft)
+                    if (button.id == previewCosmetic.footLeft)
                     {
                         choosenButton = button;
                     }
 
                     break;
                 case CosmeticTypes.Hair:
-                    if (button.sprite_name == previewCosmetic.hair)
+                    if (button.id == previewCosmetic.hair)
                     {
                         choosenButton = button;
                     }
@@ -292,15 +292,15 @@ public class MarketScrollPanel : MonoBehaviour
         }
         else
         {
-            if (User.GetInstance().cosmeticData.body == choosenButton.sprite_name)
+            if (User.GetInstance().cosmeticData.body == choosenButton.id)
                 txt_button.text = "Kuşanıldı";
-            else if (User.GetInstance().cosmeticData.footLeft == choosenButton.sprite_name)
+            else if (User.GetInstance().cosmeticData.footLeft == choosenButton.id)
                 txt_button.text = "Kuşanıldı";
-            else if (User.GetInstance().cosmeticData.hair == choosenButton.sprite_name)
+            else if (User.GetInstance().cosmeticData.hair == choosenButton.id)
                 txt_button.text = "Kuşanıldı";
-            else if (User.GetInstance().cosmeticData.handLeft == choosenButton.sprite_name)
+            else if (User.GetInstance().cosmeticData.handLeft == choosenButton.id)
                 txt_button.text = "Kuşanıldı";
-            else if (User.GetInstance().cosmeticData.eye == choosenButton.sprite_name)
+            else if (User.GetInstance().cosmeticData.eye == choosenButton.id)
                 txt_button.text = "Kuşanıldı";
             else
                 txt_button.text = "Kuşan";
@@ -341,7 +341,7 @@ public class MarketScrollPanel : MonoBehaviour
             {
                 popUp.ResetListenerFromButton();
                 popUp.AddListenerToButton(() => isPopUpOpen = false)
-                    .SetAndShow("Üzgünüm", "YYeterli paraya sahip değilsin");
+                    .SetAndShow("Üzgünüm", "Yeterli paraya sahip değilsin");
             }
         }
         else

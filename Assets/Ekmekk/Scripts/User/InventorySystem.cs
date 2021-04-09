@@ -33,8 +33,7 @@ public class InventorySystem : MonoBehaviour
         foreach (JToken jToken in response)
         {
             InventoryCosmetic inventoryCosmetic = new InventoryCosmetic();
-            inventoryCosmetic.sprite_name = jToken["sprite_name"].ToString();
-            inventoryCosmetic.name = jToken["name"].ToString();
+            inventoryCosmetic.sprite_id = jToken["sprite_id"].ToString();
 
             switch (jToken["type"].ToString())
             {
@@ -59,11 +58,11 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
-    public bool CheckExist(string sprite_name)
+    public bool CheckExist(string sprite_id)
     {
         foreach (InventoryCosmetic inventory in cosmetics)
         {
-            if (inventory.sprite_name == sprite_name)
+            if (inventory.sprite_id == sprite_id)
                 return true;
         }
 
@@ -73,7 +72,7 @@ public class InventorySystem : MonoBehaviour
     public void AddCosmetic(string name, string spriteName, CosmeticTypes type)
     {
         InventoryCosmetic inventoryCosmetic = new InventoryCosmetic();
-        inventoryCosmetic.sprite_name = spriteName;
+        inventoryCosmetic.sprite_id = spriteName;
         inventoryCosmetic.type = type;
         inventoryCosmetic.name = name; 
         
@@ -83,7 +82,7 @@ public class InventorySystem : MonoBehaviour
 
 public class InventoryCosmetic
 {
-    public string sprite_name;
+    public string sprite_id;
     public CosmeticTypes type;
     public string name;
 }

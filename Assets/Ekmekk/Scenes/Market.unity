@@ -2245,7 +2245,6 @@ GameObject:
   - component: {fileID: 333710174}
   - component: {fileID: 333710178}
   - component: {fileID: 333710179}
-  - component: {fileID: 333710180}
   m_Layer: 5
   m_Name: Market
   m_TagString: Untagged
@@ -2386,18 +2385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aacc1483fe54a5640b988a07a16567e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &333710180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333710173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a189f92ccaaa20e49b5eb365808a39dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 8a0e1077c43973145995b4cfbe03874b, type: 2}
 --- !u!1 &333742997
 GameObject:
   m_ObjectHideFlags: 0
@@ -4969,7 +4957,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.65
+  m_fontSize: 22.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6218,7 +6206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 500
-  id: diomand2
+  id: diamond2
 --- !u!114 &775736062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6532,7 +6520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 1000
-  id: diomand3
+  id: diamond3
 --- !u!114 &815699842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7613,7 +7601,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.35
+  m_fontSize: 19.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9188,7 +9176,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.65
+  m_fontSize: 22.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10389,7 +10377,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.65
+  m_fontSize: 22.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12965,7 +12953,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3
+  m_fontSize: 3.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13287,7 +13275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 50
-  id: diomand1
+  id: diamond1
 --- !u!114 &1557579714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16930,7 +16918,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3
+  m_fontSize: 3.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

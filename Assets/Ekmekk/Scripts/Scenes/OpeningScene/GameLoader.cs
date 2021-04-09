@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Net.Http;
 using System.Net.Mime;
+using System.Text;
 using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
@@ -19,21 +23,52 @@ public class GameLoader : MonoBehaviour
     private void Awake()
     {
         Application.targetFrameRate = 60;
-
-        DeviceControl();
+        GetIP(() =>
+        {
+            progressBar.fillAmount = 0.1f;
+            progressText.text = "%10";
+            messageText.text = "Config";
+            
+            DeviceControl();
+        });
+        
+        
 
         progressBar.fillAmount = 0;
         progressText.text = "%0";
         messageText.text = "Yükleniyor";
     }
 
+    async void GetIP(Action callback)
+    { 
+        string urlAddress = "https://bilgiyarismasi.ekmekk.app/";
+
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
+        HttpWebResponse responseHTML = (HttpWebResponse)request.GetResponse();
+
+        if (responseHTML.StatusCode == HttpStatusCode.OK)
+        {
+            Stream receiveStream = responseHTML.GetResponseStream();
+            StreamReader readStream = null;
+
+            if (String.IsNullOrWhiteSpace(responseHTML.CharacterSet))
+                readStream = new StreamReader(receiveStream);
+            else
+                readStream = new StreamReader(receiveStream, Encoding.GetEncoding(responseHTML.CharacterSet));
+
+            string data = readStream.ReadToEnd();
+            
+            responseHTML.Close();
+            readStream.Close();
+
+            Config.serverIP = data;
+        }
+
+        callback?.Invoke();
+    }
     async void DeviceControl()
     {
         sceneLoader = gameObject.AddComponent<AsyncSceneLoader>();
-
-        messageText.text = "Sunucuya Bağlanılıyor...";
-        progressBar.fillAmount = 0.1f;
-        progressText.text = "%10";
 
         var values = new Dictionary<string, string>
         {

@@ -25,4 +25,14 @@ public abstract class UserBase
         cosmeticData = new CosmeticData();
         cosmeticData.SetCosmetic(info["cosmetic"]);
     }
+    
+    public void SetUser(string id, string username, int race, CosmeticData cosmeticData)
+    {
+        ProfileId = id;
+        this.username = username;
+        this.race = race;
+
+        this.cosmeticData = new CosmeticData();
+        this.cosmeticData.SetCosmetic(cosmeticData);
+    }
 }

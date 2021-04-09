@@ -22,6 +22,7 @@ public class WordHuntManager : MonoBehaviour
 
     //Buralar düzenlenecek
     [SerializeField] private GameObject obj_word;
+    [SerializeField] private EarningData earningData;
 
     private int wordCount;
     private int correctWordCount;
@@ -49,16 +50,21 @@ public class WordHuntManager : MonoBehaviour
 
         btn_hint.onClick.AddListener(() =>
         {
-            int hint = hintSystem.GetHintIndex();
-            if (hint >= 0)
-                letterboard.Hint(hint);
-
-            txt_hint.text = hintSystem.hintCount.ToString();
-
-            if (hintSystem.hintCount == 0)
+            HintRewardedAd.instance.OnEarnReward = () =>
             {
-                btn_hint.enabled = false;
-            }
+                int hint = hintSystem.GetHintIndex();
+                if (hint >= 0)
+                    letterboard.Hint(hint);
+
+                txt_hint.text = hintSystem.hintCount.ToString();
+
+                if (hintSystem.hintCount == 0)
+                {
+                    btn_hint.enabled = false;
+                }
+            };
+            
+            HintRewardedAd.instance.UserChoseToWatchAd();
         });
     }
 
@@ -162,7 +168,7 @@ public class WordHuntManager : MonoBehaviour
         {
             for (int i = 0; i < correctWordCount; i++)
             {
-                earningCoin += Random.Range(1, 13 - wordCount);
+                earningCoin += Random.Range(earningData.minCostPerWord, earningData.maxCostPerWord);
             }
         }
 

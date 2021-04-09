@@ -16,6 +16,8 @@ public abstract class QuestionBase : MonoBehaviour
     
     protected int correct;
 
+    [SerializeField]
+    protected EarningData earningData; 
     protected virtual void Awake()
     {
         correct = 0;

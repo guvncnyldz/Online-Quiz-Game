@@ -55,4 +55,44 @@ public class LeaderHolder : MonoBehaviour
                 break;
         }
     }
+    
+    public void SetData(int index)
+    {
+        player = new Player();
+        player.SetUser(User.GetInstance().ProfileId,User.GetInstance().Username,User.GetInstance().Race,User.GetInstance().cosmeticData);
+
+        if (player.ProfileId == User.GetInstance().ProfileId)
+        {
+            txt_name.color = Color.yellow;
+        }
+
+        character.cosmetic.SetCosmetic(player.cosmeticData);
+        txt_name.text = player.Username;
+        if (player.Race == -1)
+        {
+            img_race.gameObject.SetActive(false);
+        }
+        else
+        {
+            img_race.sprite = races[player.Race];
+        }
+
+        txt_rank.text = (index + 1).ToString();
+        txt_score.text = 0.ToString();
+
+        switch (index)
+        {
+            case 0:
+                img_rank.sprite = ranks[index];
+                break;
+            case 1:
+                img_rank.sprite = ranks[index];
+                break;
+            case 2:
+                img_rank.sprite = ranks[index];
+                break;
+            default:
+                break;
+        }
+    }
 }

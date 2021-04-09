@@ -40,14 +40,27 @@ public class TournamentBoard : MonoBehaviour
             leaderHolders.Add(temp);
         }
 
+        int racerCount = 0;
+        bool flag = false;
         foreach (JToken token in leaderList)
         {
             if (token["profile"]["_id"].ToString() == User.GetInstance().ProfileId)
             {
+                flag = true;
                 GameObject temp = Instantiate(leaderHolder, myBoard.transform);
                 temp.GetComponent<LeaderHolder>().SetData(token, token["profile"],leaderList.IndexOf(token));
                 leaderHolders.Add(temp);
+                return;
             }
+
+            racerCount++;
+        }
+
+        if (!flag)
+        {
+            GameObject temp = Instantiate(leaderHolder, myBoard.transform);
+            temp.GetComponent<LeaderHolder>().SetData(racerCount);
+            leaderHolders.Add(temp);
         }
     }
 }

@@ -145,24 +145,8 @@ public class MarketManager : MonoBehaviour
     {
         GetMarketItems();
     }
-
-    async void GetMarketItems()
+    void GetMarketItems()
     {
-        var values = new Dictionary<string, string>
-        {
-        };
-
-        JArray response = await HTTPApiUtil.Post(values, "store", "getCosmetic");
-
-        Error error = ErrorHandler.Handle(response);
-
-        if (error.isError)
-        {
-            SceneManager.LoadScene((int) Scenes.Fail);
-            return;
-        }
-
-        MarketData.instance.SetData(response);
         marketScrollPanel.SetMarketItems(CosmeticTypes.Body);
         currentType = CosmeticTypes.Body;
         MoveBottomMenu(null);

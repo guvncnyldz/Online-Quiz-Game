@@ -8,35 +8,25 @@ public class MarketData : MonoBehaviour
 {
     public static MarketData instance;
 
-    public List<JToken> items;
+    [SerializeField] private ItemData itemData;
 
     private void Awake()
     {
         instance = this;
     }
 
-    public void SetData(JArray jArray)
+    public List<Item> GetData(CosmeticTypes type)
     {
-        items = new List<JToken>();
+        List<Item> items = new List<Item>();
 
-        foreach (JToken token in jArray)
+        foreach (Item item in itemData.items)
         {
-            items.Add(token);
-        }
-    }
-
-    public List<JToken> GetData(CosmeticTypes type)
-    {
-        List<JToken> choosenItems = new List<JToken>();
-
-        foreach (JToken item in items)
-        {
-            if (item["type"].ToString() == type.ToString())
+            if (item.cosmeticTypes == type && !item.isDefault && !item.isFree)
             {
-                choosenItems.Add(item);
+                items.Add(item);
             }
         }
 
-        return choosenItems;
+        return items;
     }
 }

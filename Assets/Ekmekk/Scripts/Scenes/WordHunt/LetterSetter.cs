@@ -16,8 +16,10 @@ public static class LetterSetter
             do
             {
                 tryCount++;
+
                 if (tryCount >= 2000)
                 {
+                    Debug.Log(tryCount);
                     SceneManager.LoadScene((int) Scenes.Fail);
                     break;
                 }

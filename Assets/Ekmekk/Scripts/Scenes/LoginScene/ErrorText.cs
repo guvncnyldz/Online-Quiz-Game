@@ -15,7 +15,11 @@ public class ErrorText : MonoBehaviour
 
     public void SetError(string text)
     {
-        transform.DOShakePosition(1);
+        if (text != "")
+        {
+            transform.DOShakePosition(1);
+        }
+
         text = text.Replace(@"\n", Environment.NewLine);
         error.text = text;
     }

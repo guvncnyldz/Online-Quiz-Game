@@ -3,7 +3,7 @@ using WebSocketSharp;
 
 public static class SocketUtil
 {
-    private const string URL = "ws://" + Config.serverIP + ":" + Config.port;
+    private static string URL = "ws://" + Config.serverIP + ":" + Config.port;
 
     public static WebSocket ws;
 

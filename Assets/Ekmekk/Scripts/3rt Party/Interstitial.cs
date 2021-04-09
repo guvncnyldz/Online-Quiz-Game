@@ -12,9 +12,18 @@ public class Interstitial : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        Interstitial[] interstitial = FindObjectsOfType<Interstitial>();
 
-        RequestInterstitial();
+        if (interstitial.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+            RequestInterstitial();
+        }
     }
 
     private void RequestInterstitial()
@@ -30,7 +39,12 @@ public class Interstitial : MonoBehaviour
         this.interstitial = new InterstitialAd(adUnitId);
 
         this.interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+        this.interstitial.OnAdClosed += HabdleOnAdClosed;
+        LoadAd();
+    }
 
+    private void HabdleOnAdClosed(object sender, EventArgs e)
+    {
         LoadAd();
     }
 
@@ -42,6 +56,7 @@ public class Interstitial : MonoBehaviour
         LoadAd();
     }
 
+
     void LoadAd()
     {
         AdRequest request = new AdRequest.Builder().Build();
@@ -52,8 +67,15 @@ public class Interstitial : MonoBehaviour
     {
         if (DataManager.GameSeries >= 3)
         {
-            interstitial.Show();
-            DataManager.GameSeries = 0;
+            if (!interstitial.IsLoaded())
+            {
+                LoadAd();
+            }
+            else
+            {
+                interstitial.Show();
+                DataManager.GameSeries = 0;
+            }
         }
         else
         {

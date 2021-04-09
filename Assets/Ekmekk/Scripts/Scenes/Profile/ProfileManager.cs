@@ -71,18 +71,17 @@ public class ProfileManager : MonoBehaviour
 
         profileStatistic.Set(response);
     }
-
-    async void EditRace()
+    void EditRace()
     {
-        //TODO iap
-        User.GetInstance().Race = -1;
-        SceneManager.LoadScene((int) Scenes.Opening);
+        FindObjectOfType<IAP>().BuyConsumable("changeRace", () =>
+        {
+            User.GetInstance().Race = -1;
+            SceneManager.LoadScene((int) Scenes.Opening);
+        });
     }
 
-    async void EditName()
+    void EditName()
     {
-        //TODO iap
-        FindObjectOfType<ProfilePopUp>().AddListenerToButton(() => { txt_nickname.text = User.GetInstance().Username; })
-            .SetAndShow();
+        FindObjectOfType<ProfilePopUp>().AddListenerToButton(txt_nickname).SetAndShow();
     }
 }

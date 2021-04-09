@@ -1890,6 +1890,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022739070}
     m_Modifications:
+    - target: {fileID: 7731111472757307113, guid: 340e73e1514bf404e93921279b2d453f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 385.90002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731111472974648576, guid: 340e73e1514bf404e93921279b2d453f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731111472974648576, guid: 340e73e1514bf404e93921279b2d453f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.19613647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731111472974648576, guid: 340e73e1514bf404e93921279b2d453f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.060058594
+      objectReference: {fileID: 0}
     - target: {fileID: 7731111473021464709, guid: 340e73e1514bf404e93921279b2d453f,
         type: 3}
       propertyPath: m_Name
@@ -7230,7 +7250,6 @@ GameObject:
   - component: {fileID: 1022739071}
   - component: {fileID: 1022739066}
   - component: {fileID: 1022739072}
-  - component: {fileID: 1022739073}
   m_Layer: 5
   m_Name: WordHunt
   m_TagString: Untagged
@@ -7350,6 +7369,7 @@ MonoBehaviour:
   btn_hint: {fileID: 713014291}
   obj_word: {fileID: 4925425241241523747, guid: 2a92f8a7936fab64688e96e4c2a5ebc4,
     type: 3}
+  earningData: {fileID: 11400000, guid: bcfffbf48a77073459d06f504b265607, type: 2}
 --- !u!114 &1022739072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7363,18 +7383,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintCount: 3
---- !u!114 &1022739073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022739065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47f30b538a1ec39408d8763e54a934fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1024695080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10868,6 +10876,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714771832542366620, guid: 60966d535feef2844bf69618c0c7151f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714771832542366620, guid: 60966d535feef2844bf69618c0c7151f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714771832542366620, guid: 60966d535feef2844bf69618c0c7151f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 37.648438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714771832542366620, guid: 60966d535feef2844bf69618c0c7151f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 57
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714771832542366620, guid: 60966d535feef2844bf69618c0c7151f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 8364482236675716318, guid: 60966d535feef2844bf69618c0c7151f,
         type: 3}

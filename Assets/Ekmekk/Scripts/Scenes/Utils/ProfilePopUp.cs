@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ProfilePopUp : MonoBehaviour
@@ -12,15 +14,13 @@ public class ProfilePopUp : MonoBehaviour
     [SerializeField] private float DISAPPEARY = 413f;
 
     private RectTransform rectTransform;
-
+    [SerializeField] private ErrorText errorText;
     [SerializeField] private Image blackScreen;
     [SerializeField] private TMP_InputField tmpInputField;
     [SerializeField] private Button button;
 
     private void Awake()
     {
-        button.onClick.AddListener(() => { Disappear(); });
-
         blackScreen.enabled = false;
         rectTransform = GetComponent<RectTransform>();
     }
@@ -33,16 +33,52 @@ public class ProfilePopUp : MonoBehaviour
         return this;
     }
 
-    public ProfilePopUp AddListenerToButton(Action action)
+    public ProfilePopUp AddListenerToButton(TextMeshProUGUI txt_name)
     {
-        button.onClick.AddListener(() =>
+        button.onClick.AddListener(async () =>
         {
-            //TODO username iap eklenecek
-            User.GetInstance().Username = tmpInputField.text;
-            action?.Invoke();
+            
+            if (FormInputControl.NicknameControl(tmpInputField.text, WrongInput))
+            {
+                var values = new Dictionary<string, string>
+                {
+                    {"user_name", tmpInputField.text},
+                };
+
+                JArray response = await HTTPApiUtil.Post(values, "users", "isuserexist");
+
+                Error error = ErrorHandler.Handle(response);
+
+                if (error.errorCode == ErrorHandler.Forbidden)
+                {
+                    FindObjectOfType<IAP>().BuyConsumable("changeName", () =>
+                    {
+                        User.GetInstance().Username = tmpInputField.text;
+                        txt_name.text = tmpInputField.text;
+
+                        WrongInput("");
+                    });
+                    
+                    Disappear();
+                }
+                else if (error.isError)
+                {
+                    SceneManager.LoadScene((int) Scenes.Fail);
+                    return;
+                }
+                else
+                {
+                    WrongInput("Bu kullanıcı bulunmakta");
+                }
+            }
         });
 
         return this;
+    }
+
+    void WrongInput(string error)
+    {
+        errorText.SetError(error);
     }
 
     public ProfilePopUp ResetListenerFromButton(bool isDefault = true)
