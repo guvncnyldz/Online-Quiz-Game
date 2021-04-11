@@ -353,15 +353,15 @@ MonoBehaviour:
     name: "Bal\u0131k \u0130nsan"
     sprite: {fileID: 21300000, guid: 4a62b40c53ac7734fb69fa5f98ddfef5, type: 3}
     moneyCost: 0
-    goldCost: 1500
+    goldCost: 15000
     cosmeticTypes: 3
     isDefault: 0
     isFree: 0
   - id: clth_air_skymonk_body
     name: "\xDCst\xFCn Hava Ke\u015Fi\u015Fi"
     sprite: {fileID: 21300000, guid: 05b73f7332d8fd64898d122e07715f50, type: 3}
-    moneyCost: 0
-    goldCost: 0
+    moneyCost: 100
+    goldCost: 25000
     cosmeticTypes: 3
     isDefault: 0
     isFree: 0
@@ -369,7 +369,7 @@ MonoBehaviour:
     name: "\xDCst\xFCn Ta\u015F Sava\u015F\xE7\u0131"
     sprite: {fileID: 21300000, guid: e17858650501bf74b9e04bf3cb8cc9e6, type: 3}
     moneyCost: 100
-    goldCost: 2500
+    goldCost: 25000
     cosmeticTypes: 3
     isDefault: 0
     isFree: 0
@@ -377,7 +377,7 @@ MonoBehaviour:
     name: "Yang\u0131n\u0131n Efendisi"
     sprite: {fileID: 21300000, guid: 7a633862b8a61844287b91c0d3328284, type: 3}
     moneyCost: 100
-    goldCost: 2500
+    goldCost: 25000
     cosmeticTypes: 3
     isDefault: 0
     isFree: 0
