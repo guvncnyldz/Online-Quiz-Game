@@ -41,6 +41,7 @@ public class GameLoader : MonoBehaviour
 
     async void GetIP(Action callback)
     { 
+        /*
         string urlAddress = "https://bilgiyarismasi.ekmekk.app/";
 
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
@@ -63,6 +64,7 @@ public class GameLoader : MonoBehaviour
 
             Config.serverIP = data;
         }
+        */
 
         callback?.Invoke();
     }

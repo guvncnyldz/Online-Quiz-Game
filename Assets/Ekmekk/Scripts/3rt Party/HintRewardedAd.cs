@@ -99,6 +99,7 @@ public class HintRewardedAd : MonoBehaviour
     
     public void UserChoseToWatchAd()
     {
+        return;
         if (this.rewardedAd.IsLoaded()) {
             this.rewardedAd.Show();
         }

@@ -65,6 +65,7 @@ public class Interstitial : MonoBehaviour
 
     public void ShowAd()
     {
+        return;
         if (DataManager.GameSeries >= 3)
         {
             if (!interstitial.IsLoaded())
